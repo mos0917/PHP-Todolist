@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
     
     $name = $_POST['name'];
     $memo = $_POST['memo'];
-
+ 
     $name = htmlspecialchars($name, ENT_QUOTES);
     $memo = htmlspecialchars($memo, ENT_QUOTES);
 
@@ -62,13 +62,39 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Todoリスト</title>
+<!-- Bootstrap読み込み（スタイリングのため） -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 </head>
 <body>
+<h1>Todoリスト</h1>
+<h3>下の「タスク名」、「タスク内容」を入力してください。</h3>
 
-<!-- 共通部分(ヘッダー) -->
-<?php include(dirname(__FILE__).'/header.php'); ?>
-<!--共通部分おわり-->
+<?php
+
+    session_start();
+    include_once 'dbconnect.php';
+    if(!isset($_SESSION['user'])) {
+        header("Location: index.php");
+    }
+
+    // ユーザーIDからユーザー名を取り出す
+    $query = "SELECT * FROM users WHERE user_id=".$_SESSION['user']."";
+    $result = $mysqli->query($query);
+
+    // ユーザー情報の取り出し
+    while ($row = $result->fetch_assoc()) {
+            $username = $row['username'];
+    }
+
+    // データベースの切断
+    $result->close();
+?>
+
+<ul>
+  <li>ログイン中のユーザー：<?php echo $username; ?> さん</li>
+</ul>
 
 
 
@@ -86,10 +112,12 @@ if(isset($errors)){
 <form action="index.php" method="post" onsubmit="return submitChk()">
 <ul>
     <li><span>タスク名</span><input type="text" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
-    <li><span>メモ</span><textarea name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
-    <li><input type="submit" name="submit"></li>
+    <li><span>メモ　　</span><textarea name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
+    <li><input type="submit" class="btn btn-default" name="submit"></li>
 </ul>
 </form>
+
+<input type="button" name="logout" onclick="location.href='./logout.php?logout'" value="ログアウト">
 
 <script>
     /**
@@ -97,12 +125,17 @@ if(isset($errors)){
     */
     function submitChk () {
         /* 確認ダイアログ表示 */
-        var flag = confirm ( "送信してもよろしいですか？\n送信したくない場合は[キャンセル]ボタンを押して下さい");
+        var flag = confirm ( "送信してもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押して下さい");
         /* send_flg が TRUEなら送信、FALSEなら送信しない */
         return flag;
     }
-</script>
 
+    function logoutChk(){
+        /*ログアウトボタン押下時ダイアログを表示*/
+        var logoutflg = confirm("ログアウトしてもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押してください");
+        return logoutflg;
+        }
+</script>
 
 
 <?php
