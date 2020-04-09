@@ -31,7 +31,7 @@ if(isset($_POST['login'])) {
 	// ハッシュ化されたパスワードがマッチするかどうかを確認
 	if (password_verify($password, $db_hashed_pwd)) {
 		$_SESSION['user'] = $user_id;
-		header("Location: index.php");
+		header("Location: login.php");
 		exit;
 	} else { ?>
 		<div class="alert alert-danger" role="alert">メールアドレスとパスワードが一致しません。</div>

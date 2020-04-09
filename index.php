@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     $memo = htmlspecialchars($memo, ENT_QUOTES);
 
     if($name === ''){
-        $errors['name'] = 'お名前が入力されていません。';
+        $errors['name'] = 'タスク名が入力されていません。';
     }
 
     if($memo === ''){
