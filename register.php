@@ -35,7 +35,7 @@ include_once 'dbconnect.php';
 		<input type="password" class="form-control" name="password" placeholder="パスワード" required />
 	</div>
 	<button type="submit" class="btn btn-default" name="signup">会員登録する</button>
-	<a href="login.php">ログインはこちら</a>
+	<a href="login.php">ログイン画面に戻る</a>
 </form>
 
 </div>
