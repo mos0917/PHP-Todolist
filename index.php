@@ -76,7 +76,7 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
     session_start();
     include_once 'dbconnect.php';
     if(!isset($_SESSION['user'])) {
-        header("Location: index.php");
+        header("Location: login.php");
     }
 
     // ユーザーIDからユーザー名を取り出す
