@@ -2,9 +2,9 @@
 
 function db_connect() {
     
-    $dsn = 'mysql:dbname=todolist;host=localhost;charset=utf8';
-    $user = 'root';
-    $password = 'root';
+    $dsn = 'mysql:dbname=eroku_9e11dccd84aee89;host=us-cdbr-east-05.cleardb.net;charset=utf8';
+    $user = 'b258db074787a9';
+    $password = 'e25dfa8f';
 
     $dbh = new PDO($dsn, $user, $password);
 
