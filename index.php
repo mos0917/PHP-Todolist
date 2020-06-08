@@ -111,7 +111,7 @@ if(isset($errors)){
 <form action="index.php" method="post" onsubmit="return submitChk()">
 <ul>
     <li><span>タスク名</span><input type="text" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
-    <li><span>メモ　　</span><textarea name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
+    <li><span>内容　　</span><textarea name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
 </ul>
     <li><input class="btn btn-outline-success" type="submit" name="submit" value="登録"></li>
 </form>
@@ -156,13 +156,11 @@ while($task = $stmt->fetch(PDO::FETCH_ASSOC)){
     print '<HR>';//罫線
 
     print '<dt>';
-    print $task["name"];
+    print 'タスク名:'$task["name"];
     print '</dt>';
 
-    print '<HR>';
-
     print '<dd>';
-    print $task["memo"];
+    print '内容:'$task["memo"];
     print '</dd>';
 
     print '<dd>';
