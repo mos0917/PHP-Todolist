@@ -156,11 +156,11 @@ while($task = $stmt->fetch(PDO::FETCH_ASSOC)){
     print '<HR>';//罫線
 
     print '<dt>';
-    print 'タスク名:'$task["name"];
+    print $task["name"];
     print '</dt>';
 
     print '<dd>';
-    print '内容:'$task["memo"];
+    print $task["memo"];
     print '</dd>';
 
     print '<dd>';
