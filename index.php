@@ -153,9 +153,13 @@ print('<dl>');
 
 while($task = $stmt->fetch(PDO::FETCH_ASSOC)){
     
+    print '<HR>';//罫線
+
     print '<dt>';
     print $task["name"];
     print '</dt>';
+
+    print '<HR>';
 
     print '<dd>';
     print $task["memo"];
@@ -170,6 +174,7 @@ while($task = $stmt->fetch(PDO::FETCH_ASSOC)){
             </form>
           ' ;
     print '</dd>';
+    print '<HR>';
 
 }
 
