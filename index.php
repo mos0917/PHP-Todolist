@@ -170,7 +170,7 @@ while($task = $stmt->fetch(PDO::FETCH_ASSOC)){
             <form action="index.php" method="post">
             <input type="hidden" name="method" value="put">
             <input type="hidden" name="id" value="' . $task['id'] . '">
-            <button type="submit">完了</button>
+            <button type="submit" class="btn btn-warning" >完了</button>
             </form>
           ' ;
     print '</dd>';
