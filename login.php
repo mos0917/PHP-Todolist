@@ -72,10 +72,10 @@ if(isset($_POST['signup'])) {
 <form method="post">
 	<h1>ログインフォーム</h1>
 	<div class="form-group">
-		<input type="email"  class="form-control" name="email" placeholder="メールアドレス" required />
+		<input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required />
 	</div>
 	<div class="form-group">
-		<input type="password" class="form-control" name="password" placeholder="パスワード" required />
+		<input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
 	</div>
 	<button type="submit" class="btn btn-default" name="login">ログインする</button>
 	<a href="register.php">会員登録はこちら</a>

@@ -117,6 +117,7 @@ if(isset($errors)){
 </form>
 
 <li><input class="btn btn-primary" type="submit" name="submit" value="登録"></li>
+
 <input class="btn btn-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'" value="ログアウト">
 
 <script>
