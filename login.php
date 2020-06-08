@@ -3,7 +3,7 @@ ob_start();
 // ここから、register.phpと同様
 session_start();
 if( isset($_SESSION['user']) != "") {
-	header("Location: login.php");
+	header("Location: index.php");
 }
 include_once 'dbconnect.php';
 // ここまで、register.phpと同様
