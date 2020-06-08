@@ -113,10 +113,11 @@ if(isset($errors)){
 <ul>
     <li><span>タスク名</span><input type="text" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
     <li><span>メモ　　</span><textarea name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
-    <li><input type="submit" name="submit" value="登録"></li>
+    
 </ul>
 </form>
 
+<li><input type="submit" name="submit" value="登録"></li>
 <input type="button" name="logout" onclick="location.href='./logout.php?logout'" value="ログアウト">
 
 <script>
