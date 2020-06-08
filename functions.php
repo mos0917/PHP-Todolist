@@ -2,7 +2,7 @@
 
 function db_connect() {
     
-    $dsn = 'mysql:dbname=eroku_9e11dccd84aee89;host=us-cdbr-east-05.cleardb.net;charset=utf8';
+    $dsn = 'mysql:dbname=heroku_9e11dccd84aee89;host=us-cdbr-east-05.cleardb.net;charset=utf8';
     $user = 'b258db074787a9';
     $password = 'e25dfa8f';
 
