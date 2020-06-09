@@ -12,7 +12,7 @@ include_once 'dbconnect.php';
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PHPの会員登録機能</title>
+<title>Todo List Member registration</title>
 <link rel="stylesheet" href="style.css">
 
 <!-- Bootstrap読み込み（スタイリングのため） -->
@@ -24,7 +24,7 @@ include_once 'dbconnect.php';
 
 
 <form action="login.php" method="post">
-	<h1>会員登録フォーム</h1>
+	<h1>会員登録</h1>
 	<div class="form-group">
 		<input type="text" class="form-control" name="username" placeholder="ユーザー名" required />
 	</div>
@@ -34,7 +34,7 @@ include_once 'dbconnect.php';
 	<div class="form-group">
 		<input type="password" class="form-control" name="password" placeholder="パスワード" required />
 	</div>
-	<button type="submit" class="btn btn-default" name="signup">会員登録する</button>
+	<button type="submit" class="btn btn-success" name="signup">会員登録する</button>
 	<a href="login.php">ログイン画面に戻る</a>
 </form>
 
