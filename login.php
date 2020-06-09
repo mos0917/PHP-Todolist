@@ -43,7 +43,7 @@ if(isset($_POST['login'])) {
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PHPのログイン機能</title>
+<title>Todo List Login</title>
 <link rel="stylesheet" href="style.css">
 <!-- Bootstrap読み込み（スタイリングのため） -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -70,14 +70,14 @@ if(isset($_POST['signup'])) {
 } ?>
 
 <form method="post">
-	<h1>ログインフォーム</h1>
+	<h1>Todo List ログイン</h1>
 	<div class="form-group">
 		<input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required />
 	</div>
 	<div class="form-group">
 		<input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
 	</div>
-	<button type="submit" class="btn btn-default" name="login">ログインする</button>
+	<button type="submit" class="btn btn-primary" name="login">ログインする</button>
 	<a href="register.php">会員登録はこちら</a>
 </form>
 

@@ -68,10 +68,11 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
 </head>
 <body>
 <h1>Todoリスト</h1>
-<h3>下の「タスク名」、「タスク内容」を入力してください。</h3>
+<input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+
 
 <?php
-
+    
     session_start();
     include_once 'dbconnect.php';
     if(!isset($_SESSION['user'])) {
@@ -110,8 +111,8 @@ if(isset($errors)){
 ?>
 <form action="index.php" method="post" onsubmit="return submitChk()">
 <ul>
-    <li><span>タスク名</span><input type="text" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
-    <li><span>内容　　</span><textarea name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
+    <li><span>タスク名</span><input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
+    <li><span>内容　　</span><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
 </ul>
     <li><input class="btn btn-outline-success" type="submit" name="submit" value="登録"></li>
 </form>
@@ -168,7 +169,7 @@ while($task = $stmt->fetch(PDO::FETCH_ASSOC)){
             <form action="index.php" method="post">
             <input type="hidden" name="method" value="put">
             <input type="hidden" name="id" value="' . $task['id'] . '">
-            <button type="submit" class="btn btn-warning" >完了</button>
+            <button type="submit" class="btn btn-danger" >完了</button>
             </form>
           ' ;
     print '</dd>';
