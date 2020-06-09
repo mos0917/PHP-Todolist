@@ -111,7 +111,7 @@ if(isset($errors)){
 ?>
 <form action="index.php" method="post" onsubmit="return submitChk()">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <ul>
                 <li>
                     <span>タスク名</span>
@@ -127,12 +127,12 @@ if(isset($errors)){
                 </li>
             </ul>
         </div>
-        <div>
+    </div>
+    <div>
             <li>
                 <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
             </li>
         </div>
-    </div>
 </form>
 
 
