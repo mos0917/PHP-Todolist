@@ -67,6 +67,7 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
 <title>Todoリスト</title>
 </head>
 <body>
+<div class="col-xs-6 col-xs-offset-3">
 <h1>Todoリスト</h1>
 <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
 
@@ -110,11 +111,13 @@ if(isset($errors)){
 }
 ?>
 <form action="index.php" method="post" onsubmit="return submitChk()">
-<ul>
-    <li><span>タスク名</span><input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
-    <li><span>内容　　</span><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
-</ul>
-    <li><input class="btn btn-outline-success" type="submit" name="submit" value="登録"></li>
+    <div>
+        <ul>
+            <li><span>タスク名</span><input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
+            <li><span>内容　　</span><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
+        </ul>
+        <li><input class="btn btn-outline-success" type="submit" name="submit" value="登録"></li>
+    </div>
 </form>
 
 
