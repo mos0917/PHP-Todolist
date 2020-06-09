@@ -93,10 +93,7 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
     $result->close();
 ?>
 
-  <li>■ログイン中のユーザー：<?php echo $username; ?> さん</li>
-
-
-
+  <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 <?php
 if(isset($errors)){
@@ -111,7 +108,7 @@ if(isset($errors)){
 ?>
 <form action="index.php" method="post" onsubmit="return submitChk()">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <ul>
                 <li>
                     <span>タスク名</span>
@@ -123,23 +120,18 @@ if(isset($errors)){
             <ul>
                 <li>
                     <span>内容　　</span>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea>
                 </li>
             </ul>
         </div>
-    </div>
-    <div>
-            <li>
-                <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
-            </li>
+        <div>
+            <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
         </div>
+    </div>
 </form>
 
-
 <form action="index.php" method="post" onsubmit="return logoutChk()">
-    <li>
-        <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
-    </li>
+    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
 </form>
 </div>
 
