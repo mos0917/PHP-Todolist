@@ -133,9 +133,9 @@ if(isset($errors)){
 </form>
 
 
-<form action="logout.php" method="post" onsubmit="return logoutChk()">
+<form action="index.php" method="post" onsubmit="return logoutChk()">
     <li>
-        <input class="btn btn-outline-primary" type="button" name="logout" value="ログアウト">
+        <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
     </li>
 </form>
 
