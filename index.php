@@ -110,9 +110,13 @@ if(isset($errors)){
 }
 ?>
 <form action="index.php" method="post" onsubmit="return submitChk()">
-    <div>
+    <div class="col-xs-3">
         <ul>
             <li><span>タスク名</span><input type="text" class="form-control input-sm" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
+        </ul>
+    </div>
+    <div class="col-xs-3">
+        <ul>
             <li><span>内容　　</span><textarea class="form-control input-sm" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
         </ul>
         <li><input class="btn btn-outline-success" type="submit" name="submit" value="登録"></li>
