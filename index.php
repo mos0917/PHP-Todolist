@@ -67,7 +67,7 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
 <title>Todo List</title>
 </head>
 <body>
-<div class="container">
+
 <h1>Todo List</h1>
 <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
 
@@ -110,21 +110,23 @@ if(isset($errors)){
 }
 ?>
 <form action="index.php" method="post" onsubmit="return submitChk()">
-    <div class="col-xs-3">
-        <ul>
-            <li>
-                <span>タスク名</span>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>">
-            </li>
-        </ul>
-    </div>
-    <div class="col-xs-3">
-        <ul>
-            <li>
-                <span>内容　　</span>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea>
-            </li>
-        </ul>
+    <div class="container">
+        <div class="col-xs-3">
+            <ul>
+                <li>
+                    <span>タスク名</span>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>">
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-3">
+            <ul>
+                <li>
+                    <span>内容　　</span>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea>
+                </li>
+            /ul>
+        </div>
     </div>
     <div>
         <li>
