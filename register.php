@@ -33,6 +33,9 @@ include_once 'dbconnect.php';
 	</div>
 	<div class="form-group">
 		<input type="password" class="form-control" name="password" placeholder="パスワード" required />
+		<small id="passwordHelpBlock" class="form-text text-muted">
+  			8-20文字で入力してください。大文字、小文字、数字を組み合わせて入力してください。
+		</small>
 	</div>
 	<button type="submit" class="btn btn-success" name="signup">会員登録する</button>
 	<a href="login.php">ログイン画面に戻る</a>

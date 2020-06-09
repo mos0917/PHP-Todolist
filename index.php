@@ -93,9 +93,8 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
     $result->close();
 ?>
 
-<ul>
-  <li>ログイン中のユーザー：<?php echo $username; ?> さん</li>
-</ul>
+  <li>■ログイン中のユーザー：<?php echo $username; ?> さん</li>
+
 
 
 
@@ -113,8 +112,8 @@ if(isset($errors)){
 <form action="index.php" method="post" onsubmit="return submitChk()">
     <div>
         <ul>
-            <li><span>タスク名</span><input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
-            <li><span>内容　　</span><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
+            <li><span>タスク名</span><input type="text" class="form-control input-sm" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>"></li>
+            <li><span>内容　　</span><textarea class="form-control input-sm" id="exampleFormControlTextarea1" rows="3" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea></li>
         </ul>
         <li><input class="btn btn-outline-success" type="submit" name="submit" value="登録"></li>
     </div>
