@@ -64,10 +64,11 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Todoリスト</title>
+<title>Todo List</title>
 </head>
 <body>
-<h1>Todoリスト</h1>
+<div class="container">
+<h1>Todo List</h1>
 <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
 
 
@@ -138,6 +139,7 @@ if(isset($errors)){
         <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
     </li>
 </form>
+</div>
 
 
 
