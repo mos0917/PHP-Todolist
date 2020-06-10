@@ -12,12 +12,20 @@ if (isset($_POST['submit'])) {
     $memo = htmlspecialchars($memo, ENT_QUOTES);
 
     if ($name === '') {
+        $errors['name'] = 1;
+    }
+
+    if ($memo === '') {
+        $errors['memo'] = 1;
+    }
+
+    if ($errors['name'] == 1) {
         ?>
         <div class="alert alert-danger" role="alert">タスク名を入力してください。</div>
 <?php
     }
 
-    if ($memo === '') {
+    if ($errors['memo'] == 1) {
         ?>
         <div class="alert alert-danger" role="alert">内容を入力してください。</div>
 <?php
