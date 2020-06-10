@@ -101,17 +101,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
   <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
-<?php
-if (isset($errors)) {
-    echo '<ul>';
-    foreach ($errors as $value) {
-        echo '<li>';
-        echo $value;
-        echo '</li>';
-    }
-    echo '</ul>';
-}
-?>
+
 <form action="index.php" method="post" onsubmit="return submitChk()">
     <div class="row">
         <div class="col-md-4">
