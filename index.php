@@ -1,33 +1,34 @@
 <?php
 
-require_once("functions.php");
+require_once 'functions.php';
 
 $errors = array();
 
-if(isset($_POST['submit'])){
-    
+if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $memo = $_POST['memo'];
- 
+
     $name = htmlspecialchars($name, ENT_QUOTES);
     $memo = htmlspecialchars($memo, ENT_QUOTES);
 
-    if($name === ''){
-        $errors['name'] = 'タスク名が入力されていません。';
+    if ($name === '') {
+        ?>
+        <div class="alert alert-danger" role="alert">タスク名を入力してください。</div>
+<?php
     }
 
-    if($memo === ''){
-        $errors['memo'] = 'メモが入力されていません。';
+    if ($memo === '') {
+        ?>
+        <div class="alert alert-danger" role="alert">内容を入力してください。</div>
+<?php
     }
-    
-    if(count($errors) === 0){
-        
+
+    if (count($errors) === 0) {
         $dbh = db_connect();
 
         $sql = 'INSERT INTO tasks (name, memo, done) VALUES (?, ?, 0)';
         $stmt = $dbh->prepare($sql);
 
-        
         $stmt->bindValue(1, $name, PDO::PARAM_STR);
         $stmt->bindValue(2, $memo, PDO::PARAM_STR);
         $stmt->execute();
@@ -38,19 +39,16 @@ if(isset($_POST['submit'])){
     }
 }
 
-
-if(isset($_POST['method']) && ($_POST['method'] === 'put')){
-    
-    
-    $id = $_POST["id"];
+if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
+    $id = $_POST['id'];
     $id = htmlspecialchars($id, ENT_QUOTES);
-    $id = (int)$id;
+    $id = (int) $id;
 
     $dbh = db_connect();
 
     $sql = 'UPDATE tasks SET done = 1  WHERE id = ?';
     $stmt = $dbh->prepare($sql);
-    
+
     $stmt->bindValue(1, $id, PDO::PARAM_INT);
     $stmt->execute();
 
@@ -73,20 +71,20 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
 
 
 <?php
-    
+
     session_start();
     include_once 'dbconnect.php';
-    if(!isset($_SESSION['user'])) {
-        header("Location: login.php");
+    if (!isset($_SESSION['user'])) {
+        header('Location: login.php');
     }
 
     // ユーザーIDからユーザー名を取り出す
-    $query = "SELECT * FROM users WHERE user_id=".$_SESSION['user']."";
+    $query = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
     $result = $mysqli->query($query);
 
     // ユーザー情報の取り出し
     while ($row = $result->fetch_assoc()) {
-            $username = $row['username'];
+        $username = $row['username'];
     }
 
     // データベースの切断
@@ -96,14 +94,14 @@ if(isset($_POST['method']) && ($_POST['method'] === 'put')){
   <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 <?php
-if(isset($errors)){
-    print("<ul>");
-    foreach($errors as $value){
-        print("<li>");
-        print($value);
-        print("</li>");
+if (isset($errors)) {
+    echo '<ul>';
+    foreach ($errors as $value) {
+        echo '<li>';
+        echo $value;
+        echo '</li>';
     }
-    print("</ul>");
+    echo '</ul>';
 }
 ?>
 <form action="index.php" method="post" onsubmit="return submitChk()">
@@ -112,7 +110,9 @@ if(isset($errors)){
             <ul>
                 <li>
                     <span>タスク名</span>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if(isset($name)){print($name);} ?>">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if (isset($name)) {
+    echo $name;
+} ?>">
                 </li>
             </ul>
         </div>
@@ -120,7 +120,9 @@ if(isset($errors)){
             <ul>
                 <li>
                     <span>内容　　</span>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="memo"><?php if(isset($memo)){print($memo);} ?></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="memo"><?php if (isset($memo)) {
+    echo $memo;
+} ?></textarea>
                 </li>
             </ul>
         </div>
@@ -164,39 +166,37 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $dbh = null;
 
-print('<dl>');
+echo '<dl>';
 
-while($task = $stmt->fetch(PDO::FETCH_ASSOC)){
-    
-    print '<HR>';//罫線
+while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    echo '<HR>'; //罫線
 
-    print '<dt>';
-    print $task["name"];
-    print '</dt>';
+    echo '<dt>';
+    echo $task['name'];
+    echo '</dt>';
 
-    print '<dd>';
-    print $task["memo"];
-    print '</dd>';
+    echo '<dd>';
+    echo $task['memo'];
+    echo '</dd>';
 
-    print '<dd>';
-    print '
+    echo '<dd>';
+    echo '
             <form action="index.php" method="post">
             <input type="hidden" name="method" value="put">
-            <input type="hidden" name="id" value="' . $task['id'] . '">
+            <input type="hidden" name="id" value="'.$task['id'].'">
             <button type="submit" class="btn btn-danger" >完了</button>
             </form>
-          ' ;
-    print '</dd>';
-    print '<HR>';
-
+          ';
+    echo '</dd>';
+    echo '<HR>';
 }
 
-print('</dl>');
+echo '</dl>';
 
 ?>
 
 
-<?PHP include(dirname(__FILE__).'/footer.php'); ?>
+<?php include dirname(__FILE__).'/footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
