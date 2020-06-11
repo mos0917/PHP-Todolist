@@ -2,7 +2,6 @@
 MOS09 at fukurou
 ===
 
-Overview
 
 ##作成アプリケーション
 【Todo List】(フクロウ式式Todolist)
