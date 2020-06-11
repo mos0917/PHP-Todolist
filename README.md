@@ -12,7 +12,7 @@ phpの勉強をするためににサンプルを用いて作成
 会員登録(メールアドレス、パスワード登録)、ログイン、タスク登録、タスク完了(削除)、ログアウト
 
 ## どのサイトで公開してるか
-https://blooming-ocean-46381.herokuapp.com/login.php
+https://blooming-ocean-46381.herokuapp.com/login.php  
 ↑で公開してます
 
 ## これからどんな機能を追加していきたいか
