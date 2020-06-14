@@ -10,27 +10,27 @@ if (isset($_POST['submit'])) {
 
     $name = htmlspecialchars($name, ENT_QUOTES);
     $memo = htmlspecialchars($memo, ENT_QUOTES);
+    /*
+        if ($name === '') {
+            $errors['name'] = 1;
+        }
 
-    if ($name === '') {
-        $errors['name'] = 1;
-    }
+        if ($memo === '') {
+            $errors['memo'] = 1;
+        }
 
-    if ($memo === '') {
-        $errors['memo'] = 1;
-    }
+        if ($errors['name'] == 1) {
+            ?>
+            <div class="alert alert-danger" role="alert" id="taskerr">タスク名を入力してください。</div>
+    <?php
+        }
 
-    if ($errors['name'] == 1) {
-        ?>
-        <div class="alert alert-danger" role="alert">タスク名を入力してください。</div>
-<?php
-    }
-
-    if ($errors['memo'] == 1) {
-        ?>
-        <div class="alert alert-danger" role="alert">内容を入力してください。</div>
-<?php
-    }
-
+        if ($errors['memo'] == 1) {
+            ?>
+            <div class="alert alert-danger" role="alert" id="valerr">内容を入力してください。</div>
+    <?php
+        }
+    */
     if (count($errors) === 0) {
         $dbh = db_connect();
 
@@ -102,13 +102,13 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
   <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
-<form action="index.php" method="post" onsubmit="return submitChk()">
+<form action="index.php" method="post" onsubmit="return !!(submitChk() & errChk())">
     <div class="row">
         <div class="col-md-4">
             <ul>
                 <li>
                     <span>タスク名</span>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php if (isset($name)) {
+                    <input type="text" class="form-control" id="taskname" name="name" value="<?php if (isset($name)) {
     echo $name;
 } ?>">
                 </li>
@@ -118,7 +118,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
             <ul>
                 <li>
                     <span>内容　　</span>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="memo"><?php if (isset($memo)) {
+                    <textarea class="form-control" id="taskvalue" rows="1" name="memo"><?php if (isset($memo)) {
     echo $memo;
 } ?></textarea>
                 </li>
@@ -153,6 +153,13 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
         var logoutflg = confirm("ログアウトしてもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押してください");
         return logoutflg;
         }
+    
+
+    function errChk(){ //タスク登録時のエラーチェック
+        if(document.getElementById('taskname') === '' || document.getElementById('taskvalue') === ''){
+            alert('タスク名、またはまたは内容に不備があります。');
+        }
+    }
 </script>
 
 
