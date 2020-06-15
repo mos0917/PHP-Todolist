@@ -102,7 +102,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
   <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
-<form action="index.php" method="post" onsubmit="return errChk(errflg)">
+<form action="index.php" method="post" onsubmit="return errChk()">
     <div class="row">
         <div class="col-md-4">
             <ul>
@@ -156,9 +156,8 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 */    
 
     function errChk(){ //タスク登録時のエラーチェック
-        if(document.getElementById('taskname') === '' || document.getElementById('taskvalue') === ''){
-            var errflg = alert("タスク名、またはまたは内容に不備があります。");
-            return errflg;
+        if(document.getElementById('taskname') === ''){
+            alert("タスク名、またはまたは内容に不備があります。");
         }
     }
 </script>
