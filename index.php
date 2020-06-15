@@ -10,16 +10,16 @@ if (isset($_POST['submit'])) {
 
     $name = htmlspecialchars($name, ENT_QUOTES);
     $memo = htmlspecialchars($memo, ENT_QUOTES);
-    /*
-        if ($name === '') {
-            $errors['name'] = 1;
-        }
 
-        if ($memo === '') {
-            $errors['memo'] = 1;
-        }
+    if ($name === '') {
+        $errors['name'] = 1;
+    }
 
-        if ($errors['name'] == 1) {
+    if ($memo === '') {
+        $errors['memo'] = 1;
+    }
+
+    /*    if ($errors['name'] == 1) {
             ?>
             <div class="alert alert-danger" role="alert" id="taskerr">タスク名を入力してください。</div>
     <?php
