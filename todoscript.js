@@ -18,6 +18,6 @@ function logoutChk(){
 function errChk(){ //タスク登録時のエラーチェック
     if(document.getElementById('taskname').value === '' || document.getElementById('taskvalue').value === ''){
         alert("タスク名、またはまたは内容に不備があります。");
-        
+        return false;
     }
 }
