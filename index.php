@@ -72,6 +72,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <title>Todo List</title>
 </head>
 <body>
+<script src="todoscript.js">
 <div class="container">
 <h1>Todo List</h1>
 <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
@@ -136,30 +137,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
 
 
-<script>
-    /**
-     * 確認ダイアログの返り値によりフォーム送信
-    */
-/**     function submitChk () {
-/*        /* 確認ダイアログ表示 */
-/*        var flag = confirm ( "登録してもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押して下さい");
-/*        /* send_flg が TRUEなら送信、FALSEなら送信しない */
-/*        return flag;
-/*    }
-/*
-/*    function logoutChk(){
-/*       /*ログアウトボタン押下時ダイアログを表示*/
-/*       var logoutflg = confirm("ログアウトしてもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押してください");
-/*        return logoutflg;
-/*    } 
-*/    
 
-    function errChk(){ //タスク登録時のエラーチェック
-        if(document.getElementById('taskname').value === '' || document.getElementById('taskvalue').value === ''){
-            alert("タスク名、またはまたは内容に不備があります。");
-        }
-    }
-</script>
 
 
 <?php
@@ -205,5 +183,6 @@ echo '</dl>';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+</script>
 </body>
 </html>
