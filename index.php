@@ -24,7 +24,6 @@ if (isset($_POST['submit'])) {
             <div class="alert alert-danger" role="alert" id="taskerr">タスク名を入力してください。</div>
     <?php
         }
-
         if ($errors['memo'] == 1) {
             ?>
             <div class="alert alert-danger" role="alert" id="valerr">内容を入力してください。</div>
@@ -156,7 +155,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 */    
 
     function errChk(){ //タスク登録時のエラーチェック
-        if(document.getElementById('taskname') === ''){
+        if(document.getElementById('taskname').value === '' || document.getElementById('taskvalue').value === ''){
             alert("タスク名、またはまたは内容に不備があります。");
         }
     }
@@ -208,4 +207,3 @@ echo '</dl>';
 
 </body>
 </html>
-
