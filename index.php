@@ -156,7 +156,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 */    
 
     function errChk(){ //タスク登録時のエラーチェック
-        if(document.getElementById('taskname') === ''){
+        if(document.getElementById('taskname').value === ''){
             alert("タスク名、またはまたは内容に不備があります。");
         }
     }
