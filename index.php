@@ -102,7 +102,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
   <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
-<form action="index.php" method="post" onsubmit="return !!(submitChk() & errChk())">
+<form action="index.php" method="post" onsubmit="return errChk()">
     <div class="row">
         <div class="col-md-4">
             <ul>
@@ -141,19 +141,19 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
     /**
      * 確認ダイアログの返り値によりフォーム送信
     */
-    function submitChk () {
-        /* 確認ダイアログ表示 */
-        var flag = confirm ( "登録してもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押して下さい");
-        /* send_flg が TRUEなら送信、FALSEなら送信しない */
-        return flag;
-    }
-
-    function logoutChk(){
-        /*ログアウトボタン押下時ダイアログを表示*/
-        var logoutflg = confirm("ログアウトしてもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押してください");
-        return logoutflg;
-        }
-    
+/**     function submitChk () {
+/*        /* 確認ダイアログ表示 */
+/*        var flag = confirm ( "登録してもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押して下さい");
+/*        /* send_flg が TRUEなら送信、FALSEなら送信しない */
+/*        return flag;
+/*    }
+/*
+/*    function logoutChk(){
+/*       /*ログアウトボタン押下時ダイアログを表示*/
+/*       var logoutflg = confirm("ログアウトしてもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押してください");
+/*        return logoutflg;
+/*    } 
+*/    
 
     function errChk(){ //タスク登録時のエラーチェック
         if(document.getElementById('taskname') === '' || document.getElementById('taskvalue') === ''){
