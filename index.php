@@ -102,7 +102,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
   <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
-<form action="index.php" method="post" onsubmit="return errChk()">
+<form action="index.php" method="post" onsubmit="return errChk(errflg)">
     <div class="row">
         <div class="col-md-4">
             <ul>
