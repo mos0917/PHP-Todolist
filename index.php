@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
     if (count($errors) === 0) {
         $dbh = db_connect();
 
-        $sql = 'INSERT INTO tasks (name, memo, done) VALUES (?, ?, 0)';
+        $sql = 'INSERT INTO tasks (username,name, memo, done) VALUES ($username,?, ?, 0)';
         $stmt = $dbh->prepare($sql);
 
         $stmt->bindValue(1, $name, PDO::PARAM_STR);
