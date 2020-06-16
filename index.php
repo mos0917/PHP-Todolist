@@ -17,7 +17,7 @@ $result = $mysqli->query($query);
 // ユーザー情報の取り出し
 while ($row = $result->fetch_assoc()) {
     $username = $row['username'];
-    $user_id = $row['email']; //ユーザーidの取り出し
+    $email = $row['email']; //ユーザーidの取り出し
 }
 
 // データベースの切断
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
         $sql = 'INSERT INTO tasks (email,name, memo, done) VALUES (?, ?, ?, 0)';
         $stmt = $dbh->prepare($sql);
 
-        $stmt->bindvalue(1, $user_id, PDO::PARAM_STR);
+        $stmt->bindvalue(1, $email, PDO::PARAM_STR);
         $stmt->bindValue(2, $name, PDO::PARAM_STR);
         $stmt->bindValue(3, $memo, PDO::PARAM_STR);
         $stmt->execute();
@@ -127,7 +127,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <?php
 $dbh = db_connect();
 
-$sql = 'SELECT id, name, memo FROM tasks WHERE done = 0 and email = "'.$user_id.'" ORDER BY id DESC';
+$sql = 'SELECT id, name, memo FROM tasks WHERE done = 0 and email = "'.$email.'" ORDER BY id DESC';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $dbh = null;
