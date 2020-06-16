@@ -126,7 +126,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <?php
 $dbh = db_connect();
 
-$sql = 'SELECT id, name, memo FROM tasks WHERE done = 0 and username = $username ORDER BY id DESC';
+$sql = 'SELECT id, name, memo FROM tasks WHERE done = 0 and username = "'.$username.'" ORDER BY id DESC';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $dbh = null;
