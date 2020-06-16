@@ -4,6 +4,30 @@ require_once 'functions.php';
 
 $errors = array();
 
+session_start();
+include_once 'dbconnect.php';
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php');
+}
+
+// ユーザーIDからユーザー名を取り出す
+$query = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
+$result = $mysqli->query($query);
+
+// ユーザー情報の取り出し
+while ($row = $result->fetch_assoc()) {
+    $username = $row['username'];
+}
+
+// データベースの切断
+$result->close();
+
+?>
+
+<span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
+
+<?php
+
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $memo = $_POST['memo'];
@@ -19,17 +43,17 @@ if (isset($_POST['submit'])) {
         $errors['memo'] = 1;
     }
 
-    /*    if ($errors['name'] == 1) {
-            ?>
+    if ($errors['name'] == 1) {
+        ?>
             <div class="alert alert-danger" role="alert" id="taskerr">タスク名を入力してください。</div>
     <?php
-        }
-        if ($errors['memo'] == 1) {
-            ?>
+    }
+    if ($errors['memo'] == 1) {
+        ?>
             <div class="alert alert-danger" role="alert" id="valerr">内容を入力してください。</div>
     <?php
-        }
-    */
+    }
+
     if (count($errors) === 0) {
         $dbh = db_connect();
 
@@ -76,30 +100,6 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <div class="container">
 <h1>Todo List</h1>
 <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
-
-
-<?php
-
-    session_start();
-    include_once 'dbconnect.php';
-    if (!isset($_SESSION['user'])) {
-        header('Location: login.php');
-    }
-
-    // ユーザーIDからユーザー名を取り出す
-    $query = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
-    $result = $mysqli->query($query);
-
-    // ユーザー情報の取り出し
-    while ($row = $result->fetch_assoc()) {
-        $username = $row['username'];
-    }
-
-    // データベースの切断
-    $result->close();
-?>
-
-  <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
 <form action="index.php" method="post" onsubmit="return errChk();">
