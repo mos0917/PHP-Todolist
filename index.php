@@ -112,7 +112,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
             </ul>
         </div>
 
-        <div>
+        <div class="col-md-4">
             <ul>
                 <li>
                     <span>期限</span>
@@ -125,7 +125,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
     </div>
 </form>
 
-<br>
+
 <form action="index.php" method="post" onsubmit="return logoutChk()">
     <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
 </form>
