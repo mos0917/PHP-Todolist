@@ -111,6 +111,14 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
+
+        <div>
+            <ul>
+                <li>
+                    <span>期限</span>
+                    <input type="date" name="taskdeaddate">
+                </li>
+            </ul>
         <div>
             <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
         </div>
