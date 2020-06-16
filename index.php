@@ -22,13 +22,7 @@ while ($row = $result->fetch_assoc()) {
 // データベースの切断
 $result->close();
 
-?>
-
-<span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
-
-<?php
-
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     $name = $_POST['name'];
     $memo = $_POST['memo'];
 
@@ -43,25 +37,15 @@ if (isset($_POST['submit'])) {
         $errors['memo'] = 1;
     }
 
-    if ($errors['name'] == 1) {
-        ?>
-            <div class="alert alert-danger" role="alert" id="taskerr">タスク名を入力してください。</div>
-    <?php
-    }
-    if ($errors['memo'] == 1) {
-        ?>
-            <div class="alert alert-danger" role="alert" id="valerr">内容を入力してください。</div>
-    <?php
-    }
-
     if (count($errors) === 0) {
         $dbh = db_connect();
 
-        $sql = 'INSERT INTO tasks (username,name, memo, done) VALUES ($username,?, ?, 0)';
+        $sql = 'INSERT INTO tasks (username,name, memo, done) VALUES (?, ?, ?, 0)';
         $stmt = $dbh->prepare($sql);
 
-        $stmt->bindValue(1, $name, PDO::PARAM_STR);
-        $stmt->bindValue(2, $memo, PDO::PARAM_STR);
+        $stmt->bindvalue(1, $username, PDO::PARAM_STR);
+        $stmt->bindValue(2, $name, PDO::PARAM_STR);
+        $stmt->bindValue(3, $memo, PDO::PARAM_STR);
         $stmt->execute();
 
         $dbh = null;
@@ -100,6 +84,8 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <div class="container">
 <h1>Todo List</h1>
 <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+
+<span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
 <form action="index.php" method="post" onsubmit="return errChk();">
