@@ -41,12 +41,14 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     if (count($errors) === 0) {
         $dbh = db_connect();
 
-        $sql = 'INSERT INTO tasks (email,name, memo, done) VALUES (?, ?, ?, 0)';
+        $sql = 'INSERT INTO tasks (email,name, memo, create_date, done) VALUES (?, ?, ?, ?. 0)';
         $stmt = $dbh->prepare($sql);
 
         $stmt->bindvalue(1, $email, PDO::PARAM_STR);
         $stmt->bindValue(2, $name, PDO::PARAM_STR);
         $stmt->bindValue(3, $memo, PDO::PARAM_STR);
+        $stmt->bindValue(4, $createdate, PDO::PARAM_STR);
+
         $stmt->execute();
 
         $dbh = null;
