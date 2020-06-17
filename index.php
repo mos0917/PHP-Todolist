@@ -93,7 +93,11 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <div class="container">
 
 <h1>Todo List</h1>
-<input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+    <div class="row">
+        <div class="col-md-12">
+            <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+        </div>
+    </div>
 
 <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
