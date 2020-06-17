@@ -2,7 +2,7 @@
 
 require_once 'functions.php';
 
-$date = date('Y/m/d H:i:s'); //現在日付の取得
+$date = date('YYYY-MM-DD HH:MM:SS'); //現在日付の取得
 $errors = array();
 
 session_start();
