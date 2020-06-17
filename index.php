@@ -128,7 +128,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     </li>
                 </ul>
             </div>
-            <div class="col-md-1">
+            <div class="col align-self-center">
                 <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
             </div>
         </div>
