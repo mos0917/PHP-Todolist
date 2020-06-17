@@ -135,6 +135,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
             <input class="btn btn-outline-warning" type="edit" name="edit" value="編集">
         </div>
     </div>
+</div>
 </form>
 
 
