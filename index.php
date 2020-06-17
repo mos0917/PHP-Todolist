@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
         $stmt->bindvalue(1, $email, PDO::PARAM_STR);
         $stmt->bindValue(2, $name, PDO::PARAM_STR);
         $stmt->bindValue(3, $memo, PDO::PARAM_STR);
-        $stmt->bindValue(4, $date, PDO::PARAM_STR);
+        $stmt->bindparam(4, $date, PDO::PARAM_STR);
         $stmt->bindValue(5, $deaddate, PDO::PARAM_STR);
 
         $stmt->execute();
@@ -112,7 +112,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     <span>内容　　</span>
                     <textarea class="form-control" id="taskvalue" rows="1" name="memo"><?php if (isset($memo)) {
     echo $memo;
-} ?></textarea>
+} ?> </textarea>
                 </li>
             </ul>
         </div>
