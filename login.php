@@ -80,7 +80,9 @@ if (isset($_POST['signup'])) {
 		<div class="col-md-12">
 			<input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required />
 		</div>
+	</div>
 		<br>
+	<div class="row">
 		<div class="col-md-12">
 			<input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
 		</div>
