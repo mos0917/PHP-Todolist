@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
         $stmt->bindValue(2, $name, PDO::PARAM_STR);
         $stmt->bindValue(3, $memo, PDO::PARAM_STR);
         $stmt->bindValue(4, $date, PDO::PARAM_STR);
-        $stmt->bindValue(5, date('YYYY-mm-dd', strtotime($deaddate)), PDO::PARAM_STR);
+        $stmt->bindValue(5, $deaddate, PDO::PARAM_STR);
 
         $stmt->execute();
 
