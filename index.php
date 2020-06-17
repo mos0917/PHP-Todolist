@@ -5,7 +5,6 @@ require_once 'functions.php';
 
 $date = date('Y-m-d H:i:s'); //現在日付の取得
 
-echo $date; //仮
 $errors = array();
 
 session_start();
@@ -99,7 +98,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
 <form action="index.php" method="post" onsubmit="return errChk();">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md">
             <ul>
                 <li>
                     <span>タスク名</span>
@@ -109,7 +108,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-md">
             <ul>
                 <li>
                     <span>内容　　</span>
@@ -119,8 +118,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
-
-        <div class="col-md-3">
+        <div class="col-md">
             <ul>
                 <li>
                     <span>期限</span>
@@ -128,10 +126,13 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-md">
             <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
         </div>
-    </div>
+        <div class="col-md">
+            <input class="btn btn-outline-warning" type="edit" name="edit" value="編集">
+        </div>
+    </dix>
 </form>
 
 
@@ -163,11 +164,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo $task['memo'];
     echo '</dd>';
 
-    echo '<dd>';
-    echo $task['memo'];
-    echo '</dd>';
-
-    echo $task['deadline_date']; //仮
+    echo $task['deadline_date'];
 
     echo '<dd>';
     echo '
