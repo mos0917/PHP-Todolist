@@ -11,7 +11,7 @@ include_once 'dbconnect.php';
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=360, initial-scale=1">
 <title>Todo List Member registration</title>
 <link rel="stylesheet" href="style.css">
 
@@ -46,7 +46,7 @@ include_once 'dbconnect.php';
 		</div>
 	</div>
 	<br>
-	
+
 	<button type="submit" class="btn btn-success" name="signup">会員登録する</button>
 	<a href="login.php">ログイン画面に戻る</a>
 </form>
