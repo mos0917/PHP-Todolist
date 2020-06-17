@@ -120,7 +120,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     </li>
                 </ul>
             </div>
-            <div class="ol-md-3">
+            <div class="col-md-3">
                 <ul>
                     <li>
                         <span>期限</span>
@@ -129,7 +129,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     </li>
                 </ul>
             </div>
-            <div class="col align-self-center">
+            <div class="row align-items-center">
                 <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
             </div>
         </div>
