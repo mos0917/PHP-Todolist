@@ -128,9 +128,9 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="col-md-1">
-            <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
+            <div class="col-md-1">
+                <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
+            </div>
         </div>
     </form>
     <form action="index.php" method="post" onsubmit="return logoutChk()">
@@ -170,7 +170,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
             <form action="index.php" method="post">
             <input type="hidden" name="method" value="put">
             <input type="hidden" name="id" value="'.$task['id'].'">
-            <button type="show" class="btn btn-warning>編集</button>
+            <button type="show" class="btn btn-warning" >編集</button>
             <button type="show" class="btn btn-danger" >完了</button>
             </form>
           ';
