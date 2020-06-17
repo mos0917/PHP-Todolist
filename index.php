@@ -30,7 +30,7 @@ $result->close();
 if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     $name = $_POST['name'];
     $memo = $_POST['memo'];
-    $deaddate = $_POST['taskdeaddate'];
+    $deaddate = $_POST['deadline_date'];
 
     $name = htmlspecialchars($name, ENT_QUOTES);
     $memo = htmlspecialchars($memo, ENT_QUOTES);
@@ -124,7 +124,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
             <ul>
                 <li>
                     <span>期限</span>
-                    <input type="date" name="taskdeaddate">
+                    <input type="date" name="deadline_date">
                 </li>
             </ul>
         </div>
@@ -167,7 +167,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo $task['memo'];
     echo '</dd>';
 
-    echo $task['taskdeaddate']; //仮
+    echo $task['deadline_date']; //仮
 
     echo '<dd>';
     echo '
