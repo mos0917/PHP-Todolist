@@ -98,7 +98,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
 <form action="index.php" method="post" onsubmit="return errChk();">
     <div class="row">
-        <div class="col-md">
+        <div class="col-md-4">
             <ul>
                 <li>
                     <span>タスク名</span>
@@ -108,7 +108,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
-        <div class="col-md">
+        <div class="col-md-4">
             <ul>
                 <li>
                     <span>内容　　</span>
@@ -118,7 +118,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
-        <div class="col-md">
+        <div class="col-md-4">
             <ul>
                 <li>
                     <span>期限</span>
@@ -126,13 +126,15 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
-        <div class="col-md">
+    </div>
+    <div class="row">
+        <div class="col-md-3">
             <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
         </div>
-        <div class="col-md">
+        <div class="col-md-3">
             <input class="btn btn-outline-warning" type="edit" name="edit" value="編集">
         </div>
-    </dix>
+    </div>
 </form>
 
 
