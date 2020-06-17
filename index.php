@@ -120,7 +120,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col align-self-center">
                 <ul>
                     <li>
                         <span>期限</span>
