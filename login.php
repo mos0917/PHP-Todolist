@@ -44,7 +44,7 @@ if (isset($_POST['login'])) {
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=360, initial-scale=1">
+<meta name="viewport" content="width=width=device-width, initial-scale=1">
 <title>Todo List Login</title>
 <link rel="stylesheet" href="style.css">
 <!-- Bootstrap読み込み（スタイリングのため） -->
@@ -77,13 +77,13 @@ if (isset($_POST['signup'])) {
 <form method="post">
 	<h1>Todo List ログイン</h1>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-xs-12 col-lg-12">
 			<input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required />
 		</div>
 	</div>
 		<br>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-xs-12 col-lg-12">
 			<input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
 		</div>
 	</div>

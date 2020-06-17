@@ -84,7 +84,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <meta charset="utf-8">
-<meta name="viewport" content="width=360, initial-scale=1">
+<meta name="viewport" content="width=width=device-width, initial-scale=1">
 <title>Todo List</title>
 </head>
 <body>
@@ -104,7 +104,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
     <form action="index.php" method="post" onsubmit="return errChk();">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-xs-12 col-lg-3">
                 <ul>
                     <li>
                         <span>タスク名</span>
@@ -114,7 +114,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     </li>
                 </ul>
             </div>
-            <div class="col-md-4">
+            <div class="col-xs-12 col-lg-3">
                 <ul>
                     <li>
                         <span>内容　　</span>
@@ -124,7 +124,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-xs-12 col-lg-3">
                 <ul>
                     <li>
                         <span>期限</span>
@@ -133,7 +133,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                     </li>
                 </ul>
             </div>
-            <div class="row align-items-center">
+            <div class="col-xs-12 col align-self-start col-lg-3">
                 <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
             </div>
         </div>
