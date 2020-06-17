@@ -3,6 +3,8 @@
 require_once 'functions.php';
 
 $date = date('YYYY-MM-DD HH:MM:SS'); //現在日付の取得
+
+echo $date; //仮
 $errors = array();
 
 session_start();
@@ -159,6 +161,12 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<dd>';
     echo $task['memo'];
     echo '</dd>';
+
+    echo '<dd>';
+    echo $task['memo'];
+    echo '</dd>';
+
+    echo $task['taskdeaddate']; //仮
 
     echo '<dd>';
     echo '
