@@ -108,7 +108,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
             <ul>
                 <li>
                     <span>内容　　</span>
@@ -118,7 +118,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 </li>
             </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <ul>
                 <li>
                     <span>期限</span>
