@@ -30,11 +30,13 @@ include_once 'dbconnect.php';
 			<input type="text" class="form-control" name="username" placeholder="ユーザー名" required />
 		</div>
 	</div>
+	<br>
 	<div class="row">
 		<div class="col-md-12">
 			<input type="email"  class="form-control" name="email" placeholder="メールアドレス" required />
 		</div>
 	</div>
+	<br>
 	<div class="row">
 		<div class="col-md-12">
 			<input type="password" class="form-control" name="password" placeholder="パスワード" required />
@@ -43,6 +45,8 @@ include_once 'dbconnect.php';
 			</small>
 		</div>
 	</div>
+	<br>
+	
 	<button type="submit" class="btn btn-success" name="signup">会員登録する</button>
 	<a href="login.php">ログイン画面に戻る</a>
 </form>
