@@ -89,59 +89,56 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 </head>
 <body>
 <script src="todoscript.js"></script>
-<div class="container">
+
 <h1>Todo List</h1>
 <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
 
 <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
-
-<form action="index.php" method="post" onsubmit="return errChk();">
-    <div class="row">
-        <div class="col-md-4">
-            <ul>
-                <li>
-                    <span>タスク名</span>
-                    <input type="text" class="form-control" id="taskname" name="name" value="<?php if (isset($name)) {
+<div class="container">
+    <form action="index.php" method="post" onsubmit="return errChk();">
+        <div class="row">
+            <div class="col-md-4">
+                <ul>
+                    <li>
+                        <span>タスク名</span>
+                        <input type="text" class="form-control" id="taskname" name="name" value="<?php if (isset($name)) {
     echo $name;
 } ?>">
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-5">
-            <ul>
-                <li>
-                    <span>内容　　</span>
-                    <textarea class="form-control" id="taskvalue" rows="1" name="memo"><?php if (isset($memo)) {
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-5">
+                <ul>
+                    <li>
+                        <span>内容　　</span>
+                        <textarea class="form-control" id="taskvalue" rows="1" name="memo"><?php if (isset($memo)) {
     echo $memo;
 } ?> </textarea>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul>
+                    <li>
+                        <span>期限</span>
+                        <input type="date" name="deadline_date">
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-3">
-            <ul>
-                <li>
-                    <span>期限</span>
-                    <input type="date" name="deadline_date">
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col-md-3">
+                <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
+            </div>
+            <div class="col-md-3">
+                <input class="btn btn-outline-warning" type="edit" name="edit" value="編集">
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
-        </div>
-        <div class="col-md-3">
-            <input class="btn btn-outline-warning" type="edit" name="edit" value="編集">
-        </div>
-    </div>
-</div>
-</form>
-
-
-<form action="index.php" method="post" onsubmit="return logoutChk()">
-    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
-</form>
+    </form>
+    <form action="index.php" method="post" onsubmit="return logoutChk()">
+        <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
+    </form>
 </div>
 
 
