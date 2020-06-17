@@ -124,6 +124,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
                 <ul>
                     <li>
                         <span>期限</span>
+                        <br>
                         <input type="date" name="deadline_date">
                     </li>
                 </ul>
