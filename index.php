@@ -27,7 +27,7 @@ $result->close();
 if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     $name = $_POST['name'];
     $memo = $_POST['memo'];
-    $deaddate = $_post['taskdeaddate'];
+    $deaddate = $_POST['taskdeaddate'];
 
     $name = htmlspecialchars($name, ENT_QUOTES);
     $memo = htmlspecialchars($memo, ENT_QUOTES);
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
         $stmt->bindvalue(1, $email, PDO::PARAM_STR);
         $stmt->bindValue(2, $name, PDO::PARAM_STR);
         $stmt->bindValue(3, $memo, PDO::PARAM_STR);
-        $stmt->bindparam(4, $date, PDO::PARAM_STR);
+        $stmt->bindValue(4, $date, PDO::PARAM_STR);
         $stmt->bindValue(5, $deaddate, PDO::PARAM_STR);
 
         $stmt->execute();
