@@ -91,14 +91,19 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <script src="todoscript.js"></script>
 
 <div class="container">
-
-<h1>Todo List</h1>
     <div class="row">
-        <div class="col-md-12">
-            <input class="form-control" type="text" placeholder="以下にに「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+        <div class="row justify-content-between">
+            <h1>Todo List</h1>
+            <form action="index.php" method="post" onsubmit="return logoutChk()">
+                    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+            </div>
         </div>
     </div>
-
 <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
@@ -138,11 +143,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
             </div>
         </div>
     </form>
-    <form action="index.php" method="post" onsubmit="return logoutChk()">
-        <div class="col align-self-center">
-            <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
-        </div>
-    </form>
+
 </div>
 
 
