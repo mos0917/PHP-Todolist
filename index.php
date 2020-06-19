@@ -110,7 +110,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボ
 
 <div id="modal-content">
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
-	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<p><a id="modal-close" class="btn btn-warning">閉じる</a></p>
 </div>
 
 
