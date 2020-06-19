@@ -45,12 +45,6 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     if (count($errors) === 0) {
         $dbh = db_connect();
 
-        if ($deaddate = '') {
-            $deaddate = '';
-        } else {
-            $deaddate = $_POST['deadline_date'];
-        }
-
         $sql = 'INSERT INTO tasks (email,name, memo, create_date, deadline_date, done) VALUES (? ,?, ?, ?, ?, 0)';
         $stmt = $dbh->prepare($sql);
 
