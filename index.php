@@ -177,19 +177,22 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
     echo '<dd>';
     echo '
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="row">
-                    <div class="col-xs-12 col-lg-3">
-                    <input type="text" class="form-control" id="edittaskname" name="editname" value="<?php if (isset($name)) { echo $name; } ?>">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-3">
+                            <input type="text" class="form-control" id="edittaskname" name="editname" value="<?php if (isset($name)) { echo $name; } ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-lg-3">
-                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo"><?php if (isset($memo)) { echo $memo; } ?> </textarea>
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-3">
+                            <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo"><?php if (isset($memo)) { echo $memo; } ?> </textarea>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            
             <form action="index.php" method="post">
                 <input type="hidden" name="method" value="put">
                 <input type="hidden" name="id" value="'.$task['id'].'">

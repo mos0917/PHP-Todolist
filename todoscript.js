@@ -21,3 +21,7 @@ function errChk(){ //タスク登録時のエラーチェック
         return false;
     }
 }
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
