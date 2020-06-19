@@ -178,7 +178,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     //以下、編集モーダルを表示させる処理AND完了ボタン処理
     echo '<dd>';
     echo '
-            <div class="modal fade" id="editmodal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal fade" id="'.$task['task_id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -218,7 +218,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
             <form action="index.php" method="post">
                 <input type="hidden" name="method" value="put">
                 <input type="hidden" name="task_id" value="'.$task['task_id'].'">
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editmodal1">編集</button>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="'.$task['task_id'].'">編集</button>
             <button type="show" class="btn btn-danger" >完了</button>
             </form>
           ';
