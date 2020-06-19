@@ -63,9 +63,9 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
 }
 
 if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボタン押下時に以下の処理を実行
-    $id = $_POST['id'];
+    $id = $_POST['taks_id'];
     $id = htmlspecialchars($id, ENT_QUOTES);
-    $id = (int) $id;
+    $id = (int) $task_id;
 
     $dbh = db_connect();
 
@@ -156,7 +156,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボ
 <?php
 $dbh = db_connect();
 
-$sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and email = "'.$email.'" ORDER BY id DESC';
+$sql = 'SELECT task_id, name, memo, deadline_date FROM tasks WHERE done = 0 and email = "'.$email.'" ORDER BY task_id DESC';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $dbh = null;
@@ -178,8 +178,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     //以下、編集モーダルを表示させる処理AND完了ボタン処理
     echo '<dd>';
     echo '
-
-            <div class="modal fade" id="'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal fade" id="editmodal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -218,8 +217,8 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
             <form action="index.php" method="post">
                 <input type="hidden" name="method" value="put">
-                <input type="hidden" name="id" value="'.$task['id'].'">
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="'.$task['id'].'">編集</button>
+                <input type="hidden" name="task_id" value="'.$task['task_id'].'">
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editmodal1">編集</button>
             <button type="show" class="btn btn-danger" >完了</button>
             </form>
           ';
