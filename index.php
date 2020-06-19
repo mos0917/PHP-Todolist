@@ -174,33 +174,33 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '</dd>';
 
     echo $task['deadline_date'];
-
+    //以下、編集モーダルを表示させる処理AND完了ボタン処理
     echo '<dd>';
     echo '
-
             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editmodal">
                 編集
             </button>
-            <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
+            <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="label1">Todo編集画面</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-xs-12 col-lg-3">
-                                    <input type="text" class="form-control" id="edittaskname" name="editname" value="<?php if (isset($name)) { echo $name; } ?>">
+                                    <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
                                 </div>
                                 <div class="col-xs-12 col-lg-3">
-                                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo"><?php if (isset($memo)) { echo $memo; } ?> </textarea>
+                                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">"'.$task['memo'].'"</textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
                             <button type="button" class="btn btn-primary">OK</button>
                         </div>
                     </div>
