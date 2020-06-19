@@ -178,15 +178,17 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<dd>';
     echo '
 
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-1">
-                起動ボタン
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editmodal">
+                編集
             </button>
-            <div class="modal fade" id="modal-1" tabindex="-1">
+            <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="label1">Todo編集画面</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>
+                        </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-xs-12 col-lg-3">
@@ -196,6 +198,10 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo"><?php if (isset($memo)) { echo $memo; } ?> </textarea>
                                 </div>
                             </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">OK</button>
                         </div>
                     </div>
                 </div>
