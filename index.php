@@ -196,7 +196,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
                                 </div>
                                 <div class="col-xs-12 col-lg-3">
-                                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">"'.$task['memo'].'"</textarea>
+                                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
                                 </div>
                             </div>
                         </div>
