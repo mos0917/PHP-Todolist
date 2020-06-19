@@ -22,6 +22,5 @@ function errChk(){ //タスク登録時のエラーチェック
     }
 }
 
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
+
+
