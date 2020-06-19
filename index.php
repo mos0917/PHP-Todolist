@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     }
 }
 
-if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
+if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボタン押下時に以下の処理を実行
     $id = $_POST['id'];
     $id = htmlspecialchars($id, ENT_QUOTES);
     $id = (int) $id;
@@ -107,6 +107,11 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
         </div>
     </div>
 <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
+
+<div id="modal-content">
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+</div>
 
 
     <form action="index.php" method="post" onsubmit="return errChk();">
@@ -175,10 +180,14 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
     echo '<dd>';
     echo '
+            <form action="index.php>
+                <button type="show" class="btn btn-warning" >編集</button>
+
+            </form>
+
             <form action="index.php" method="post">
-            <input type="hidden" name="method" value="put">
-            <input type="hidden" name="id" value="'.$task['id'].'">
-            <button type="show" class="btn btn-warning" >編集</button>
+                <input type="hidden" name="method" value="put">
+                <input type="hidden" name="id" value="'.$task['id'].'">
             <button type="show" class="btn btn-danger" >完了</button>
             </form>
           ';
