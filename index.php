@@ -83,6 +83,8 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボ
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=width=device-width, initial-scale=1">
 <title>Todo List</title>
@@ -106,7 +108,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボ
             <input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
         </div>
     </div>
-<span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
+    <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
     <form action="index.php" method="post" onsubmit="return errChk();">
@@ -175,10 +177,18 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
     echo '<dd>';
     echo '
-            <form action="index.php>
-                <button type="show" class="btn btn-warning" >編集</button>
-
-            </form>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-3">
+                    <input type="text" class="form-control" id="edittaskname" name="editname" value="<?php if (isset($name)) { echo $name; } ?>">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-lg-3">
+                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo"><?php if (isset($memo)) { echo $memo; } ?> </textarea>
+                    </div>
+                </div>
+            </div>
 
             <form action="index.php" method="post">
                 <input type="hidden" name="method" value="put">
@@ -198,7 +208,6 @@ echo '</dl>';
 <?php include dirname(__FILE__).'/footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 
 </body>
