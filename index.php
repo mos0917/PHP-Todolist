@@ -177,8 +177,22 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
     echo '<dd>';
     echo '
-            <button type="button" data-toggle="modal" data-target="#taskedit">編集</button>
-
+            <div class="modal fade" id="modal-1" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-12 col-lg-3">
+                                    <input type="text" class="form-control" id="edittaskname" name="editname" value="<?php if (isset($name)) { echo $name; } ?>">
+                                </div>
+                                <div class="col-xs-12 col-lg-3">
+                                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo"><?php if (isset($memo)) { echo $memo; } ?> </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <form action="index.php" method="post">
                 <input type="hidden" name="method" value="put">
