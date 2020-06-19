@@ -1,0 +1,12 @@
+#modal-1 .modal-content {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+  }
+  #modal-1 .close {
+    color: #fff;
+    opacity: 1;
+  }
+  #modal-1 .modal-body {
+    background-color: #fff;
+  }
