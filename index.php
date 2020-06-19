@@ -108,11 +108,6 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボ
     </div>
 <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
-<div id="modal-content">
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
-	<p><a id="modal-close" class="btn btn-warning">閉じる</a></p>
-</div>
-
 
     <form action="index.php" method="post" onsubmit="return errChk();">
         <div class="row">
