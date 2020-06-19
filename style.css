@@ -24,3 +24,8 @@
 	cursor:pointer;
 	color:#f00;
 }
+
+#modal-content{
+	/*追加分*/
+	z-index:2;
+}
