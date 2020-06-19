@@ -178,9 +178,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     //以下、編集モーダルを表示させる処理AND完了ボタン処理
     echo '<dd>';
     echo '
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editmodal">
-                編集
-            </button>
+    
             <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -192,17 +190,27 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-xs-12 col-lg-3">
-                                    <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
+                                <div class="col-xs-12 col-lg-6">
+                                    <ul>
+                                        <li>
+                                            <span>タスク名</span>
+                                            <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="col-xs-12 col-lg-3">
-                                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
+                                <div class="col-xs-12 col-lg-6">
+                                    <ul>
+                                        <li>
+                                            <span>内容</span>
+                                            <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                            <button type="button" class="btn btn-primary">OK</button>
+                            <button type="button" class="btn btn-primary">更新</button>
                         </div>
                     </div>
                 </div>
@@ -211,6 +219,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
             <form action="index.php" method="post">
                 <input type="hidden" name="method" value="put">
                 <input type="hidden" name="id" value="'.$task['id'].'">
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editmodal">編集</button>
             <button type="show" class="btn btn-danger" >完了</button>
             </form>
           ';
