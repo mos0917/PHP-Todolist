@@ -62,8 +62,8 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     }
 }
 
-if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボタン押下時に以下の処理を実行
-    $id = $_POST['taks_id'];
+if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
+    $id = $_POST['task_id'];
     $id = htmlspecialchars($id, ENT_QUOTES);
     $id = (int) $id;
 
@@ -178,48 +178,13 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     //以下、編集モーダルを表示させる処理AND完了ボタン処理
     echo '<dd>';
     echo '
-            <div class="modal fade" id="edittask'.$task['task_id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="label1">Todo編集画面</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-xs-12 col-lg-6">
-                                    <ul>
-                                        <li>
-                                            <span>タスク名</span>
-                                            <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-xs-12 col-lg-6">
-                                    <ul>
-                                        <li>
-                                            <span>内容</span>
-                                            <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                            <button type="button" class="btn btn-primary">更新</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['task_id'].'">編集</button>
+
+
 
             <form action="index.php" method="post">
                 <input type="hidden" name="method" value="put">
-                <input type="hidden" name="task_id" value="'.$task['task_id'].'">
+                <input type="hidden" name="id" value="'.$task['task_id'].'">
                 <button type="show" class="btn btn-danger" >完了</button>
             </form>
           ';
