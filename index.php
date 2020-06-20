@@ -187,7 +187,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-xs-12 col-lg-4">
+                                <div class="col-xs-12 col-lg-12">
                                     <ul>
                                         <li>
                                             <span>タスク名</span>
@@ -195,7 +195,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-xs-12 col-lg-4">
+                                <div class="col-xs-12 col-lg-12">
                                     <ul>
                                         <li>
                                             <span>内容</span>
@@ -203,7 +203,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-xs-12 col-lg-4">
+                                <div class="col-xs-12 col-lg-12">
                                     <ul>
                                         <li>
                                             <span>期限</span>
