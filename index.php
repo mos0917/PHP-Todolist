@@ -187,7 +187,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-xs-12 col-lg-6">
+                                <div class="col-xs-12 col-lg-4">
                                     <ul>
                                         <li>
                                             <span>タスク名</span>
@@ -195,12 +195,21 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-xs-12 col-lg-6">
+                                <div class="col-xs-12 col-lg-4">
                                     <ul>
                                         <li>
                                             <span>内容</span>
                                             <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
                                         </li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-12 col-lg-4">
+                                    <ul>
+                                        <li>
+                                            <span>期限</span>
+                                            <br>
+                                            <input type="date" name="deadline_date" value="'.$task['deadline_date'].'">
+                                        </li> 
                                     </ul>
                                 </div>
                             </div>
