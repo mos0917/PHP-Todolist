@@ -8,13 +8,6 @@ function submitChk () {
     return flag;
 }
 
-function logoutChk(){
-    /*ログアウトボタン押下時ダイアログを表示*/
-    var logoutflg = confirm("ログアウトしてもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押してください");
-    return logoutflg;
-} 
-    
-
 function errChk(){ //タスク登録時のエラーチェック
     if(document.getElementById('taskname').value === '' || document.getElementById('taskvalue').value === ''){
         alert("タスク名、またはまたは内容に不備があります。");

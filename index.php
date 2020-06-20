@@ -77,6 +77,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
     $dbh = null;
 }
+
 ?>
 
 <!doctype html>
@@ -215,8 +216,10 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                            <button type="button" class="btn btn-primary">更新</button>
+                            <form action="index.php" method="post" onsubmit="return submitChk();">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                                <button type="submit" class="btn btn-primary">更新</button>
+                            </form>
                         </div>
                     </div>
                 </div>
