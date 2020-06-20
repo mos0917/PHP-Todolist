@@ -212,17 +212,12 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
-
-
-
-
-
-
+            
 
             <form action="index.php" method="post">
             <input type="hidden" name="method" value="put">
             <input type="hidden" name="id" value="'.$task['id'].'">
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
             <button type="show" class="btn btn-danger" >完了</button>
             </form>
           ';
