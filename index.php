@@ -69,7 +69,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
     $dbh = db_connect();
 
-    $sql = 'UPDATE tasks SET done = 1  WHERE id = ?';
+    $sql = 'UPDATE tasks SET done = 1  WHERE task_id = ?';
     $stmt = $dbh->prepare($sql);
 
     $stmt->bindValue(1, $id, PDO::PARAM_INT);
@@ -83,9 +83,6 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=width=device-width, initial-scale=1">
 <title>Todo List</title>
@@ -109,7 +106,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
             <input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
         </div>
     </div>
-    <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
+<span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
 
 
     <form action="index.php" method="post" onsubmit="return errChk();">
@@ -175,17 +172,13 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '</dd>';
 
     echo $task['deadline_date'];
-    //以下、編集モーダルを表示させる処理AND完了ボタン処理
+
     echo '<dd>';
     echo '
-
-
-
-
             <form action="index.php" method="post">
-                <input type="hidden" name="method" value="put">
-                <input type="hidden" name="id" value="'.$task['task_id'].'">
-                <button type="show" class="btn btn-danger" >完了</button>
+            <input type="hidden" name="method" value="put">
+            <input type="hidden" name="id" value="'.$task['task_id'].'">
+            <button type="show" class="btn btn-danger" >完了</button>
             </form>
           ';
     echo '</dd>';
@@ -199,8 +192,9 @@ echo '</dl>';
 
 <?php include dirname(__FILE__).'/footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
 
 </body>
 </html>
