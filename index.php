@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
 if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //「完了」ボタン押下時に以下の処理を実行
     $id = $_POST['taks_id'];
     $id = htmlspecialchars($id, ENT_QUOTES);
-    $id = (int) $task_id;
+    $id = (int) $id;
 
     $dbh = db_connect();
 
@@ -216,6 +216,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
             </div>
 
             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['task_id'].'">編集</button>
+
             <form action="index.php" method="post">
                 <input type="hidden" name="method" value="put">
                 <input type="hidden" name="task_id" value="'.$task['task_id'].'">
