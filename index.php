@@ -95,7 +95,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 <div class="container">
     <div class="row">
         <div class="col-xs-8 col-lg-11">
-            <h1>Todo List</h1>
+            <h2>Todo List</h2>
         </div>
         <div class="col-xs-4 col-lg-1">
             <form action="index.php" method="post" onsubmit="return logoutChk()">
