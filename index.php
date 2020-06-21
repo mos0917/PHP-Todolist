@@ -105,7 +105,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
     </div>
     <div class="row">
         <div class="col-md-12">
-            <input class="form-control-plaintext" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+            <input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
         </div>
     </div>
 <span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
@@ -166,10 +166,20 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<HR>'; //罫線
 
     echo '<dt>';
+    echo'<ul>
+            <li>
+                <span>タスク名</span>
+            </li>
+        </ul>';
     echo $task['name'];
     echo '</dt>';
 
     echo '<dd>';
+    echo'<ul>
+            <li>
+                <span>内容</span>
+            </li>
+        </ul>';
     echo $task['memo'];
     echo '</dd>';
 
