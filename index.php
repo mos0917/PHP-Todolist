@@ -168,11 +168,11 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo'<div class="container">
             <div class="row">
                 <div class="col-xs-12 col-lg-3">
-                    ■ログイン中のユーザー:'.$task['name'].'
+                    ■タスク名:'.$task['name'].'
                 </div>
                 <br>
                 <div class="col-xs-12 col-lg-3">
-                    ■期限日:'.$task['deadline_date'].'
+                    ■内容:'.$task['memo'].'
                 </div>
                 <br>
                 <div class="col-xs-12 col-lg-3">
