@@ -147,6 +147,8 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
             </div>
         </div>
     </form>
+    <BR>
+    <HR>
 
 </div>
 
