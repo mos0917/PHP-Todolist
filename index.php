@@ -164,25 +164,25 @@ echo '<dl>';
 
 while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<HR>'; //罫線
-
-    echo '<dt>';
     echo'<ul>
             <li>
                 <span>タスク名</span>
             </li>
         </ul>';
     echo $task['name'];
-    echo '</dt>';
 
-    echo '<dd>';
     echo'<ul>
             <li>
                 <span>内容</span>
             </li>
         </ul>';
     echo $task['memo'];
-    echo '</dd>';
 
+    echo'<ul>
+            <li>
+                <span>期限日</span>
+            </li>
+        </ul>';
     echo $task['deadline_date'];
 
     echo '<dd>';
