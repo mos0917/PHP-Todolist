@@ -108,7 +108,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
             <input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
         </div>
     </div>
-<span>■ログイン中のユーザー：<?php echo $username; ?> さん</span>
+<span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
 
 
     <form action="index.php" method="post" onsubmit="return errChk();">
@@ -164,26 +164,12 @@ echo '<dl>';
 
 while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<HR>'; //罫線
-    echo'<ul>
-            <li>
-                <span>タスク名</span>
-            </li>
-        </ul>';
-    echo $task['name'];
 
-    echo'<ul>
-            <li>
-                <span>内容</span>
-            </li>
-        </ul>';
-    echo $task['memo'];
+    echo '<span>■ログイン中のユーザー:<?php echo '.$task['name'].'; ?> さん</span>';
 
-    echo'<ul>
-            <li>
-                <span>期限日</span>
-            </li>
-        </ul>';
-    echo $task['deadline_date'];
+    echo '<span>■内容:<?php echo '.$task['memo'].'; ?> さん</span>';
+
+    echo '<span>■期限日:<?php echo '.$task['deadline_date'].'; ?> さん</span>';
 
     echo '<dd>';
     echo '
