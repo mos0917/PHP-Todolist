@@ -165,10 +165,10 @@ echo '<dl>';
 while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<HR>'; //罫線
 
-    echo '<span>■ログイン中のユーザー:<?php echo '.$task['name'].'; ?></span>';
+    echo '■ログイン中のユーザー:'.$task['name'].'';
     echo '<br>';
 
-    echo '<span>■内容:<?php echo '.$task['memo'].'; ?></span>';
+    echo '■内容:'.$task['memo'].'';
     echo '<br>';
 
     echo '<span>■期限日:<?php echo '.$task['deadline_date'].'; ?></span>';
