@@ -94,10 +94,10 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-9 col-lg-9">
+        <div class="col-xs-6 col-lg-6">
             <h1>Todo List</h1>
         </div>
-        <div class="col-xs-3 col-lg-3">
+        <div class="col-xs-6 col-lg-6">
             <form action="index.php" method="post" onsubmit="return logoutChk()">
                     <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
             </form>
