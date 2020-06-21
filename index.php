@@ -171,7 +171,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '■内容:'.$task['memo'].'';
     echo '<br>';
 
-    echo '<span>■期限日:<?php echo '.$task['deadline_date'].'; ?></span>';
+    echo '■期限日:'.$task['deadline_date'].'';
     echo '<br>';
 
     echo '<dd>';
