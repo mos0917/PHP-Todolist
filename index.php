@@ -254,10 +254,14 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     </li> 
                                                 </ul>
                                             </div>
+                                            <div class="col-lg-11">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                                            </div>
+                                            <div class="col-lg-1">
+                                                <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
+                                            </div>
                                         </form>
                                     </div>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                                    <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
                                 </div>
                             </div>
                         </div>
