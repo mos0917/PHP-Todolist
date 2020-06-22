@@ -79,7 +79,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
     $dbh = null;
 }
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['modify'])) {
     $editid = $_POST['id'];
     $editname = $_POST['editname'];
     $editmemo = $_POST['editmemo'];
@@ -257,7 +257,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                                                <button type="submit" class="btn btn-primary">更新</button>
+                                                <button type="submit" class="btn btn-primary"　name="modfiy>更新</button>
                                             </div>
                                         </form>
                                     </div>
