@@ -184,10 +184,9 @@ if (!empty($_POST['modify'])) {
             </div>
         </div>
     </form>
-    <BR>
-    <HR>
-
 </div>
+<BR>
+<HR>
 
 
 
@@ -230,7 +229,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     <div class="row">
                                         <form action="index.php" method="post" onsubmit="return submitChk();">
                                             <input type="hidden" name="editid" value="'.$task['id'].'">
-                                            <div class="col-xs-12 col-lg-12">
+                                            <div class="col-lg-12">
                                                 <ul>
                                                     <li>
                                                         <span>タスク名</span>
@@ -238,7 +237,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="col-xs-12 col-lg-12">
+                                            <div class="col-lg-12">
                                                 <ul>
                                                     <li>
                                                         <span>内容</span>
@@ -246,7 +245,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="col-xs-12 col-lg-12">
+                                            <div class="col-lg-12">
                                                 <ul>
                                                     <li>
                                                         <span>期限</span>
