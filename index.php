@@ -215,7 +215,6 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 <div class="col-xs-12 col-lg-3">
                     ■期限日:'.$task['deadline_date'].'
                 </div>
-
                 <dd>
                     <div class="modal fade" id="edittask'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -229,7 +228,6 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 <div class="modal-body">
                                     <div class="row">
                                         <form action="index.php" method="post" onsubmit="return submitChk();">
-                                            <input type="hidden" name="editid" value="'.$task['id'].'">
                                             <div class="col-xs-12 col-lg-12">
                                                 <ul>
                                                     <li>
@@ -265,8 +263,6 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             </div>
                         </div>
                     </div>
-                </div>
-
                 <form action="index.php" method="post">
                     <input type="hidden" name="method" value="put">
                     <input type="hidden" name="id" value="'.$task['id'].'">
@@ -276,7 +272,6 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 </dd>
             </div>
         </div>
-        <HR>
     ';
 }
 
