@@ -78,7 +78,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
     $dbh = null;
 }
-if ($_POST['modify']) {
+if (!empty($_POST['modify'])) {
     $editid = $_POST['id'];
     $editname = $_POST['editname'];
     $editmemo = $_POST['editmemo'];
