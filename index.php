@@ -134,9 +134,9 @@ if (!empty($_POST['modify'])) {
         <div class="col-xs-8 col-lg-11">
             <h1>Todo List</h1>
         </div>
-        <div class="col-xs-4 col-lg-1" text-align:right>
+        <div class="col-xs-4 col-lg-1" class="col align-self-center">
             <form action="index.php" method="post" onsubmit="return logoutChk()">
-                    <input class="btn btn-outline-primary" class="align-middle" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
+                    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
             </form>
         </div>
     </div>
