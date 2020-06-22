@@ -98,7 +98,7 @@ if (!empty($_POST['modify'])) {
     if (count($updateerrors) === 0) {
         $dbh = db_connect();
 
-        $sql = 'UPDATE tasks SET name = :edittaskname, memo = :edittaskvalue,deadline_date = :editdeadline_date,update_date = :modifydate WHERE id = :editid';
+        $sql = 'UPDATE tasks SET name = :edittaskname, memo = :edittaskvalue, deadline_date = :editdeadline_date, update_date = :modifydate WHERE id = :editid';
         $stmt = $dbh->prepare($sql);
 
         $stmt->bindValue(':edittaskname', $editname, PDO::PARAM_STR);
@@ -222,6 +222,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="label1">Todo編集画面</h5>
+                                    <input type="hidden" name="id" value="'.$task['id'].'">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
