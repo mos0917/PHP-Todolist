@@ -79,7 +79,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
     $dbh = null;
 }
 if (!empty($_POST['modify'])) {
-    $editid = $_POST['id'];
+    $editid = $_POST['editid'];
     $editname = $_POST['editname'];
     $editmemo = $_POST['editmemo'];
     $editdeaddate = $_POST['editdeadline_date'];
@@ -222,7 +222,6 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="label1">Todo編集画面</h5>
-                                    <input type="hidden" name="id" value="'.$task['id'].'">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -230,6 +229,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 <div class="modal-body">
                                     <div class="row">
                                         <form action="index.php" method="post" onsubmit="return submitChk();">
+                                            <input type="hidden" name="editid" value="'.$task['id'].'">
                                             <div class="col-xs-12 col-lg-12">
                                                 <ul>
                                                     <li>
