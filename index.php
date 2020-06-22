@@ -273,6 +273,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     <button type="show" class="btn btn-danger" >完了</button>
                 </form>
                 </dd>
+                <HR>
             </div>
         </div>
     ';
