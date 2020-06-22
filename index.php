@@ -6,6 +6,7 @@ require_once 'functions.php';
 $date = date('Y-m-d H:i:s'); //現在日付の取得
 
 $errors = array();
+$updateerrors = array();
 
 session_start();
 include_once 'dbconnect.php';
@@ -76,6 +77,43 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
     $stmt->execute();
 
     $dbh = null;
+}
+
+if (isset($_POST['submit'])) {
+    $editid = $_POST['id'];
+    $editname = $_POST['editname'];
+    $editmemo = $_POST['editmemo'];
+    $editdeaddate = $_POST['editdeadline_date'];
+
+    $editname = htmlspecialchars($name, ENT_QUOTES);
+    $editmemo = htmlspecialchars($memo, ENT_QUOTES);
+
+    if ($editname === '') {
+        $updateerrors['editname'] = 1;
+    }
+
+    if ($editmemo === '') {
+        $updateerrors['editmemo'] = 1;
+    }
+
+    if (count($updateerrors) === 0) {
+        $dbh = db_connect();
+
+        $sql = 'UPDATE tasks SET name = :edittaskname, memo = :edittaskvalue,deadline_date = :editdeadline_date,update_date = :modifydate WHERE id = :editid';
+        $stmt = $dbh->prepare($sql);
+
+        $stmt->bindValue(':edittaskname', $editname, PDO::PARAM_STR);
+        $stmt->bindValue(':edittaskvalue', $editmemo, PDO::PARAM_STR);
+        $stmt->bindValue(':editdeadline_date,', $editdeaddate, PDO::PARAM_STR);
+        $stmt->bindValue(':modifydate', $date, PDO::PARAM_STR);
+        $stmt->bindValue(':editid', $editid, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $dbh = null;
+
+        unset($editname, $editmemo);
+    }
 }
 
 ?>
@@ -191,38 +229,38 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 </div>
                                 <div class="modal-body">
                                     <div class="row">
-                                        <div class="col-xs-12 col-lg-12">
-                                            <ul>
-                                                <li>
-                                                    <span>タスク名</span>
-                                                    <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12 col-lg-12">
-                                            <ul>
-                                                <li>
-                                                    <span>内容</span>
-                                                    <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12 col-lg-12">
-                                            <ul>
-                                                <li>
-                                                    <span>期限</span>
-                                                    <br>
-                                                    <input type="date" name="deadline_date" value="'.$task['deadline_date'].'">
-                                                </li> 
-                                            </ul>
-                                        </div>
+                                        <form action="index.php" method="post" onsubmit="return errChk();">
+                                            <div class="col-xs-12 col-lg-12">
+                                                <ul>
+                                                    <li>
+                                                        <span>タスク名</span>
+                                                        <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xs-12 col-lg-12">
+                                                <ul>
+                                                    <li>
+                                                        <span>内容</span>
+                                                        <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xs-12 col-lg-12">
+                                                <ul>
+                                                    <li>
+                                                        <span>期限</span>
+                                                        <br>
+                                                        <input type="date" name="editdeadline_date" value="'.$task['deadline_date'].'">
+                                                    </li> 
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                                                <button type="submit" class="btn btn-primary">更新</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <form action="index.php" method="post" onsubmit="return submitChk();">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                                        <button type="submit" class="btn btn-primary">更新</button>
-                                    </form>
                                 </div>
                             </div>
                         </div>
