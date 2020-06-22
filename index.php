@@ -226,8 +226,8 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="row">
-                                        <form action="index.php" method="post" onsubmit="return submitChk();">
+                                    <form action="index.php" method="post" onsubmit="return submitChk();">
+                                        <div class="row">
                                             <input type="hidden" name="editid" value="'.$task['id'].'">
                                             <div class="col-lg-12">
                                                 <ul>
@@ -260,8 +260,8 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                             <div class="col-lg-1">
                                                 <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
                                             </div>
-                                        </form>
-                                    </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
