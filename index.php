@@ -98,14 +98,14 @@ if (!empty($_POST['modify'])) {
     if (count($updateerrors) === 0) {
         $dbh = db_connect();
 
-        $sql = 'UPDATE tasks SET name = :edittaskname, memo = :edittaskvalue, deadline_date = :editdeadline_date, update_date = :modifydate WHERE id = :editid';
+        $sql = 'UPDATE tasks SET name = ?, memo = ?, deadline_date = ?, update_date = ? WHERE id = ?';
         $stmt = $dbh->prepare($sql);
 
-        $stmt->bindValue(':edittaskname', $editname, PDO::PARAM_STR);
-        $stmt->bindValue(':edittaskvalue', $editmemo, PDO::PARAM_STR);
-        $stmt->bindValue(':editdeadline_date,', $editdeaddate, PDO::PARAM_STR);
-        $stmt->bindValue(':modifydate', $date, PDO::PARAM_STR);
-        $stmt->bindValue(':editid', $editid, PDO::PARAM_INT);
+        $stmt->bindValue('1', $editname, PDO::PARAM_STR);
+        $stmt->bindValue('2', $editmemo, PDO::PARAM_STR);
+        $stmt->bindValue('3', $editdeaddate, PDO::PARAM_STR);
+        $stmt->bindValue('4', $date, PDO::PARAM_STR);
+        $stmt->bindValue('5', $editid, PDO::PARAM_INT);
 
         $stmt->execute();
 
