@@ -142,7 +142,7 @@ if (!empty($_POST['modify'])) {
     </div>
     <div class="row">
         <div class="col-md-12">
-            <input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+            <p><input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly></p>
         </div>
     </div>
 <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
@@ -254,10 +254,10 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     </li> 
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-9 pull-right">
+                                            <div class="pull-right">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
                                             </div>
-                                            <div class="col-lg-3 pull-right">
+                                            <div class="pull-right">
                                                 <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
                                             </div>
                                         </div>
