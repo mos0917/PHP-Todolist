@@ -180,7 +180,7 @@ if (!empty($_POST['modify'])) {
                 </ul>
             </div>
             <div class="col align-self-center">
-                    <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
+                <button type="submit" class="btn btn-outline-success"　name="submit"　value="submit">登録</button>
             </div>
         </div>
     </form>
@@ -257,7 +257,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                                                    <button type="submit" class="btn btn-primary"　name="modify">更新</button>
+                                                    <button type="submit" class="btn btn-primary"　name="modify" value="modify">更新</button>
                                                 </div>
                                             </div>
                                         </form>
