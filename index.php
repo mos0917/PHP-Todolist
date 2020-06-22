@@ -229,7 +229,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 </div>
                                 <div class="modal-body">
                                     <div class="row">
-                                        <form action="index.php" method="post" onsubmit="return errChk();">
+                                        <form action="index.php" method="post" onsubmit="return submitChk();">
                                             <div class="col-xs-12 col-lg-12">
                                                 <ul>
                                                     <li>
