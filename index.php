@@ -142,7 +142,7 @@ if (!empty($_POST['modify'])) {
     </div>
     <div class="row">
         <div class="col-xs-12 col-lg-12">
-            <input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly>
+            <p><input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly></p>
         </div>
     </div>
 <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
