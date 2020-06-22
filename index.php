@@ -227,37 +227,38 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="row">
-                                        <form action="index.php" method="post" onsubmit="return submitChk();">
-                                            <input type="hidden" name="editid" value="'.$task['id'].'">
-                                            <div class="col-xs-12 col-lg-12">
-                                                <ul>
-                                                    <li>
-                                                        <span>タスク名</span>
-                                                        <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xs-12 col-lg-12">
-                                                <ul>
-                                                    <li>
-                                                        <span>内容</span>
-                                                        <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xs-12 col-lg-12">
-                                                <ul>
-                                                    <li>
-                                                        <span>期限</span>
-                                                        <br>
-                                                        <input type="date" name="editdeadline_date" value="'.$task['deadline_date'].'">
-                                                    </li> 
-                                                </ul>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                                                <button type="submit" class="btn btn-primary"　name="modify">更新</button>
+                                    <form action="index.php" method="post" onsubmit="return submitChk();">
+                                        <div class="row">
+                                                <input type="hidden" name="editid" value="'.$task['id'].'">
+                                                <div class="col-xs-12 col-lg-12">
+                                                    <ul>
+                                                        <li>
+                                                            <span>タスク名</span>
+                                                            <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-xs-12 col-lg-12">
+                                                    <ul>
+                                                        <li>
+                                                            <span>内容</span>
+                                                            <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-xs-12 col-lg-12">
+                                                    <ul>
+                                                        <li>
+                                                            <span>期限</span>
+                                                            <br>
+                                                            <input type="date" name="editdeadline_date" value="'.$task['deadline_date'].'">
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                                                    <input type="submit" class="btn btn-primary"　name="modify">更新</button>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
