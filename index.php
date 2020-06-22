@@ -180,7 +180,7 @@ if (!empty($_POST['modify'])) {
                 </ul>
             </div>
             <div class="col align-self-center">
-                <button type="submit" class="btn btn-outline-success"　name="submit"　value="submit">登録</button>
+                <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
             </div>
         </div>
     </form>
