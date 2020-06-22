@@ -84,8 +84,8 @@ if (!empty($_POST['modify'])) {
     $editmemo = $_POST['editmemo'];
     $editdeaddate = $_POST['editdeadline_date'];
 
-    $editname = htmlspecialchars($name, ENT_QUOTES);
-    $editmemo = htmlspecialchars($memo, ENT_QUOTES);
+    $editname = htmlspecialchars($editname, ENT_QUOTES);
+    $editmemo = htmlspecialchars($editmemo, ENT_QUOTES);
 
     if ($editname === '') {
         $updateerrors['editname'] = 1;
