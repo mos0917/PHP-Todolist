@@ -136,7 +136,7 @@ if (!empty($_POST['modify'])) {
         </div>
         <div class="col-xs-4 col-lg-1" text-align:right>
             <form action="index.php" method="post" onsubmit="return logoutChk()">
-                    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
+                    <input class="btn btn-outline-primary" class="align-middle" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
             </form>
         </div>
     </div>
