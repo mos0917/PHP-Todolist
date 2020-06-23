@@ -267,8 +267,11 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     </li> 
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-10 text-right">
+                                            <div class="col-lg-8 text-right">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                                            </div>
+                                            <div class="col-lg-2 text-right">
+                                                <button type="button" class="btn btn-danger" name="delete" value="delete">削除</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
                                                 <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
@@ -284,7 +287,6 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         <input type="hidden" name="method" value="put">
                         <input type="hidden" name="id" value="'.$task['id'].'">
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
-                        <button type="button" class="btn btn-secondary">削除</button>
                         <button type="show" class="btn btn-danger" >完了</button>
                     </form>
                 </dd>
