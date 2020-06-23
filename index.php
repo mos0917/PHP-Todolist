@@ -84,6 +84,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
 
     $dbh = null;
 }
+
 if (!empty($_POST['modify'])) {
     $editid = $_POST['editid'];
     $editname = $_POST['editname'];
@@ -283,6 +284,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         <input type="hidden" name="method" value="put">
                         <input type="hidden" name="id" value="'.$task['id'].'">
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
+                        <button type="button" class="btn btn-secondary">削除</button>
                         <button type="show" class="btn btn-danger" >完了</button>
                     </form>
                 </dd>
