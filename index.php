@@ -86,7 +86,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //完了ボタン
 }
 
 if (isset($_POST['modify'])) { //更新ボタン押下時の処理
-    $editid = $_POST['editid'];
+    $editid = $_POST['editdelid'];
     $editname = $_POST['editname'];
     $editmemo = $_POST['editmemo'];
     $editdeaddate = $_POST['editdeadline_date'];
@@ -129,7 +129,7 @@ if (isset($_POST['modify'])) { //更新ボタン押下時の処理
 }
 
 if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
-    $delid = $_POST['editid'];
+    $delid = $_POST['editdelid'];
     $delid = htmlspecialchars($id, ENT_QUOTES);
     $delid = (int) $delid;
 
@@ -257,6 +257,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 </div>
                                 <div class="modal-body">
                                     <form action="index.php" method="post">
+                                        <input type="hidden" name="editdelid" value="'.$task['id'].'">
                                         <div class="row">
                                             
                                             <div class="col-lg-12">
@@ -292,7 +293,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                 <button type="submit" class="btn btn-danger" name="delete" value="delete">削除</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
-                                                <input type="hidden" name="editid" value="'.$task['id'].'">
+
                                                 <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
                                             </div>
                                         </div>
