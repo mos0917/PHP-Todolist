@@ -85,7 +85,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //完了ボタン
     $dbh = null;
 }
 
-if (!empty($_POST['modify'])) { //更新ボタン押下時の処理
+if (isset($_POST['modify'])) { //更新ボタン押下時の処理
     $editid = $_POST['editid'];
     $editname = $_POST['editname'];
     $editmemo = $_POST['editmemo'];
@@ -126,9 +126,7 @@ if (!empty($_POST['modify'])) { //更新ボタン押下時の処理
 
         unset($editname, $editmemo);
     }
-}
-
-if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処理
+} else {
     $delid = $_POST['editid'];
     $delid = htmlspecialchars($id, ENT_QUOTES);
     $delid = (int) $delid;
@@ -143,6 +141,7 @@ if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処�
 
     $dbh = null;
 }
+
 
 ?>
 
