@@ -129,7 +129,7 @@ if (!empty($_POST['modify'])) { //更新ボタン押下時の処理
 }
 
 if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処理
-    $delid = $_POST['id'];
+    $delid = $_POST['delid'];
     $delid = htmlspecialchars($id, ENT_QUOTES);
     $delid = (int) $delid;
 
@@ -257,7 +257,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 <div class="modal-body">
                                     <form action="index.php" method="post">
                                         <div class="row">
-                                            <input type="hidden" name="editid" value="'.$task['id'].'">
+                                            
                                             <div class="col-lg-12">
                                                 <ul>
                                                     <li>
@@ -288,10 +288,11 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
-                                                <input type="hidden" name="id" value="'.$task['id'].'">
+                                            <input type="hidden" name="delid" value="'.$task['id'].'">
                                                 <button type="button" class="btn btn-danger" name="delete" value="delete">削除</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
+                                                <input type="hidden" name="editid" value="'.$task['id'].'">
                                                 <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
                                             </div>
                                         </div>
