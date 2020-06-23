@@ -130,8 +130,6 @@ if (isset($_POST['modify'])) { //更新ボタン押下時の処理
 
 if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     $delid = $_POST['editdelid'];
-    $delid = htmlspecialchars($id, ENT_QUOTES);
-    $delid = (int) $delid;
 
     $dbh = db_connect();
 
