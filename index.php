@@ -85,22 +85,6 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //完了ボタン
     $dbh = null;
 }
 
-if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処理
-    $delid = $_POST['id'];
-    $delid = htmlspecialchars($id, ENT_QUOTES);
-    $delid = (int) $delid;
-
-    $dbh = db_connect();
-
-    $sql = 'UPDATE tasks SET delete_flg = 1 WHERE id = ?';
-    $stmt = $dbh->prepare($sql);
-
-    $stmt->bindValue(1, $delid, PDO::PARAM_INT);
-    $stmt->execute();
-
-    $dbh = null;
-}
-
 if (!empty($_POST['modify'])) { //更新ボタン押下時の処理
     $editid = $_POST['editid'];
     $editname = $_POST['editname'];
@@ -142,6 +126,22 @@ if (!empty($_POST['modify'])) { //更新ボタン押下時の処理
 
         unset($editname, $editmemo);
     }
+}
+
+if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処理
+    $delid = $_POST['id'];
+    $delid = htmlspecialchars($id, ENT_QUOTES);
+    $delid = (int) $delid;
+
+    $dbh = db_connect();
+
+    $sql = 'UPDATE tasks SET delete_flg = 1 WHERE id = ?';
+    $stmt = $dbh->prepare($sql);
+
+    $stmt->bindValue(1, $delid, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $dbh = null;
 }
 
 ?>
@@ -255,7 +255,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="index.php" method="post" onsubmit="return submitChk();">
+                                    <form action="index.php" method="post">
                                         <div class="row">
                                             <input type="hidden" name="editid" value="'.$task['id'].'">
                                             <div class="col-lg-12">
@@ -288,6 +288,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
+                                                <input type="hidden" name="id" value="'.$task['id'].'">
                                                 <button type="button" class="btn btn-danger" name="delete" value="delete">削除</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
