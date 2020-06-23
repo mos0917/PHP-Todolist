@@ -126,7 +126,9 @@ if (isset($_POST['modify'])) { //更新ボタン押下時の処理
 
         unset($editname, $editmemo);
     }
-} else {
+}
+
+if (isset($_POST['delete'])) { //削除ボタン押下時の処理
     $delid = $_POST['editid'];
     $delid = htmlspecialchars($id, ENT_QUOTES);
     $delid = (int) $delid;
@@ -287,7 +289,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
-                                                <button type="button" class="btn btn-danger" name="delete" value="delete">削除</button>
+                                                <button type="submit" class="btn btn-danger" name="delete" value="delete">削除</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
                                                 <input type="hidden" name="editid" value="'.$task['id'].'">
