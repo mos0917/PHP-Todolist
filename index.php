@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     }
 }
 
-if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
+if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //完了ボタン押下時の処理
     $id = $_POST['id'];
     $id = htmlspecialchars($id, ENT_QUOTES);
     $id = (int) $id;
@@ -85,7 +85,23 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) {
     $dbh = null;
 }
 
-if (!empty($_POST['modify'])) {
+if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処理
+    $delid = $_POST['id'];
+    $delid = htmlspecialchars($id, ENT_QUOTES);
+    $delid = (int) $delid;
+
+    $dbh = db_connect();
+
+    $sql = 'UPDATE tasks SET delete_flg = 1 WHERE id = ?';
+    $stmt = $dbh->prepare($sql);
+
+    $stmt->bindValue(1, $delid, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $dbh = null;
+}
+
+if (!empty($_POST['modify'])) { //更新ボタン押下時の処理
     $editid = $_POST['editid'];
     $editname = $_POST['editname'];
     $editmemo = $_POST['editmemo'];
@@ -206,7 +222,7 @@ if (!empty($_POST['modify'])) {
 <?php
 $dbh = db_connect();
 
-$sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and email = "'.$email.'" ORDER BY id DESC';
+$sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and delete_flg = 1 and email = "'.$email.'" ORDER BY id DESC';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $dbh = null;
@@ -267,6 +283,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     </li> 
                                                 </ul>
                                             </div>
+                                            <HR>
                                             <div class="col-lg-8 text-right">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
                                             </div>
