@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     $deaddate = $_POST['deadline_date'];
 
     if ($_POST['deadline_date'] === '') { //期限日がnullの場合NULLを入れる(0000-00-00回避)
-        $deaddate = 'NULL';
+        $deaddate = null;
     } else {
         $deaddate = $_POST['deadline_date'];
     }
