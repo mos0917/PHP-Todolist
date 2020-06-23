@@ -91,9 +91,9 @@ if (!empty($_POST['modify'])) {
     $editdeaddate = $_POST['editdeadline_date'];
 
     if ($_POST['editdeadline_date'] === '') { //期限日がnullの場合NULLを入れる(0000-00-00回避)
-        $deaddate = null;
+        $editdeaddate = null;
     } else {
-        $deaddate = $_POST['editdeadline_date'];
+        $editdeaddate = $_POST['editdeadline_date'];
     }
 
     $editname = htmlspecialchars($editname, ENT_QUOTES);
