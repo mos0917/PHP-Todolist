@@ -32,6 +32,12 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     $memo = $_POST['memo'];
     $deaddate = $_POST['deadline_date'];
 
+    if ($_POST['deadline_date'] === '') { //期限日がnullの場合NULLを入れる(0000-00-00回避)
+        $deaddate = 'NULL';
+    } else {
+        $deaddate = $_POST['deadline_date'];
+    }
+
     $name = htmlspecialchars($name, ENT_QUOTES);
     $memo = htmlspecialchars($memo, ENT_QUOTES);
 
@@ -163,7 +169,7 @@ if (!empty($_POST['modify'])) {
             <div class="col-xs-12 col-lg-3">
                 <ul>
                     <li>
-                        <span>内容　　</span>
+                        <span>内容    </span>
                         <textarea class="form-control" id="taskvalue" rows="1" name="memo"><?php if (isset($memo)) {
     echo $memo;
 } ?> </textarea>
