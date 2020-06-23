@@ -129,7 +129,7 @@ if (!empty($_POST['modify'])) { //更新ボタン押下時の処理
 }
 
 if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処理
-    $delid = $_POST['delid'];
+    $delid = $_POST['editid'];
     $delid = htmlspecialchars($id, ENT_QUOTES);
     $delid = (int) $delid;
 
@@ -165,7 +165,7 @@ if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処�
         </div>
         <div class="col-xs-1 col-lg-1 col align-self-center">
             <form action="index.php" method="post" onsubmit="return logoutChk()">
-                    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
+                <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
             </form>
         </div>
     </div>
@@ -184,8 +184,8 @@ if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処�
                     <li>
                         <span>タスク名</span>
                         <input type="text" class="form-control" id="taskname" name="name" value="<?php if (isset($name)) {
-    echo $name;
-} ?>">
+                             echo $name;
+                                                                                                 } ?>">
                     </li>
                 </ul>
             </div>
@@ -194,8 +194,8 @@ if (!empty($_POST['delete'])) { //モーダル内削除ボタン押下時の処�
                     <li>
                         <span>内容    </span>
                         <textarea class="form-control" id="taskvalue" rows="1" name="memo"><?php if (isset($memo)) {
-    echo $memo;
-} ?> </textarea>
+                            echo $memo;
+                                                                                           } ?> </textarea>
                     </li>
                 </ul>
             </div>
@@ -288,7 +288,6 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
-                                            <input type="hidden" name="delid" value="'.$task['id'].'">
                                                 <button type="button" class="btn btn-danger" name="delete" value="delete">削除</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
@@ -319,9 +318,9 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 
 <?php include dirname(__FILE__).'/footer.php'; ?>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 
 </body>
