@@ -222,7 +222,7 @@ if (!empty($_POST['modify'])) { //更新ボタン押下時の処理
 <?php
 $dbh = db_connect();
 
-$sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and delete_flg = 1 and email = "'.$email.'" ORDER BY id DESC';
+$sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $dbh = null;
