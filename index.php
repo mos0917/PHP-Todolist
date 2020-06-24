@@ -178,7 +178,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
         </div>
         <div class="col-xs-2 col-lg-2 col align-self-center">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#completedtask">完了したタスク</button>
+            <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask">完了したタスク</button>
         </div>
     </div>
 
@@ -233,7 +233,35 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
         </button>
       </div>
       <div class="modal-body">
-        ・・・
+      <?php
+        if (isset($_POST['completedtask'])) {
+            $dbh = db_connect();
+
+            $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC';
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            $dbh = null;
+
+            while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo'<div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-3">
+                            ■タスク名:'.$task['name'].'
+                        </div>
+                        <br>
+                        <div class="col-xs-12 col-lg-3">
+                            ■内容:'.$task['memo'].'
+                        </div>
+                        <br>
+                        <div class="col-xs-12 col-lg-3">
+                            ■期限日:'.$task['deadline_date'].'
+                        </div>
+                    </div>
+                </div>
+                ';
+            }
+        }
+        ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
