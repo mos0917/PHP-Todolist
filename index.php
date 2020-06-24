@@ -243,22 +243,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             $dbh = null;
 
             while ($comptask = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo'<div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-4">
-                            ■タスク名:'.$comptask['name'].'
-                        </div>
-                        <br>
-                        <div class="col-xs-12 col-lg-4">
-                            ■内容:'.$comptask['memo'].'
-                        </div>
-                        <br>
-                        <div class="col-xs-12 col-lg-4">
-                            ■期限日:'.$comptask['deadline_date'].'
-                        </div>
-                    </div>
-                </div>
-                ';
+                echo '■タスク名:'.$comptask['name'].'';
             }
         }
         ?>
