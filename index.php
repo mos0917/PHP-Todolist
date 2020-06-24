@@ -246,7 +246,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                 echo'<div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-lg-3">
-                            ■タスク名:'.$task['name'].'
+                            ■タスク名:'.$comptask['name'].'
                         </div>
                     </div>
                 </div>';
