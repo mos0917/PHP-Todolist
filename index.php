@@ -160,7 +160,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <div class="container">
     <div class="row">
         <div class="col-xs-7 col-lg-10">
-            <h1>Todo List</h1>
+            <h2>Todo List</h2>
         </div>
         <div class="col-xs-4 col-lg-1 col align-self-center">
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#completedtask">完了したタスク</button>
