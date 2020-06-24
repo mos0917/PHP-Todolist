@@ -145,9 +145,9 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 if (isset($_POST['completedtask'])) { //完了済みタスクボタン押下時処理
     $dbh = db_connect();
 
-    $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and email = "'.$email.'" ORDER BY id DESC';
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute();
+    $compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and email = "'.$email.'" ORDER BY id DESC';
+    $compstmt = $dbh->prepare($compsql);
+    $compstmt->execute();
     $dbh = null;
 
     $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
