@@ -190,7 +190,7 @@ function comptask()
             <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
         </div>
         <div class="col-xs-2 col-lg-2 col align-self-center">
-            <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" onclick="comptask()">完了したタスク</button>
+            <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
         </div>
     </div>
 
