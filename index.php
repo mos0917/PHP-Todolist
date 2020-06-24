@@ -162,9 +162,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
         <div class="col-xs-7 col-lg-10">
             <h2>Todo List</h2>
         </div>
-        <div class="col-xs-4 col-lg-1 col align-self-center">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#completedtask">完了したタスク</button>
-        </div>
         <div class="col-xs-1 col-lg-1 col align-self-center">
             <form action="index.php" method="post" onsubmit="return logoutChk()">
                 <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
@@ -176,7 +173,14 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <p><input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly></p>
         </div>
     </div>
-<span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
+    <div class="row">
+        <div class="col-xs-10 col-lg-10">
+            <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
+        </div>
+        <div class="col-xs-2 col-lg-2 col align-self-center">
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#completedtask">完了したタスク</button>
+        </div>
+    </div>
 
 
     <form action="index.php" method="post" onsubmit="return errChk();">
