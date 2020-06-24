@@ -142,6 +142,24 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     $dbh = null;
 }
 
+if (isset($_POST['completedtask'])) { //完了済みタスクボタン押下時処理
+    $dbh = db_connect();
+
+    $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and email = "'.$email.'" ORDER BY id DESC';
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+    $dbh = null;
+
+    while ($comptask = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo'<div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-3">
+                    ■タスク名:'.$comptask['name'].'
+                </div>
+            </div>
+        </div>';
+    }
+}
 
 ?>
 
@@ -234,24 +252,22 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
-        if (isset($_POST['completedtask'])) {
-            $dbh = db_connect();
-
-            $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and email = "'.$email.'" ORDER BY id DESC';
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute();
-            $dbh = null;
-
-            while ($comptask = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo'<div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-3">
-                            ■タスク名:'.$comptask['name'].'
-                        </div>
-                    </div>
-                </div>';
-            }
-        }
+        echo'<div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-3">
+                ■タスク名:'.$comptask['name'].'
+            </div>
+            <br>
+            <div class="col-xs-12 col-lg-3">
+                ■内容:'.$comptask['memo'].'
+            </div>
+            <br>
+            <div class="col-xs-12 col-lg-3">
+                ■期限日:'.$comptask['deadline_date'].'
+            </div>
+        </div>
+        </div>
+        ';
         ?>
       </div>
       <div class="modal-footer">
