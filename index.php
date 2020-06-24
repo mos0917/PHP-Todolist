@@ -141,16 +141,18 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 
     $dbh = null;
 }
+function comptask()
+{
+    if (isset($_POST['completedtask'])) { //完了済みタスクボタン押下時処理
+        $dbh = db_connect();
 
-if (isset($_POST['completedtask'])) { //完了済みタスクボタン押下時処理
-    $dbh = db_connect();
+        $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and email = "'.$email.'" ORDER BY id DESC';
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+        $dbh = null;
 
-    $compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and email = "'.$email.'" ORDER BY id DESC';
-    $compstmt = $dbh->prepare($compsql);
-    $compstmt->execute();
-    $dbh = null;
-
-    $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
+        $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>
@@ -188,7 +190,7 @@ if (isset($_POST['completedtask'])) { //完了済みタスクボタン押下時�
             <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
         </div>
         <div class="col-xs-2 col-lg-2 col align-self-center">
-            <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask">完了したタスク</button>
+            <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" onclick="comptask()">完了したタスク</button>
         </div>
     </div>
 
