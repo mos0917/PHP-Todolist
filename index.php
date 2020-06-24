@@ -150,15 +150,7 @@ if (isset($_POST['completedtask'])) { //完了済みタスクボタン押下時�
     $stmt->execute();
     $dbh = null;
 
-    while ($comptask = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo'<div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-lg-3">
-                    ■タスク名:'.$comptask['name'].'
-                </div>
-            </div>
-        </div>';
-    }
+    $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 ?>
