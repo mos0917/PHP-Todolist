@@ -141,17 +141,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 
     $dbh = null;
 }
-function comptask()
-{
-    $dbh = db_connect();
-
-    $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and email = "'.$email.'" ORDER BY id DESC';
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute();
-    $dbh = null;
-
-    $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
-}
 
 ?>
 
@@ -244,6 +233,17 @@ function comptask()
       </div>
       <div class="modal-body">
       <?php
+        function comptask()
+        {
+            $dbh = db_connect();
+      
+            $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and email = "'.$email.'" ORDER BY id DESC';
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            $dbh = null;
+      
+            $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
         echo'<div class="container">
         <div class="row">
             <div class="col-xs-12 col-lg-3">
