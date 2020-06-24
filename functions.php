@@ -1,7 +1,8 @@
 <?php
 
-function db_connect() {
-    
+function db_connect()
+{
+
     $dsn = 'mysql:dbname=heroku_9e11dccd84aee89;host=us-cdbr-east-05.cleardb.net;charset=utf8';
     $user = 'b258db074787a9';
     $password = 'e25dfa8f';
@@ -12,5 +13,4 @@ function db_connect() {
     $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     
     return $dbh;
-    
 }
