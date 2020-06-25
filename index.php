@@ -233,8 +233,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
-                echo'<div id="result">
-            ';
+                echo'<div id="result">';
         ?>
       </div>
       <div class="modal-footer">

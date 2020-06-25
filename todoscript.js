@@ -15,7 +15,7 @@ function errChk(){ //タスク登録時のエラーチェック
     }
 }
 
-function comptask(){
+/**function comptask(){
     const url = 'https://blooming-ocean-46381.herokuapp.com/footer.php';
     fetch(url).then(function(response) {
         return response.text();
@@ -23,4 +23,4 @@ function comptask(){
         var result = document.querySelector('#result');
         result.innerHTML = text;
     });
-}
+} */
