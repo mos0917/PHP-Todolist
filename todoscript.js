@@ -16,7 +16,7 @@ function errChk(){ //タスク登録時のエラーチェック
 }
 
 function comptask(){
-    
+    const url = 'https://blooming-ocean-46381.herokuapp.com/login.php';
     fetch(url).then(function(response) {
         return response.text();
     }).then(function(text) {
