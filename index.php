@@ -233,12 +233,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
-        echo '<script></script>
-            function print_json($data) {
-                header("Content-Type: application/json; charset=utf-8");
-                echo json_encode($data);
-            }
-        ';
+        echo "'.$data.'";
         ?>
       </div>
       <div class="modal-footer">
