@@ -15,17 +15,11 @@ function errChk(){ //タスク登録時のエラーチェック
     }
 }
 
-/**function comptask(){
-    const url = 'https://blooming-ocean-46381.herokuapp.com/footer.php';
-    fetch(url).then(function(response) {
-        return response.text();
-    }).then(function(text) {
-        var result = document.querySelector('#result');
-        result.innerHTML = text;
-    });
-} */
-
 fetch('https://blooming-ocean-46381.herokuapp.com/test.json')
 .then(response => response.text())
 .then(console.log(text));
 
+function print_json($data) {
+    header("Content-Type: application/json; charset=utf-8");
+    echo json_encode($data);
+}
