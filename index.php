@@ -233,9 +233,8 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
-        $my_POST = json_decode(file_get_contents("php://input"), true);
-        $comptask = ["get"=>$my_POST];
-        echo json_encode($comptask, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+
+        
         ?>
       </div>
       <div class="modal-footer">

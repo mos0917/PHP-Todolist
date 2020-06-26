@@ -11,4 +11,6 @@ $stmt->execute();
 $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-■タスク名:$comptask['name'];
+$my_POST = json_decode(file_get_contents("php://input"), true);
+$comptask = ["get"=>$my_POST];
+echo json_encode($comptask, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
