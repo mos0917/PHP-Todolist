@@ -15,11 +15,8 @@ function errChk(){ //タスク登録時のエラーチェック
     }
 }
 
-fetch('https://blooming-ocean-46381.herokuapp.com/test.json')
-.then(response => response.text())
-.then(console.log(text));
-
-function print_json($data) {
-    header("Content-Type: application/json; charset=utf-8");
-    echo json_encode($data);
+function comptask(){
+    fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php')
+    .then(response => response.text())
+    .then(console.log(text));
 }
