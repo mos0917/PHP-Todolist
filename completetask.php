@@ -7,10 +7,6 @@ $compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and d
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
 
-while ($comptask = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo'■タスク名:'.$comptask['name'].'
-         ■内容:'.$comptask['memo'].'
-         ■期限日:'.$comptask['deadline_date'].'
-        <HR>
-    ';
-}
+    ■タスク名:$comptask['name'];
+    ■内容:$comptask['memo'];
+    ■期限日:$comptask['deadline_date'];
