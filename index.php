@@ -234,9 +234,9 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       <div class="modal-body">
       <?php
         $completetsk = json_decode($getvalue, false);
-        $completetsk ->get[1];//タスク名
-        $completetsk ->get[2];//内容
-        $completetsk ->get[3];//期限日
+        echo $completetsk ->get[1];//タスク名
+        echo $completetsk ->get[2];//内容
+        echo $completetsk ->get[3];//期限日
 
         ?>
       </div>
