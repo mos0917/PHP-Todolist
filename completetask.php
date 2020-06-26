@@ -13,12 +13,9 @@ while ($comprow = $compresult->fetch_assoc()) {
     $compemail = $comprow['email']; //ユーザーidの取り出し
 }
 
-$dbh = db_connect();
-
-$compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC';
+$compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 and email = "'.$compemail.'" ORDER BY id DESC';
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
-$dbh = null;
 
 while ($comptask = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo'■タスク名:'.$comptask['name'].'
@@ -27,8 +24,3 @@ while ($comptask = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <HR>
     ';
 }
-?>
-
-
-</body>
-</html>
