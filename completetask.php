@@ -3,6 +3,7 @@
 require_once 'functions.php';
 include_once 'dbconnect.php';
 
+$dbh = db_connect();
 
 $compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 ORDER BY id DESC';
 $stmt = $dbh->prepare($compsql);
