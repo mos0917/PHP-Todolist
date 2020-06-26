@@ -16,7 +16,20 @@ function errChk(){ //タスク登録時のエラーチェック
 }
 
 function comptask(){
-    fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php')
-    .then(response => response.text())
-    .then(console.log(text));
+    fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php',{
+        method: 'GET',
+    })
+    .then(response => {
+        if(response.ok){
+            return response.text();
+        }else{
+            return Promise.reject(new error('エラーです。'));
+        }
+    })
+    .then(text =>{
+        console.log(text);
+    })
+    .catch(e =>{
+        console.log(e.message);//エラー
+    })
 }
