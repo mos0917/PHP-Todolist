@@ -5,7 +5,7 @@ require_once 'functions.php';
 include_once 'dbconnect.php';
 
 
-$compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 and email = "'.$compemail.'" ORDER BY id DESC';
+$compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 ORDER BY id DESC';
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
 
