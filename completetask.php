@@ -7,7 +7,7 @@ include_once 'dbconnect.php';
 $compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 ORDER BY id DESC';
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
+$comptask = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
 ■タスク名:$comptask['name'];
-■内容:$comptask['memo'];
-■期限日:$comptask['deadline_date'];
