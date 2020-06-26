@@ -9,6 +9,6 @@ $compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and d
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
 
-    ■タスク名:$comptask['name'];
-    ■内容:$comptask['memo'];
-    ■期限日:$comptask['deadline_date'];
+■タスク名:$comptask['name'];
+■内容:$comptask['memo'];
+■期限日:$comptask['deadline_date'];
