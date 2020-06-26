@@ -4,15 +4,13 @@ date_default_timezone_set('Asia/Tokyo');
 require_once 'functions.php';
 include_once 'dbconnect.php';
 
-$dbh = db_connect();
-$query = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
-$result = $mysqli->query($query);
+$compquery = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
+$compresult = $mysqli->query($compquery);
 
 
 // ユーザー情報の取り出し
-while ($row = $result->fetch_assoc()) {
-    $username = $row['username'];
-    $email = $row['email']; //ユーザーidの取り出し
+while ($comprow = $compresult->fetch_assoc()) {
+    $compemail = $comprow['email']; //ユーザーidの取り出し
 }
 ?>
 <!doctype html>
