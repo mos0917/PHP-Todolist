@@ -3,6 +3,15 @@ date_default_timezone_set('Asia/Tokyo');
 
 require_once 'functions.php';
 include_once 'dbconnect.php';
+
+$query = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
+$result = $mysqli->query($query);
+
+// ユーザー情報の取り出し
+while ($row = $result->fetch_assoc()) {
+    $username = $row['username'];
+    $email = $row['email']; //ユーザーidの取り出し
+}
 ?>
 <!doctype html>
 <html>
@@ -24,21 +33,9 @@ $stmt->execute();
 $dbh = null;
 
 while ($comptask = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo'<div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-lg-3">
-                    ■タスク名:'.$comptask['name'].'
-                </div>
-                <br>
-                <div class="col-xs-12 col-lg-3">
-                    ■内容:'.$comptask['memo'].'
-                </div>
-                <br>
-                <div class="col-xs-12 col-lg-3">
-                    ■期限日:'.$comptask['deadline_date'].'
-                </div>
-            </div>
-        </div>
+    echo'■タスク名:'.$comptask['name'].'
+         ■内容:'.$comptask['memo'].'
+         ■期限日:'.$comptask['deadline_date'].'
         <HR>
     ';
 }
