@@ -234,12 +234,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
-        print(var_dump($json['1']));
-        echo '<br>';
-        print(var_dump($json['2']));
-        echo '<br>';
-        print(var_dump($json['3']));
-        echo '<br>';
 
 
         ?>
