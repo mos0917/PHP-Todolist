@@ -84,7 +84,10 @@ if (isset($_POST['signup'])) {
 		<br>
 	<div class="row">
 		<div class="col-xs-12 col-lg-12">
-			<input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
+			<input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
+            <small id="passwordHelpBlock" class="form-text text-muted">
+  				8-20文字で入力してください。大文字、小文字、数字を組み合わせて入力してください。
+			</small>
 		</div>
 	</div>
 	<br>
