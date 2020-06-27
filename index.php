@@ -233,8 +233,9 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
-        $decodecomptask = json_decode($compjsontask, true);
-        echo json_encode($comptask, false);
+        //$decodecomptask = json_decode($compjsontask, true);
+        var_dump($json);
+
 
 
         ?>
