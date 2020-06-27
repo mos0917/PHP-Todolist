@@ -11,7 +11,6 @@ $stmt->execute();
 $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-
 $getvalue = $comptask;
 $comptask = ["get"=>$getvalue];
-$compjsontask = json_encode($comptask, JSON_PRETTY_PRINT);
+echo json_encode($comptask, JSON_PRETTY_PRINT);
