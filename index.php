@@ -234,7 +234,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
-        var_dump($json);
+        $json = json_encode($comptask, JSON_PRETTY_PRINT);
 
 
 
