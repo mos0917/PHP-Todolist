@@ -233,7 +233,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
-        $completetsk = json_decode($comptask, false);
+        $completetsk = json_decode($comptask, true);
         print $completetsk["name"];
         print $completetsk["memo"];
         print $completetsk["deadline_date"];
