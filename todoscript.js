@@ -21,6 +21,6 @@ function comptask(){
     .then((text) => console.log(text))
     .catch((error) => console.log(error));
 
-    var texthoge = document.createElement('div');
+    var div = document.createElement('div');
     div.textContent = 'hoge';
 }
