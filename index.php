@@ -236,7 +236,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
         </button>
       </div>
       <div class="modal-body">
-        <div id="hoge">
+        <div id="texthoge">
 
         </div>
       </div>
