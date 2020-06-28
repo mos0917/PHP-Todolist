@@ -20,4 +20,6 @@ function comptask(){
     .then((response) => response.text())
     .then((text) => console.log(text))
     .catch((error) => console.log(error));
+    var decordtask = JSON.parse($comptask);
+    return $comptask;
 }
