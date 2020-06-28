@@ -179,6 +179,9 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
         <div class="col-xs-2 col-lg-2 col align-self-center">
             <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
         </div>
+        <div class="col-xs-5 col-lg-5">
+            <span>今日は<?php echo date('Y年m月d日'); ?>です</span>
+        </div>
     </div>
 
 
@@ -233,6 +236,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <div class="modal-body">
       <?php
+        
 
         ?>
       </div>
