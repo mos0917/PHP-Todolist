@@ -240,7 +240,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                 <div class="col-lg-12">
                     <ul>
                         <li>
-                            <span>タスク名</span>
+                            <span>タスク名:</span>
                             <span id="comptaskname">
                             </span>
                         </li>
@@ -249,7 +249,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                 <div class="col-lg-12">
                     <ul>
                         <li>
-                            <span>内容</span>
+                            <span>内容:</span>
                             <span id="comptaskvalue">
                             </span>
                         </li>
@@ -258,7 +258,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                 <div class="col-lg-12">
                     <ul>
                         <li>
-                            <span>期限</span>
+                            <span>期限:</span>
                             <br>
                             <span id="compdeadline_date">
                             </span>
