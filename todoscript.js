@@ -19,11 +19,11 @@ function comptask(){
     var div = document.createElement('div');
 
     fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php')
-    .then((response) => response.text())
-    .then((text) => {
+    .then((response) => response.json())
+    .then((jsom) => {
 
 
-    console.log(text)
+    console.log(json)
     div = document.getElementById('comptaskname')
     div.innerHTML = text.get.name
 
