@@ -27,11 +27,11 @@ function comptask(){
     div = getElementById('comptaskname')
     div.innerHTML = text.name
 
-    div = getElementById('comptaskvalue')
-    div.innerHTML = text.memo
+    //div = getElementById('comptaskvalue')
+    //div.innerHTML = text.memo
 
-    div = getElementById('compdeadline_date')
-    div.innerHTML = text.deadline_date
+    //div = getElementById('compdeadline_date')
+    //div.innerHTML = text.deadline_date
     })
     .catch((error) => console.log(error));
 
