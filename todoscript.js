@@ -16,14 +16,29 @@ function errChk(){ //タスク登録時のエラーチェック
 }
 
 function comptask(){
+    var div = document.createElement('div');
+
     fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php')
     .then((response) => response.text())
-    .then((text) => console.log(text))
+    .then((text) => {
+
+
+    console(text)
+    div = getElementById('comptaskname')
+    div.innerHTML = text.name
+    div = getElementById('comptaskvalue')
+    div.innerHTML = text.memo
+    div = getElementById('compdeadline_date')
+    div.innerHTML = text.deadline_date
+
+    })
     .catch((error) => console.log(error));
 
-    var div = document.createElement('div');
-    div.id = "hoge";
-    div.innerHTML = "hoge";
+
+    //div.id = "hoge";
+    //div.innerHTML = "hoge";
     
+    //var body = document.getElementById('modalbody');
+    //body.appendChild(div);
 
 }

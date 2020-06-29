@@ -236,7 +236,33 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
         </button>
       </div>
       <div class="modal-body" id="modalbody">
-      
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul>
+                        <li>
+                            <span>タスク名</span>
+                            <input type="text" class="form-control" id="comptaskname" name="compname">
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <ul>
+                        <li>
+                            <span>内容</span>
+                            <textarea class="form-control" id="comptaskvalue" rows="1" name="compmemo">'</textarea>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <ul>
+                        <li>
+                            <span>期限</span>
+                            <br>
+                            <input type="date" name="compdeadline_date">
+                        </li> 
+                    </ul>
+                </div>
+            </div>      
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
