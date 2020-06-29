@@ -23,7 +23,7 @@ function comptask(){
     .then((text) => {
 
 
-    console(text)
+    console.log(text)
     div = getElementById('comptaskname')
     div.innerHTML = text.get.name
 
