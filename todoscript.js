@@ -20,18 +20,18 @@ function comptask(){
 
     fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php')
     .then((response) => response.json())
-    .then((response) => {
+    .then((json) => {
 
 
-    console.log(response)
+    console.log(json)
     div = document.getElementById('comptaskname')
-    div.innerHTML = json.get.name
+    div.innerHTML = JSON.get.name
 
     div = document.getElementById('comptaskvalue')
-    div.innerHTML = json.get.memo
+    div.innerHTML = JSON.get.memo
 
     div = document.getElementById('compdeadline_date')
-    div.innerHTML = json.get.deadline_date
+    div.innerHTML = JSON.get.deadline_date
     })
     .catch((error) => console.log(error));
 
