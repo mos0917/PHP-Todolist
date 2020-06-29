@@ -22,5 +22,10 @@ function comptask(){
     .catch((error) => console.log(error));
 
     var div = document.createElement('div');
-    div.textContent = 'hoge';
+    div.id = "hoge";
+    div.innerHTML = "hoge";
+    
+    var body = document.getElementById('modalbody');
+    body.appendChild(div);
+
 }

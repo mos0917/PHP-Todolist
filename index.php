@@ -235,10 +235,8 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div id="texthoge">
-
-        </div>
+      <div class="modal-body" id="modalbody">
+      
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
