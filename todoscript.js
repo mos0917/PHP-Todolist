@@ -43,3 +43,7 @@ function comptask(){
     //body.appendChild(div);
 
 }
+
+function resettask(){
+    document.edittaskform.reset();
+}

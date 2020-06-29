@@ -142,22 +142,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     $dbh = null;
 }
 
-if (isset($_POST['cancel'])) {
-    $_POST['edittaskname']="";
-    $_POST['edittaskvalue']="";
-    $_POST['editdeadline_date']="";
-
-    $dbh = db_connect();
-
-    $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC';
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute();
-    $dbh = null;
-
-    $_POST['name'] = $task['name'];
-    $_POST['memo'] = $task['memo'];
-    $_POST['deadline_date'] = $task['deadline_date'];
-}
 
 ?>
 
@@ -359,7 +343,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                             </div>
                                             <HR>
                                             <div class="col-lg-8 text-right">
-                                                <button type="reset" class="btn btn-secondary reset" name="cancel" value="cancel"data-dismiss="modal">キャンセル</button>
+                                                <button type="reset" class="btn btn-secondary reset" name="cancel" value="cancel"data-dismiss="modal" onclick="resettask()">キャンセル</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
                                                 <button type="submit" class="btn btn-danger" name="delete" value="delete">削除</button>
