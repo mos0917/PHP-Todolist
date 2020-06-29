@@ -311,7 +311,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="index.php" method="post">
+                                    <form action="index.php" method="post" name="edittaskform">
                                         <input type="hidden" name="editdelid" value="'.$task['id'].'">
                                         <div class="row">
                                             

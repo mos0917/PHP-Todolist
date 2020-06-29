@@ -46,9 +46,5 @@ function comptask(){
 
 
 function resettask(){
-    // 入力値をリセット
-    $("button.reset").click(function(){
-        $('input[type="text"], input[type="date"], select').val("").removeAttr('checked').removeAttr('selected');
-    })
+    document.edittaskform.reset();
 }
-
