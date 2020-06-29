@@ -343,7 +343,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                             </div>
                                             <HR>
                                             <div class="col-lg-8 text-right">
-                                                <button type="reset" class="btn btn-secondary reset" name="cancel" value="cancel"data-dismiss="modal" onclick="resettask()">キャンセル</button>
+                                                <button type="button" class="btn btn-secondary reset" name="cancel" value="cancel"data-dismiss="modal" onclick="resettask()">キャンセル</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
                                                 <button type="submit" class="btn btn-danger" name="delete" value="delete">削除</button>
