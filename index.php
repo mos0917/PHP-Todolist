@@ -259,7 +259,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     <ul>
                         <li>
                             <span>期限:</span>
-                            <br>
                             <span id="compdeadline_date">
                             </span>
                         </li> 
