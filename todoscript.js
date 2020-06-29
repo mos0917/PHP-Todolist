@@ -20,10 +20,10 @@ function comptask(){
 
     fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php')
     .then((response) => response.json())
-    .then((jsom) => {
+    .then((response) => {
 
 
-    console.log(json)
+    console.log(response)
     div = document.getElementById('comptaskname')
     div.innerHTML = text.get.name
 
