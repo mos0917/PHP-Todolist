@@ -22,6 +22,7 @@ function comptask(){
     .catch((error) => console.log(error));
 
     var div = document.createElement('div');
+    div.innerHTML = "";
     div.id = "hoge";
     div.innerHTML = "hoge";
     
