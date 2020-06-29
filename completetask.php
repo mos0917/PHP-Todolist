@@ -15,7 +15,7 @@ while ($row = $result->fetch_assoc()) {
 }
 
 
-$compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 ORDER BY id DESC';
+$compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC';
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
 $comptask = $stmt->fetch(PDO::FETCH_ASSOC);
