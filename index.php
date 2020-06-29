@@ -241,7 +241,8 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     <ul>
                         <li>
                             <span>タスク名</span>
-                            <input type="text" class="form-control" id="comptaskname" name="compname">
+                            <span id="comptaskname">
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -249,7 +250,8 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     <ul>
                         <li>
                             <span>内容</span>
-                            <textarea class="form-control" id="comptaskvalue" rows="1" name="compmemo">'</textarea>
+                            <span id="comptaskvalue">
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -258,7 +260,8 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         <li>
                             <span>期限</span>
                             <br>
-                            <input type="date" name="compdeadline_date">
+                            <span id="compdeadline_date">
+                            </span>
                         </li> 
                     </ul>
                 </div>
