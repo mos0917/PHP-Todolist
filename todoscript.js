@@ -43,3 +43,11 @@ function comptask(){
     //body.appendChild(div);
 
 }
+
+
+$(function(){
+    // 入力値をリセット
+    $("button.reset").click(function(){
+        $('input[type="text"], input[type="date"], select').val("").removeAttr('checked').removeAttr('selected');
+    })
+});
