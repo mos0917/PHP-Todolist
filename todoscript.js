@@ -45,4 +45,10 @@ function comptask(){
 }
 function resettask() {
     document.edittaskform.reset();
-  }
+}
+$('#modal').modal('hide')({
+    backdrop:true,
+    keyboard:true,
+    show:true
+});
+
