@@ -48,5 +48,5 @@ function resettask() {
 }
 
 document.getElementById("resettaskmodal").onclick = function(){
-    document.edittaskform.reset();
+    formElement.reset();
 }
