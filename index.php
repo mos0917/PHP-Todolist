@@ -236,7 +236,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-            echo '<div class="modal-body" id="modalbody">
+            <div class="modal-body" id="modalbody">
               <div class="row">
                   <div class="col-lg-12">
                       <ul>
