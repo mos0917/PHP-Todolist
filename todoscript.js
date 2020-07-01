@@ -45,5 +45,5 @@ function comptask(){
 }
 
 document.getElementById("resettaskmodal").onclick = function(){
-    formElement.reset();
+    document.edittaskform.reset();
 }
