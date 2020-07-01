@@ -236,8 +236,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <?php
-        for ($count = o; $count < 20; $count++) {
             echo '<div class="modal-body" id="modalbody">
               <div class="row">
                   <div class="col-lg-12">
@@ -269,9 +267,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                   </div>
               </div>
           </div>
-      ';
-        }
-        ?>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
         <button type="button" class="btn btn-primary">完了</button>
