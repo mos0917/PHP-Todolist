@@ -228,58 +228,58 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <HR>
 
 <div class="modal fade" id="completedtask" tabindex="-1" role="dialog" aria-labelledby="completedtask" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">完了済みタスク</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <?php
-        for ($count = o; $count < 20; $count++) {
-            console.log('$count');
-            echo '<div class="modal-body" id="modalbody">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <ul>
-                            <li>
-                                <span>タスク名:</span>
-                                <span id="comptaskname">
-                                </span>
-                            </li>
-                        </ul>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">完了済みタスク</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php
+            for ($count = 0; $count < 20; $count++) {
+                echo '<div class="modal-body" id="modalbody">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul>
+                                    <li>
+                                        <span>タスク名:</span>
+                                        <span id="comptaskname">
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-12">
+                                <ul>
+                                    <li>
+                                        <span>内容:</span>
+                                        <span id="comptaskvalue">
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-12">
+                                <ul>
+                                    <li>
+                                        <span>期限:</span>
+                                        <span id="compdeadline_date">
+                                        </span>
+                                    </li> 
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-12">
-                        <ul>
-                            <li>
-                                <span>内容:</span>
-                                <span id="comptaskvalue">
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-12">
-                        <ul>
-                            <li>
-                                <span>期限:</span>
-                                <span id="compdeadline_date">
-                            </span>
-                        </li> 
-                    </ul>
-                </div>
+                ';
+            }
+            ?>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-primary">完了</button>
             </div>
         </div>
-      ';
-        }
-        ?>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-        <button type="button" class="btn btn-primary">完了</button>
-      </div>
     </div>
-  </div>
 </div>
+
 
 
 <?php
