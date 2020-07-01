@@ -155,7 +155,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <title>Todo List</title>
 </head>
 <body>
-<script src="todoscript.js"></script>
+
 
 <div class="container">
     <div class="row">
@@ -343,7 +343,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                             </div>
                                             <HR>
                                             <div class="col-lg-8 text-right">
-                                            <button class="btn btn-btn btn-secondary" id="resettaskmodal" type="button" >閉じる</button>
+                                            <button class="btn btn-btn btn-secondary" type="button" id="resettaskmodal">閉じる</button>
                                             </div>
                                             <div class="col-lg-2 text-right">
                                                 <button type="submit" class="btn btn-danger" name="delete" value="delete" >削除</button>
@@ -380,6 +380,6 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-
+<script src="todoscript.js"></script>
 </body>
 </html>
