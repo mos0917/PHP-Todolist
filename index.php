@@ -238,7 +238,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
       </div>
       <?php
         for ($count = o; $count < 20; $count++) {
-            console.log("ここまでできてる");
+            console.log('$count');
             echo '<div class="modal-body" id="modalbody">
                 <div class="row">
                     <div class="col-lg-12">
