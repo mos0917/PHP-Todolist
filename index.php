@@ -236,37 +236,42 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" id="modalbody">
-        <div class="row">
-            <div class="col-lg-12">
-                <ul>
-                    <li>
-                        <span>タスク名:</span>
-                        <span id="comptaskname">
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-12">
-                <ul>
-                    <li>
-                        <span>内容:</span>
-                        <span id="comptaskvalue">
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-12">
-                <ul>
-                    <li>
-                        <span>期限:</span>
-                        <span id="compdeadline_date">
-                        </span>
-                    </li> 
-                </ul>
-            </div>
-        </div>
-      </div>
+      <?php
+        for ($count = o; $count < 20; $count++) {
+            echo '<div class="modal-body" id="modalbody">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <ul>
+                          <li>
+                              <span>タスク名:</span>
+                              <span id="comptaskname">
+                              </span>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-lg-12">
+                      <ul>
+                          <li>
+                              <span>内容:</span>
+                              <span id="comptaskvalue">
+                              </span>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-lg-12">
+                      <ul>
+                          <li>
+                              <span>期限:</span>
+                              <span id="compdeadline_date">
+                              </span>
+                          </li> 
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      ';
+        }
+        ?>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
         <button type="button" class="btn btn-primary">完了</button>
