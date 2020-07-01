@@ -22,7 +22,6 @@ function comptask(){
     .then((response) => response.json())
     .then((json) => {
 
-
     console.log(json)
     div = document.getElementById('comptaskname')
     div.innerHTML = json.get.name
@@ -34,13 +33,6 @@ function comptask(){
     div.innerHTML = json.get.deadline_date
     })
     .catch((error) => console.log(error));
-
-
-    //div.id = "hoge";
-    //div.innerHTML = "hoge";
-    
-    //var body = document.getElementById('modalbody');
-    //body.appendChild(div);
 
 }
 
