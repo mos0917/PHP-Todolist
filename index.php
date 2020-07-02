@@ -236,11 +236,11 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <?php
-            for ($count = 0; $count < 20; $count++) {
-                echo '<div class="modal-body" id="modalbody">
-                        <div class="row">
-                            <div class="col-lg-12">
+            <div class="modal-body" id="modalbody">
+                <div class="row">
+                    <?php
+                    for ($count = 0; $count < 20; $count++) {
+                            echo '<div class="col-lg-12">
                                 <ul>
                                     <li>
                                         <span>タスク名:</span>
@@ -267,12 +267,12 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                     </li> 
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    <HR>
-                ';
-            }
-            ?>
+                            <HR>
+                        ';
+                    }
+                    ?>
+                </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
                 <button type="button" class="btn btn-primary">完了</button>
