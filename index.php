@@ -239,7 +239,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <div class="modal-body" id="modalbody">
                 <div class="row">
                     <?php
-                    for ($count = 0; $count < 20; $count++) {
+                    //for ($count = 0; $count < 20; $count++) {
                             echo '<div class="col-lg-12">
                                 <ul>
                                     <li>
@@ -269,7 +269,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                             </div>
                             <HR>
                         ';
-                    }
+                    //}
                     ?>
                 </div>
             </div>
