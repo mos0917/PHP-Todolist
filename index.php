@@ -267,10 +267,10 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                     </li> 
                                 </ul>
                             </div>
-                            <HR>
                         ';
                     }
                     ?>
+                <HR>
                 </div>
             </div>
             <div class="modal-footer">
