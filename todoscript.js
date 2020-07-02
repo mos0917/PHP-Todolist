@@ -15,7 +15,7 @@ function errChk(){ //タスク登録時のエラーチェック
     }
 }
 
-function comptask(){
+window.onload = function comptask(){
     var div = document.createElement('div');
 
     fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php')
