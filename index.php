@@ -244,7 +244,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                 <ul>
                                     <li>
                                         <span>タスク名:</span>
-                                        <span id="comptaskname'.$count.'">
+                                        <span id="comptaskname'.$count.'" class="completetaskname">
                                         </span>
                                     </li>
                                 </ul>
@@ -253,7 +253,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                 <ul>
                                     <li>
                                         <span>内容:</span>
-                                        <span id="comptaskvalue'.$count.'">
+                                        <span id="comptaskvalue'.$count.'" class="completetaskvalue">
                                         </span>
                                     </li>
                                 </ul>
@@ -262,7 +262,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                 <ul>
                                     <li>
                                         <span>期限:</span>
-                                        <span id="compdeadline_date'.$count.'">
+                                        <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date">
                                         </span>
                                     </li> 
                                 </ul>
