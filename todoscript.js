@@ -21,8 +21,6 @@ function comptask(){
     fetch('https://blooming-ocean-46381.herokuapp.com/completetask.php')
     .then((response) => response.json())
     .then((json) => {
-    
-        for(let count = 0; count < 20; count++) {
 
             console.log(json)
             div = document.getElementById('comptaskname')
@@ -33,8 +31,7 @@ function comptask(){
 
             div = document.getElementById('compdeadline_date')
             div.innerHTML = json.get[count].deadline_date
-        }
-    })
+        })
     .catch((error) => console.log(error));
 
 }
