@@ -19,6 +19,7 @@ $compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and d
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
 $comptask = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
+$arraytask = array_values($comptask);
 
 
 $getvalue = $comptask;
