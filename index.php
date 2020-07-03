@@ -297,17 +297,21 @@ echo '<dl>';
 while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo'<div class="container">
             <div class="row">
-                <div class="col-xs-12 col-lg-3">
-                    ■タスク名:'.$task['name'].'
-                </div>
-                <br>
-                <div class="col-xs-12 col-lg-3">
-                    ■内容:'.$task['memo'].'
-                </div>
-                <br>
-                <div class="col-xs-12 col-lg-3">
-                    ■期限日:'.$task['deadline_date'].'
-                </div>
+            <ol>
+                <li>
+                    <div class="col-xs-12 col-lg-3">
+                        ■タスク名:'.$task['name'].'
+                    </div>
+                    <br>
+                    <div class="col-xs-12 col-lg-3">
+                        ■内容:'.$task['memo'].'
+                    </div>
+                    <br>
+                    <div class="col-xs-12 col-lg-3">
+                        ■期限日:'.$task['deadline_date'].'
+                    </div>
+                </li>
+            <ol>
 
                 <dd>
                     <div class="modal fade" id="edittask'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
