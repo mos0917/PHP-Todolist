@@ -48,7 +48,8 @@ if (isset($_POST['login'])) {
 <title>Todo List Login</title>
 <link rel="stylesheet" href="style.css">
 <!-- Bootstrap読み込み（スタイリングのため） -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="login_style.css" rel="stylesheet">
 </head>
 </head>
 <body>
@@ -77,13 +78,13 @@ if (isset($_POST['signup'])) {
 <form method="post" class="form-signin">
     <h1>Todo List ログイン</h1>
     <div class="row">
-        <div class="col-xs-12 col-lg-12">
+        <div class="form-group">
             <input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required />
         </div>
     </div>
         <br>
     <div class="row">
-        <div class="col-xs-12 col-lg-12">
+        <div class="form-group">
             <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
         </div>
     </div>
@@ -93,5 +94,15 @@ if (isset($_POST['signup'])) {
 </form>
 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
+</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script><script src="/docs/4.3/assets/js/vendor/anchor.min.js"></script>
+<script src="/docs/4.3/assets/js/vendor/clipboard.min.js"></script>
+<script src="/docs/4.3/assets/js/vendor/bs-custom-file-input.min.js"></script>
+<script src="/docs/4.3/assets/js/src/application.js"></script>
+<script src="/docs/4.3/assets/js/src/search.js"></script>
+<script src="/docs/4.3/assets/js/src/ie-emulation-modes-warning.js"></script>
 </body>
 </html>
