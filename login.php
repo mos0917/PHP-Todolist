@@ -81,14 +81,14 @@ if (isset($_POST['signup'])) {
     </div>
     <div class="row">
         <div class="form-group">
-            <input type="email"  class="form-control" id="exampleInputEmail1" name="email"/>
+            <input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required autofocus />
             <label for="inputEmail">メールアドレス</label>
         </div>
     </div>
         <br>
     <div class="row">
         <div class="form-group">
-            <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password"/>
+            <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
             <label for="inputEmail">パスワード</label>
         </div>
     </div>
