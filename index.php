@@ -349,13 +349,13 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                 </ul>
                                             </div>
                                             <BR>
-                                            <div class="col-lg-8 col align-self-center text-right">
+                                            <div class="col-lg-8 align-self-center text-right">
                                             <button class="btn btn-btn btn-secondary" type="button" id="resettaskmodal" data-dismiss="modal">閉じる</button>
                                             </div>
-                                            <div class="col-lg-2 col align-self-center text-right">
+                                            <div class="col-lg-2 align-self-center text-right">
                                                 <button type="submit" class="btn btn-danger" name="delete" value="delete" >削除</button>
                                             </div>
-                                            <div class="col-lg-2 col align-self-center text-right">
+                                            <div class="col-lg-2 align-self-center text-right">
 
                                                 <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
                                             </div>
