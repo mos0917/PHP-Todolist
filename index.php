@@ -259,7 +259,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 border-bottom">
                                 <ul>
                                     <li>
                                         <span>期限:</span>
