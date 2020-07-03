@@ -87,6 +87,7 @@ if (isset($_POST['signup'])) {
             <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
             <label for="inputEmail">パスワード</label>
         </div>
+        <BR>
     <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
     <a href="register.php">会員登録はこちら</a>
 </form>
