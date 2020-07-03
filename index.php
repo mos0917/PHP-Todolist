@@ -302,17 +302,16 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     <div class="col-xs-12 col-lg-3">
                         ■タスク名:'.$task['name'].'
                     </div>
-                    <br>
-                    <div class="col-xs-12 col-lg-3">
-                        ■内容:'.$task['memo'].'
-                    </div>
-                    <br>
-                    <div class="col-xs-12 col-lg-3">
-                        ■期限日:'.$task['deadline_date'].'
-                    </div>
-                </li>
+                <li>
             <ol>
-
+            <br>
+            <div class="col-xs-12 col-lg-3">
+                ■内容:'.$task['memo'].'
+            </div>
+            <br>
+            <div class="col-xs-12 col-lg-3">
+                ■期限日:'.$task['deadline_date'].'
+            </div>
                 <dd>
                     <div class="modal fade" id="edittask'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
