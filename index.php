@@ -152,6 +152,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <meta charset="utf-8">
 <meta name="viewport" content="width=width=device-width, initial-scale=1">
+<link href="index_style.css" rel="stylesheet">
 <title>Todo List</title>
 </head>
 <body>
