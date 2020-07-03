@@ -24,7 +24,7 @@ include_once 'dbconnect.php';
 
 
 
-<form action="login.php" method="post">
+<form action="login.php" method="post" class="form-signup">
     <div class="text-left mb-4">
         <h1>会員登録</h1>
     </div>
