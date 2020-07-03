@@ -339,7 +339,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-12">
+                                            <div class="col-lg-12 border-bottom">
                                                 <ul>
                                                     <li>
                                                         <span>期限</span>
@@ -348,7 +348,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     </li> 
                                                 </ul>
                                             </div>
-                                            <HR>
+                                            <BR>
                                             <div class="col-lg-8 text-right">
                                             <button class="btn btn-btn btn-secondary" type="button" id="resettaskmodal" data-dismiss="modal">閉じる</button>
                                             </div>
