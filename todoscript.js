@@ -24,13 +24,13 @@ function comptask(){
 
             console.log(json)
             div = document.getElementById('comptaskname')
-            div.innerHTML = json.get.name
+            div.innerHTML = json.get[0].name
 
             div = document.getElementById('comptaskvalue')
-            div.innerHTML = json.get.memo
+            div.innerHTML = json.get[0].memo
 
             div = document.getElementById('compdeadline_date')
-            div.innerHTML = json.get.deadline_date
+            div.innerHTML = json.get[0].deadline_date
     })
     .catch((error) => console.log(error));
 
