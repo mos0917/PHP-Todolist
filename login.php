@@ -35,8 +35,8 @@ if (isset($_POST['login'])) {
         exit;
     } else {
         ?>
-		<div class="alert alert-danger" role="alert">メールアドレスとパスワードが一致しません。</div>
-	<?php
+        <div class="alert alert-danger" role="alert">メールアドレスとパスワードが一致しません。</div>
+        <?php
     }
 } ?>
 
@@ -65,31 +65,31 @@ if (isset($_POST['signup'])) {
     $query = "INSERT INTO users(username,email,password) VALUES('$username','$email','$password')";
     if ($mysqli->query($query)) {
         ?>
-		<div class="alert alert-success" role="alert">登録しました</div>
-		<?php
+        <div class="alert alert-success" role="alert">登録しました</div>
+        <?php
     } else {
         ?>
-		<div class="alert alert-danger" role="alert">エラーが発生しました。</div>
-		<?php
+        <div class="alert alert-danger" role="alert">エラーが発生しました。</div>
+        <?php
     }
 } ?>
 
-<form method="post">
-	<h1>Todo List ログイン</h1>
-	<div class="row">
-		<div class="col-xs-12 col-lg-12">
-			<input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required />
-		</div>
-	</div>
-		<br>
-	<div class="row">
-		<div class="col-xs-12 col-lg-12">
-			<input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
-		</div>
-	</div>
-	<br>
-	<button type="submit" class="btn btn-primary" name="login">ログインする</button>
-	<a href="register.php">会員登録はこちら</a>
+<form method="post" class="form-signin">
+    <h1>Todo List ログイン</h1>
+    <div class="row">
+        <div class="col-xs-12 col-lg-12">
+            <input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required />
+        </div>
+    </div>
+        <br>
+    <div class="row">
+        <div class="col-xs-12 col-lg-12">
+            <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" name="login">ログインする</button>
+    <a href="register.php">会員登録はこちら</a>
 </form>
 
 </div>
