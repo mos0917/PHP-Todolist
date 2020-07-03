@@ -25,19 +25,20 @@ include_once 'dbconnect.php';
 
 
 <form action="login.php" method="post">
-    <div class="text-center mb-4">
+    <div class="text-left mb-4">
         <h1>会員登録</h1>
     </div>
     <div class="form-group">
             <input type="text" class="form-control" name="username" placeholder="ユーザー名" required />
+            <label for="inputEmail">ユーザー名</label>
     </div>
-    <br>
     <div class="form-group">
         <input type="email"  class="form-control" name="email" placeholder="メールアドレス" required />
+        <label for="inputEmail">メールアドレス</label>
     </div>
-    <br>
     <div class="form-group">
         <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" name="password" placeholder="パスワード" required />
+        <label for="inputEmail">パスワード</label>
         <small id="passwordHelpBlock" class="form-text text-muted">
             8-20文字で入力してください。大文字、小文字、数字を組み合わせて入力してください。
         </small>
