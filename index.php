@@ -297,13 +297,9 @@ echo '<dl>';
 while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo'<div class="container">
             <div class="row">
-            <ol>
-                <li>
-                    <div class="col-xs-12 col-lg-3">
-                        ■タスク名:'.$task['name'].'
-                    </div>
-                <li>
-            <ol>
+            <div class="col-xs-12 col-lg-3">
+                ■タスク名:'.$task['name'].'
+            </div>
             <br>
             <div class="col-xs-12 col-lg-3">
                 ■内容:'.$task['memo'].'
