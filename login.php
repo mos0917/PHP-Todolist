@@ -76,8 +76,8 @@ if (isset($_POST['signup'])) {
 } ?>
 
 <form method="post" class="form-signin">
-    <div class="h3 mb-3 font-weight-normal">
-        <h1>Todo List ログイン</h1>
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
     </div>
     <div class="row">
         <div class="form-group">
