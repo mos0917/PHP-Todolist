@@ -23,16 +23,17 @@ function comptask(){
     .then((json) => {
 
             console.log(json)
-            div = document.getElementById('comptaskname')
+            div = document.getElementById('comptaskname0')
             div.innerHTML = json.get[0].name
 
-            div = document.getElementById('comptaskvalue')
+            div = document.getElementById('comptaskvalue0')
             div.innerHTML = json.get[0].memo
 
-            div = document.getElementById('compdeadline_date')
+            div = document.getElementById('compdeadline_date0')
             div.innerHTML = json.get[0].deadline_date
     })
     .catch((error) => console.log(error));
+    
 
 }
 
