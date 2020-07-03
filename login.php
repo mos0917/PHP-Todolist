@@ -83,13 +83,11 @@ if (isset($_POST['signup'])) {
             <input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required autofocus />
             <label for="inputEmail">メールアドレス</label>
         </div>
-        <br>
         <div class="form-group">
             <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
             <label for="inputEmail">パスワード</label>
         </div>
-    <br>
-    <button type="submit" class="btn btn-primary" name="login">ログインする</button>
+    <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
     <a href="register.php">会員登録はこちら</a>
 </form>
 
