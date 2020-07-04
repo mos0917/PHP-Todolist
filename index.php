@@ -155,43 +155,43 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <link href="index_style.css" rel="stylesheet">
 <title>Todo List</title>
 </head>
+
 <body>
-
-  <header>
-    <!-- 固定ナビゲーションバー -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">TodoList</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-header">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">ホーム <span class="sr-only">(現位置)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" aria-disabled="true">カレンダー</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ドロップダウン</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">リンク1</a>
-              <a class="dropdown-item" href="#">リンク2</a>
-              <a class="dropdown-item" href="#">リンク3</a>
+    <header>
+        <!-- 固定ナビゲーションバー -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">TodoList</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-header">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">ホーム <span class="sr-only">(現位置)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-disabled="true">カレンダー</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ドロップダウン</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">リンク1</a>
+                            <a class="dropdown-item" href="#">リンク2</a>
+                            <a class="dropdown-item" href="#">リンク3</a>
+                        </div>
+                    </li>
+                </ul>
+                <div>
+                    <input type="submit" class="btn btn-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
+                </div>
+                <form action="index.php" method="post" onsubmit="return logoutChk()">
+                    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
+                </form>
             </div>
-          </li>
-        </ul>
-        <div>
-            <input type="submit" class="btn btn-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
-        </div>
-        <form action="index.php" method="post" onsubmit="return logoutChk()">
-            <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
-        </form>
-      </div>
-    </nav>
-  </header>
+        </nav>
+    </header>
 
-
+</main>
     <div class="container">
         <div class="row">
             <div class="col-xs-1 col-lg-1 col align-self-center">
@@ -307,8 +307,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
         </div>
     </div>
 
-
-
     <?php
     $dbh = db_connect();
 
@@ -403,7 +401,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <HR>
         ';
     }
-
     ?>
 </main>
 
