@@ -192,7 +192,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     </nav>
   </header>
 
-
     <div class="container">
         <div class="row">
             <div class="col-xs-7 col-lg-10">
