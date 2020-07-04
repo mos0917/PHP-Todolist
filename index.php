@@ -182,9 +182,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </li>
                 </ul>
                 <div>
-                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="下に出るポップオーバー">ポップオーバー(下)</button>
-                </div>
-                <div>
                     <input type="submit" class="btn btn-outline-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
                 </div>
                 <form action="index.php" method="post" onsubmit="return logoutChk()">
