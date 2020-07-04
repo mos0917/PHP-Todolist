@@ -157,7 +157,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 </head>
 <body>
 
-<header>
+  <header>
     <!-- 固定ナビゲーションバー -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand" href="#">ナビゲーションバー</a>
@@ -193,228 +193,229 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
   </header>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-7 col-lg-10">
-            <h2>Todo List</h2>
-        </div>
-        <div class="col-xs-1 col-lg-1 col align-self-center">
-            <form action="index.php" method="post" onsubmit="return logoutChk()">
-                <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-lg-12">
-            <p><input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly></p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-10 col-lg-10">
-            <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
-        </div>
-        <div class="col-xs-2 col-lg-2 col align-self-center">
-            <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
-        </div>
-        <div class="col-xs-5 col-lg-5">
-            <span>今日は<?php echo date('Y年m月d日'); ?>です</span>
-        </div>
-        <br>
-    </div>
-
-
-    <form action="index.php" method="post" onsubmit="return errChk();">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-lg-3">
-                <ul>
-                    <li>
-                        <span>タスク名</span>
-                        <input type="text" class="form-control" id="taskname" name="name" value="<?php if (isset($name)) {
-                             echo $name;
-                                                                                                 } ?>">
-                    </li>
-                </ul>
+            <div class="col-xs-7 col-lg-10">
+                <h2>Todo List</h2>
             </div>
-            <div class="col-xs-12 col-lg-3">
-                <ul>
-                    <li>
-                        <span>内容    </span>
-                        <textarea class="form-control" id="taskvalue" rows="1" name="memo"><?php if (isset($memo)) {
-                            echo $memo;
-                                                                                           } ?> </textarea>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-lg-3">
-                <ul>
-                    <li>
-                        <span>期限</span>
-                        <br>
-                        <input type="date" name="deadline_date">
-                    </li>
-                </ul>
-            </div>
-            <div class="col align-self-center">
-                <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
+            <div class="col-xs-1 col-lg-1 col align-self-center">
+                <form action="index.php" method="post" onsubmit="return logoutChk()">
+                    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
+                </form>
             </div>
         </div>
-    </form>
-</div>
-<BR>
-<HR>
-
-<div class="modal fade" id="completedtask" tabindex="-1" role="dialog" aria-labelledby="completedtask" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">完了済みタスク</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+        <div class="row">
+            <div class="col-xs-12 col-lg-12">
+                <p><input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly></p>
             </div>
-            <div class="modal-body" id="modalbody">
-                <div class="row">
-                    <?php
-                    for ($count = 0; $count < 20; $count++) {
-                            echo '<div class="col-lg-12">
-                                <ul>
-                                    <li>
-                                        <span>タスク名:</span>
-                                        <span id="comptaskname'.$count.'" class="completetaskname">
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-12">
-                                <ul>
-                                    <li>
-                                        <span>内容:</span>
-                                        <span id="comptaskvalue'.$count.'" class="completetaskvalue">
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-12 border-bottom">
-                                <ul>
-                                    <li>
-                                        <span>期限:</span>
-                                        <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date">
-                                        </span>
-                                    </li> 
-                                </ul>
-                            </div>
-                            <HR>
-                        ';
-                    }
-                    ?>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-lg-10">
+                <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
+            </div>
+            <div class="col-xs-2 col-lg-2 col align-self-center">
+                <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
+            </div>
+            <div class="col-xs-5 col-lg-5">
+                <span>今日は<?php echo date('Y年m月d日'); ?>です</span>
+            </div>
+            <br>
+        </div>
+
+
+        <form action="index.php" method="post" onsubmit="return errChk();">
+            <div class="row">
+                <div class="col-xs-12 col-lg-3">
+                    <ul>
+                        <li>
+                            <span>タスク名</span>
+                            <input type="text" class="form-control" id="taskname" name="name" value="<?php if (isset($name)) {
+                                echo $name;
+                                                                                                     } ?>">
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-lg-3">
+                    <ul>
+                        <li>
+                            <span>内容    </span>
+                            <textarea class="form-control" id="taskvalue" rows="1" name="memo"><?php if (isset($memo)) {
+                                echo $memo;
+                                                                                               } ?> </textarea>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-lg-3">
+                    <ul>
+                        <li>
+                            <span>期限</span>
+                            <br>
+                            <input type="date" name="deadline_date">
+                        </li>
+                    </ul>
+                </div>
+                <div class="col align-self-center">
+                    <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                <button type="button" class="btn btn-primary">完了</button>
+        </form>
+    </div>
+    <BR>
+    <HR>
+
+    <div class="modal fade" id="completedtask" tabindex="-1" role="dialog" aria-labelledby="completedtask" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">完了済みタスク</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalbody">
+                    <div class="row">
+                        <?php
+                        for ($count = 0; $count < 20; $count++) {
+                                echo '<div class="col-lg-12">
+                                    <ul>
+                                        <li>
+                                            <span>タスク名:</span>
+                                            <span id="comptaskname'.$count.'" class="completetaskname">
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12">
+                                    <ul>
+                                        <li>
+                                            <span>内容:</span>
+                                            <span id="comptaskvalue'.$count.'" class="completetaskvalue">
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12 border-bottom">
+                                    <ul>
+                                        <li>
+                                            <span>期限:</span>
+                                            <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date">
+                                            </span>
+                                        </li> 
+                                    </ul>
+                                </div>
+                                <HR>
+                            ';
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-primary">完了</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
-<?php
-$dbh = db_connect();
+    <?php
+    $dbh = db_connect();
 
-$sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC';
-$stmt = $dbh->prepare($sql);
-$stmt->execute();
-$dbh = null;
+    $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC';
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+    $dbh = null;
 
-echo '<dl>';
+    echo '<dl>';
 
-while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo'<div class="container">
-            <div class="row">
-            <div class="col-xs-12 col-lg-3">
-                ■タスク名:'.$task['name'].'
-            </div>
-            <br>
-            <div class="col-xs-12 col-lg-3">
-                ■内容:'.$task['memo'].'
-            </div>
-            <br>
-            <div class="col-xs-12 col-lg-3">
-                ■期限日:'.$task['deadline_date'].'
-            </div>
-                <dd>
-                    <div class="modal fade" id="edittask'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="label1">Todo編集画面</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="index.php" method="post" name="edittaskform">
-                                        <input type="hidden" name="editdelid" value="'.$task['id'].'">
-                                        <div class="row">
-                                            
-                                            <div class="col-lg-12">
-                                                <ul>
-                                                    <li>
-                                                        <span>タスク名</span>
-                                                        <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
-                                                    </li>
-                                                </ul>
+    while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo'<div class="container">
+                <div class="row">
+                <div class="col-xs-12 col-lg-3">
+                    ■タスク名:'.$task['name'].'
+                </div>
+                <br>
+                <div class="col-xs-12 col-lg-3">
+                    ■内容:'.$task['memo'].'
+                </div>
+                <br>
+                <div class="col-xs-12 col-lg-3">
+                    ■期限日:'.$task['deadline_date'].'
+                </div>
+                    <dd>
+                        <div class="modal fade" id="edittask'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="label1">Todo編集画面</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="index.php" method="post" name="edittaskform">
+                                            <input type="hidden" name="editdelid" value="'.$task['id'].'">
+                                            <div class="row">
+                                                
+                                                <div class="col-lg-12">
+                                                    <ul>
+                                                        <li>
+                                                            <span>タスク名</span>
+                                                            <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <ul>
+                                                        <li>
+                                                            <span>内容</span>
+                                                            <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-12 border-bottom">
+                                                    <ul>
+                                                        <li>
+                                                            <span>期限</span>
+                                                            <br>
+                                                            <input type="date" name="editdeadline_date" value="'.$task['deadline_date'].'">
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                                <BR>
+                                                <div class="col-lg-8 align-self-center text-right">
+                                                <button class="btn btn-btn btn-secondary" type="button" id="resettaskmodal" data-dismiss="modal">閉じる</button>
+                                                </div>
+                                                <div class="col-lg-2 align-self-center text-right">
+                                                    <button type="submit" class="btn btn-danger" name="delete" value="delete" >削除</button>
+                                                </div>
+                                                <div class="col-lg-2 align-self-center text-right">
+
+                                                    <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
+                                                </div>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <ul>
-                                                    <li>
-                                                        <span>内容</span>
-                                                        <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-12 border-bottom">
-                                                <ul>
-                                                    <li>
-                                                        <span>期限</span>
-                                                        <br>
-                                                        <input type="date" name="editdeadline_date" value="'.$task['deadline_date'].'">
-                                                    </li> 
-                                                </ul>
-                                            </div>
-                                            <BR>
-                                            <div class="col-lg-8 align-self-center text-right">
-                                            <button class="btn btn-btn btn-secondary" type="button" id="resettaskmodal" data-dismiss="modal">閉じる</button>
-                                            </div>
-                                            <div class="col-lg-2 align-self-center text-right">
-                                                <button type="submit" class="btn btn-danger" name="delete" value="delete" >削除</button>
-                                            </div>
-                                            <div class="col-lg-2 align-self-center text-right">
-
-                                                <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <form action="index.php" method="post">
-                        <input type="hidden" name="method" value="put">
-                        <input type="hidden" name="id" value="'.$task['id'].'">
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
-                        <button type="show" class="btn btn-danger" >完了</button>
-                    </form>
-                </dd>
+                        <form action="index.php" method="post">
+                            <input type="hidden" name="method" value="put">
+                            <input type="hidden" name="id" value="'.$task['id'].'">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
+                            <button type="show" class="btn btn-danger" >完了</button>
+                        </form>
+                    </dd>
+                </div>
             </div>
-        </div>
-        <HR>
-    ';
-}
+            <HR>
+        ';
+    }
 
-?>
+    ?>
+</main>
 
 <footer>
     <div class="container">
