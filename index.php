@@ -155,7 +155,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <link href="index_style.css" rel="stylesheet">
 <title>Todo List</title>
 </head>
-<body>
+<body class="d-flex flex-column h-100">
 
 
 <div class="container">
