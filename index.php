@@ -160,7 +160,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
   <header>
     <!-- 固定ナビゲーションバー -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">ナビゲーションバー</a>
+      <a class="navbar-brand" href="#">TodoList</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -170,10 +170,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <a class="nav-link" href="#">ホーム <span class="sr-only">(現位置)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">リンク</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">無効</a>
+            <a class="nav-link" href="#" aria-disabled="true">カレンダー</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ドロップダウン</a>
@@ -184,23 +181,20 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-md-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="検索..." aria-label="検索...">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+        <div class="col-xs-2 col-lg-2 col align-self-center">
+            <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
+        </div>
+        <form action="index.php" method="post" onsubmit="return logoutChk()">
+            <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
         </form>
       </div>
     </nav>
   </header>
 
+
     <div class="container">
         <div class="row">
-            <div class="col-xs-7 col-lg-10">
-                <h2>Todo List</h2>
-            </div>
             <div class="col-xs-1 col-lg-1 col align-self-center">
-                <form action="index.php" method="post" onsubmit="return logoutChk()">
-                    <input class="btn btn-outline-primary" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
-                </form>
             </div>
         </div>
         <div class="row">
@@ -212,16 +206,13 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <div class="col-xs-10 col-lg-10">
                 <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
             </div>
-            <div class="col-xs-2 col-lg-2 col align-self-center">
-                <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
-            </div>
+
             <div class="col-xs-5 col-lg-5">
                 <span>今日は<?php echo date('Y年m月d日'); ?>です</span>
             </div>
             <br>
         </div>
-
-
+        
         <form action="index.php" method="post" onsubmit="return errChk();">
             <div class="row">
                 <div class="col-xs-12 col-lg-3">
