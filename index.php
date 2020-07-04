@@ -181,7 +181,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             </div>
           </li>
         </ul>
-        <div class="col-xs-2 col-lg-2 col align-self-center">
+        <div>
             <input type="submit" class="btn btn-info" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
         </div>
         <form action="index.php" method="post" onsubmit="return logoutChk()">
@@ -197,11 +197,11 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <div class="col-xs-1 col-lg-1 col align-self-center">
             </div>
         </div>
-        <div class="row">
+        <!---<div class="row">
             <div class="col-xs-12 col-lg-12">
                 <p><input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly></p>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-xs-10 col-lg-10">
                 <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
