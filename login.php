@@ -76,10 +76,10 @@ if (isset($_POST['signup'])) {
 } ?>
 
 <form method="post" class="form-signin">
+    <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
     <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
     </div>
-    <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
         <div class="form-group">
             <input type="email"  class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required autofocus />
             <label for="inputEmail">メールアドレス</label>
