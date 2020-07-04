@@ -11,7 +11,8 @@ body {
   min-height: 100vh;
 }
 
-main {
+main > .container {
+  padding: 60px 15px 0;
   flex: 1;
 }
 
