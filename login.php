@@ -76,8 +76,8 @@ if (isset($_POST['signup'])) {
 } ?>
 
 <form method="post" class="form-signin">
-    <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
     <div class="text-center mb-4">
+        <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
     </div>
         <div class="form-group">
