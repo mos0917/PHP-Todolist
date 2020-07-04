@@ -400,7 +400,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     ?>
 </main>
 
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer mt-auto py-3 bg-center">
     <div class="container px-3">
         <span class="text-muted">Copyright &copy; 2019-2020 Mos9 at fukurou All Rights Reserved.</span>
     </div>
