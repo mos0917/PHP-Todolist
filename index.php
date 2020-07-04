@@ -155,7 +155,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <link href="index_style.css" rel="stylesheet">
 <title>Todo List</title>
 </head>
-<body >
+<body>
 
 
 <div class="container">
@@ -381,11 +381,7 @@ while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 ?>
 
-<footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-        <p class="mt-5 mb-3 text-muted text-center">Copyright &copy; 2019-2020 Mos9 at fukurou All Rights Reserved.</p>
-    </div>
-</footer>
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
