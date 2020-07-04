@@ -182,7 +182,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </li>
                 </ul>
                 <div>
-                    <a class="btn btn-outline-success mr-sm-2" role="button" data-toggle="popover" data-placement="bottom" title="使用方法" data-content="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">使用方法</a>
+                    <button type="button" class="btn btn-outline-success" data-container="body" data-toggle="popover" data-placement="bottom" data-content="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">使用方法</button>
                 </div>
                 <div>
                     <input type="submit" class="btn btn-outline-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
