@@ -193,10 +193,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 
 </main>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-1 col-lg-1 col align-self-center">
-            </div>
-        </div>
         <!---<div class="row">
             <div class="col-xs-12 col-lg-12">
                 <p><input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly></p>
