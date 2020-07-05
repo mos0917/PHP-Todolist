@@ -189,7 +189,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         使用方法
                     </button>
                 </div>
-                <div class="modal fade" id="howtouse" tabindex="-1" role="dialog" aria-labelledby="howtouse" aria-hidden="true">
+                <div class="modal fade" id="howtouse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -203,6 +203,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
