@@ -160,9 +160,9 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     <header>
         <!-- 固定ナビゲーションバー -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="py-2" href="index.php">
-            <img src="../../core/img/fukurouimg_white.svg" width="24" height="24"></img>
-        </a>
+            <a class="py-2" href="index.php">
+                <img src="../../core/img/fukurouimg_white.svg" width="24" height="24"></img>
+            </a>
             <a class="navbar-brand text-light">TodoList</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
                 <span class="navbar-toggler-icon"></span>
@@ -184,30 +184,30 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         </div>
                     </li>
                 </ul>
-                <div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Launch demo modal
-                    </button>
-                </div>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    ココを押すと表示
+                </button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                    <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <h5 class="modal-title" id="exampleModalLabel">モーダルのタイトル</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <p>モーダルのコンテンツ文。</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                <button type="button" class="btn btn-primary">変更を保存</button>
+                            </div><!-- /.modal-footer -->
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <div>
                     <input type="submit" class="btn btn-outline-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
                 </div>
                 <form action="index.php" method="post" onsubmit="return logoutChk()">
