@@ -2,8 +2,8 @@ html,
 body {
   height: 100%;
 }
-header >.nav {
-  color: #ffffff
+header > .navbar-brand{
+  color:#ffffff
 }
 
 body {
