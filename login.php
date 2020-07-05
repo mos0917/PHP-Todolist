@@ -55,8 +55,6 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
-    <div class="container">
-
         <?php
         // signupがPOSTされたときに下記を実行
         if (isset($_POST['signup'])) {
@@ -76,6 +74,7 @@ if (isset($_POST['login'])) {
                 <?php
             }
         } ?>
+    <div class="container">
 
         <form method="post" class="form-signin">
             <div class="text-center mb-4">
