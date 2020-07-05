@@ -160,10 +160,13 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     <header>
         <!-- 固定ナビゲーションバー -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="py-2" href="index.php">
-            <svg xmlns="../../core/img/fukurouimg_white.svg" width="24" height="24"></svg>
+        <a class="py-2" href="#">
+            <svg xmlns="../../core/img/fukurouimg_white.svg" width="24" height="24" role="img" focusable="false"></svg>
         </a>
-            <a class="navbar-brand">TodoList</a>
+            <a class="navbar-brand" href="#">TodoList</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbar-header">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
