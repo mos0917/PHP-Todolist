@@ -164,13 +164,13 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <img src="../../core/img/fukurouimg_white.svg" width="24" height="24"></img>
         </a>
             <a class="navbar-brand text-light">TodoList</a>
-            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
                 <span class="navbar-toggler-icon"></span>
-            </button> -->
+            </button>
             <div class="collapse navbar-collapse" id="navbar-header">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">ホーム <span class="sr-only">(現位置)</span></a>
+                        <a class="nav-link" href="index.php">ホーム <span class="sr-only">(現位置)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">カレンダー</a>
