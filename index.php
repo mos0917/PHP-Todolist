@@ -161,7 +161,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
         <!-- 固定ナビゲーションバー -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="24" height="24" href="index.php">
-            <a class="navbar-brand">TodoList</a>
+            <a class="navbar-brand" href="#">TodoList</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
                 <span class="navbar-toggler-icon"></span>
             </button>
