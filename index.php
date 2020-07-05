@@ -185,9 +185,27 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </li>
                 </ul>
                 <div>
-                    <button type="button" class="btn btn-outline-warning mr-sm-2" data-toggle="tooltip" data-placement="bottom" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#howtouse">
                         使用方法
                     </button>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="howtouse" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">使用方法</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <input type="submit" class="btn btn-outline-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
@@ -201,11 +219,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 
 <main role="main" class="flex-shrink-0">
     <div class="container">
-        <!---<div class="row">
-            <div class="col-xs-12 col-lg-12">
-                <p><input class="form-control" type="text" placeholder="以下に「タスク名」、「内容」を入力し、「登録」ボタンを押下してください。" readonly></p>
-            </div>
-        </div> -->
         <div class="row">
             <div class="col-xs-10 col-lg-10">
                 <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
