@@ -160,7 +160,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     <header>
         <!-- 固定ナビゲーションバー -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="py-2" href="#">
+        <a class="py-2" href="index.php">
             <img src="../../core/img/fukurouimg_white.svg" width="24" height="24"></img>
         </a>
             <a class="navbar-brand text-light">TodoList</a>
