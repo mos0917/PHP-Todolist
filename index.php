@@ -154,6 +154,25 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <meta name="viewport" content="width=width=device-width, initial-scale=1">
 <link href="index_style.css" rel="stylesheet">
 <title>Todo List</title>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">モーダルのタイトル</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>モーダルのコンテンツ文。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-primary">変更を保存</button>
+            </div><!-- /.modal-footer -->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -187,26 +206,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     ココを押すと表示
                 </button>
-
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">モーダルのタイトル</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>モーダルのコンテンツ文。</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                                <button type="button" class="btn btn-primary">変更を保存</button>
-                            </div><!-- /.modal-footer -->
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
                 <div>
                     <input type="submit" class="btn btn-outline-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
                 </div>
