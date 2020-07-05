@@ -158,17 +158,16 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">モーダルのタイトル</h5>
+                <h5 class="modal-title" id="exampleModalLabel">使用方法</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>モーダルのコンテンツ文。</p>
+                <p>以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                <button type="button" class="btn btn-primary">変更を保存</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
             </div><!-- /.modal-footer -->
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -203,9 +202,11 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         </div>
                     </li>
                 </ul>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    ココを押すと表示
-                </button>
+                <div>
+                    <button type="button" class="btn btn-outline-warning mr-sm-2" data-toggle="modal" data-target="#exampleModal">
+                        使用方法
+                    </button>
+                </div>
                 <div>
                     <input type="submit" class="btn btn-outline-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
                 </div>
