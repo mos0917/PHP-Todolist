@@ -185,29 +185,29 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </li>
                 </ul>
                 <div>
-                    <button type="button" class="btn btn-primary mr-sm-2" data-toggle="modal" data-target="#howtouse">
-                        使用方法
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#howtouse">
+                        Launch demo modal
                     </button>
                 </div>
                 <div class="modal fade" id="howtouse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">使用方法</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
                         </div>
                     </div>
-                </div>
+                    </div>
                 <div>
                     <input type="submit" class="btn btn-outline-info mr-sm-2" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
                 </div>
