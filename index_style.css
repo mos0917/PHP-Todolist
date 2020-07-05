@@ -2,6 +2,9 @@ html,
 body {
   height: 100%;
 }
+header >.nav {
+  color: #ffffff
+}
 
 body {
   margin: 0;
