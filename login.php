@@ -35,7 +35,9 @@ if (isset($_POST['login'])) {
         exit;
     } else {
         ?>
-        <div class="alert alert-danger" role="alert">メールアドレスとパスワードが一致しません。</div>
+        <script>
+            alert("メールアドレスとパスワードが一致しません。");
+        </script>
         <?php
     }
 } ?>
@@ -55,6 +57,8 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
+    <div class="container">
+
         <?php
         // signupがPOSTされたときに下記を実行
         if (isset($_POST['signup'])) {
@@ -66,15 +70,19 @@ if (isset($_POST['login'])) {
             $query = "INSERT INTO users(username,email,password) VALUES('$username','$email','$password')";
             if ($mysqli->query($query)) {
                 ?>
-                <div class="alert alert-success" role="alert">登録しました</div>
+                <script>
+                    alert("登録しました");
+                </script>
+
                 <?php
             } else {
                 ?>
-                <div class="alert alert-danger" role="alert">エラーが発生しました。</div>
+                <script>
+                    alert("エラーが発生しました。");
+                </script>
                 <?php
             }
         } ?>
-    <div class="container">
 
         <form method="post" class="form-signin">
             <div class="text-center mb-4">
