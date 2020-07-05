@@ -387,7 +387,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                                         </li> 
                                                     </ul>
                                                 </div>
-                                                <BR>
                                                 <div class="col-lg-8 align-self-center text-right">
                                                 <button class="btn btn-btn btn-secondary" type="button" id="resettaskmodal" data-dismiss="modal">閉じる</button>
                                                 </div>
@@ -414,6 +413,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </dd>
                 </div>
             </div>
+            <HR>
         ';
     }
     ?>
