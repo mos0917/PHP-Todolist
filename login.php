@@ -35,7 +35,9 @@ if (isset($_POST['login'])) {
         exit;
     } else {
         ?>
-        <div class="alert alert-danger" role="alert">メールアドレスとパスワードが一致しません。</div>
+        <header>
+            <div class="alert alert-danger" role="alert">メールアドレスとパスワードが一致しません。</div>
+        </header>
         <?php
     }
 } ?>
