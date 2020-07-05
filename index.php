@@ -203,15 +203,15 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </li>
                 </ul>
                 <div>
-                    <button type="button" class="btn btn-outline-warning mr-sm-2 my-sm-1" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-outline-warning m-sm-1" data-toggle="modal" data-target="#exampleModal">
                         使用方法
                     </button>
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-outline-info my-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
+                    <input type="submit" class="btn btn-outline-info m-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
                 </div>
                 <form action="index.php" method="post" onsubmit="return logoutChk()">
-                    <input class="btn btn-primary my-sm-1" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
+                    <input class="btn btn-primary m-sm-1" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
                 </form>
             </div>
         </nav>
