@@ -53,6 +53,9 @@ if (isset($_POST['login'])) {
     <!-- Bootstrap読み込み（スタイリングのため） -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="login_style.css" rel="stylesheet">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="<375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com>">
 </head>
 </head>
 
@@ -99,6 +102,7 @@ if (isset($_POST['login'])) {
             </div>
             <BR>
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <a href="register.php">会員登録はこちら</a>
         </form>
 
