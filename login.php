@@ -124,7 +124,7 @@ if (isset($_POST['login'])) {
             function onSignIn(googleUser) {/* google のログイン情報を取得*/
                 var id_token = googleUser.getAuthResponse().id_token;
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'https://yourbackend.example.com/tokensignin');
+                xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/login.php');
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xhr.onload = function() {
                     console.log('Signed in as: ' + xhr.responseText);
