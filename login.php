@@ -1,4 +1,46 @@
 <?php
+ob_start();
+// ここから、register.phpと同様
+session_start();
+if (isset($_SESSION['user']) != '') {
+    header('Location: index.php');
+}
+include_once 'dbconnect.php';
+// ここまで、register.phpと同様
+?>
+
+<?php
+if (isset($_POST['login'])) {
+    $email = $mysqli->real_escape_string($_POST['email']);
+    $password = $mysqli->real_escape_string($_POST['password']);
+    // クエリの実行
+    $query = "SELECT * FROM users WHERE email='$email'";
+    $result = $mysqli->query($query);
+    if (!$result) {
+        echo 'クエリーが失敗しました。' . $mysqli->error;
+        $mysqli->close();
+        exit();
+    }
+    // パスワード(暗号化済み）とユーザーIDの取り出し
+    while ($row = $result->fetch_assoc()) {
+        $db_hashed_pwd = $row['password'];
+        $user_id = $row['user_id'];
+    }
+    // データベースの切断
+    $result->close();
+    // ハッシュ化されたパスワードがマッチするかどうかを確認
+    if (password_verify($password, $db_hashed_pwd)) {
+        $_SESSION['user'] = $user_id;
+        header('Location: index.php');
+        exit;
+    } else {
+        ?>
+        <script>
+            alert("メールアドレスとパスワードが一致しません。");
+        </script>
+        <?php
+    }
+}
 //ここからgoogle認証
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -46,49 +88,7 @@ if (@$_SESSION['accessToken']) {
 
 echo "</pre>";
 //ここまでgoogle認証
-
-ob_start();
-// ここから、register.phpと同様
-session_start();
-if (isset($_SESSION['user']) != '') {
-    header('Location: index.php');
-}
-include_once 'dbconnect.php';
-// ここまで、register.phpと同様
 ?>
-
-<?php
-if (isset($_POST['login'])) {
-    $email = $mysqli->real_escape_string($_POST['email']);
-    $password = $mysqli->real_escape_string($_POST['password']);
-    // クエリの実行
-    $query = "SELECT * FROM users WHERE email='$email'";
-    $result = $mysqli->query($query);
-    if (!$result) {
-        echo 'クエリーが失敗しました。' . $mysqli->error;
-        $mysqli->close();
-        exit();
-    }
-    // パスワード(暗号化済み）とユーザーIDの取り出し
-    while ($row = $result->fetch_assoc()) {
-        $db_hashed_pwd = $row['password'];
-        $user_id = $row['user_id'];
-    }
-    // データベースの切断
-    $result->close();
-    // ハッシュ化されたパスワードがマッチするかどうかを確認
-    if (password_verify($password, $db_hashed_pwd)) {
-        $_SESSION['user'] = $user_id;
-        header('Location: index.php');
-        exit;
-    } else {
-        ?>
-        <script>
-            alert("メールアドレスとパスワードが一致しません。");
-        </script>
-        <?php
-    }
-} ?>
 
 <!DOCTYPE HTML>
 <html lang="ja">
