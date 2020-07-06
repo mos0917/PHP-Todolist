@@ -1,16 +1,51 @@
 <?php
+//ここからgoogle認証
+require_once __DIR__ . '/../vendor/autoload.php';
 
-/*require_once 'vendor/autoload.php';
+$self = "https://{$_SERVER['HTTP_HOST']}/test/oauth.php";
+$success = "$self?mode=success";
+$secretsJson = '../client_secrets.json';
 
-$id_token = filter_input(INPUT_POST, 'id_token');
-define('CLIENT_ID', '375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com');
+$p = $_GET;
+$mode = @$p['mode'];
 
-$client = new Google_Client(['client_id' => CLIENT_ID]);
-$payload = $client->verifyIdToken($id_token);
-if ($payload) {
-    $userid = $payload['sub'];
-}*/
-//ここまでgoogle OAuth認証
+$client = new Google_Client();
+$client->setAuthConfig($secretsJson);
+$client->addScope(Google_Service_Plus::USERINFO_PROFILE);
+$client->setAccessType('offline');
+$client->setApprovalPrompt('force');
+$client->setRedirectUri($success);
+$authUrl = $client->createAuthUrl();
+echo "<p><a href='$authUrl'>Auth</a> <a href='$self?mode=clear'>Clear session</a></p>";
+echo "<pre>";
+
+session_start();
+
+if ($mode == 'clear') {
+    $_SESSION['accessToken'] = '';
+} elseif ($mode == 'success') {
+    echo "<p>SUCCESS: {$p['code']}</p>";
+    $client->authenticate($p['code']);
+    $accessToken = $client->getAccessToken();
+    if ($accessToken) {
+        $_SESSION['accessToken'] = $accessToken;
+    }
+}
+
+if (@$_SESSION['accessToken']) {
+    var_export($_SESSION['accessToken']);
+    $client->setAccessToken($_SESSION['accessToken']);
+    $plus = new Google_Service_Plus($client);
+    $me = $plus->people->get('me');
+    echo "<p><img src='{$me['image']['url']}'></p>";
+    echo "<p>NAME: {$me['displayName']}</p>";
+    echo "<p>GENDER: {$me['gender']}</p>";
+    echo "<p>BIRTHDAY: {$me['birthday']}</p>";
+    echo "<p>URL: {$me['url']}</p>";
+}
+
+echo "</pre>";
+//ここまでgoogle認証
 
 ob_start();
 // ここから、register.phpと同様
@@ -116,21 +151,8 @@ if (isset($_POST['login'])) {
             </div>
             <BR>
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <a href="register.php">会員登録はこちら</a>
         </form>
-
-        <script>
-            function onSignIn(googleUser) {/* google のログイン情報を取得*/
-                var profile = googleUser.getBasicProfile();
-                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-                console.log('Name: ' + profile.getName());
-                console.log('Image URL: ' + profile.getImageUrl());
-                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            }
-        </script>
-
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
