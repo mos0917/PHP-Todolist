@@ -47,7 +47,8 @@ if (isset($_POST['login'])) {
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="<375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com>">
+   <!-- <meta name="viewport" content="width=width=device-width, initial-scale=1"> -->
     <title>Todo List Login</title>
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap読み込み（スタイリングのため） -->
@@ -55,7 +56,7 @@ if (isset($_POST['login'])) {
     <link href="login_style.css" rel="stylesheet">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="<375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com>">
+
 </head>
 </head>
 
