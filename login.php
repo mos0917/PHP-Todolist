@@ -41,53 +41,6 @@ if (isset($_POST['login'])) {
         <?php
     }
 }
-//ここからgoogle認証
-require_once __DIR__ . '/../vendor/autoload.php';
-
-$self = "https://{$_SERVER['HTTP_HOST']}/test/oauth.php";
-$success = "$self?mode=success";
-$secretsJson = '../client_secrets.json';
-
-$p = $_GET;
-$mode = @$p['mode'];
-
-$client = new Google_Client();
-$client->setAuthConfig($secretsJson);
-$client->addScope(Google_Service_Plus::USERINFO_PROFILE);
-$client->setAccessType('offline');
-$client->setApprovalPrompt('force');
-$client->setRedirectUri($success);
-$authUrl = $client->createAuthUrl();
-echo "<p><a href='$authUrl'>Auth</a> <a href='$self?mode=clear'>Clear session</a></p>";
-echo "<pre>";
-
-session_start();
-
-if ($mode == 'clear') {
-    $_SESSION['accessToken'] = '';
-} elseif ($mode == 'success') {
-    echo "<p>SUCCESS: {$p['code']}</p>";
-    $client->authenticate($p['code']);
-    $accessToken = $client->getAccessToken();
-    if ($accessToken) {
-        $_SESSION['accessToken'] = $accessToken;
-    }
-}
-
-if (@$_SESSION['accessToken']) {
-    var_export($_SESSION['accessToken']);
-    $client->setAccessToken($_SESSION['accessToken']);
-    $plus = new Google_Service_Plus($client);
-    $me = $plus->people->get('me');
-    echo "<p><img src='{$me['image']['url']}'></p>";
-    echo "<p>NAME: {$me['displayName']}</p>";
-    echo "<p>GENDER: {$me['gender']}</p>";
-    echo "<p>BIRTHDAY: {$me['birthday']}</p>";
-    echo "<p>URL: {$me['url']}</p>";
-}
-
-echo "</pre>";
-//ここまでgoogle認証
 ?>
 
 <!DOCTYPE HTML>
