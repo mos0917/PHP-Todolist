@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'vendor/autoload.php';
 
 $id_token = filter_input(INPUT_POST, 'id_token');
@@ -9,3 +10,5 @@ $payload = $client->verifyIdToken($id_token);
 if ($payload) {
     $userid = $payload['sub'];
 }
+
+echo json_encode($payload, JSON_PRETTY_PRINT);
