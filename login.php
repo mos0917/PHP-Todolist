@@ -62,7 +62,7 @@ if (isset($_POST['login'])) {
 
 <body>
     <div class="container">
-
+    <div class="alert alert-primary" role="alert">googleログインボタンは未実装のため押下しないようにお願い致します。</div>
         <?php
         // signupがPOSTされたときに下記を実行
         if (isset($_POST['signup'])) {
@@ -121,7 +121,7 @@ if (isset($_POST['login'])) {
             };
             xhr.send('idtoken=' + id_token);
         }
-        
+
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
