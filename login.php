@@ -114,16 +114,7 @@ if (isset($_POST['login'])) {
     <script>
         function onSignIn(googleUser) {
             var id_token = googleUser.getAuthResponse().id_token;
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-                const response = JSON.parse(xhr.responseText);
-                
-                console.log('idtoken:' + response[id_token]);
-                console.log('emil:' + response[email]);
-                console.log('img:' + response[img]);
-            };
+            console.log('token_id:' + id_token);
         }
 
         function signOut() {
