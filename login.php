@@ -116,7 +116,7 @@ if (isset($_POST['login'])) {
             xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
-            console.log('Signed in as: ' + xhr.responseText);
+                console.log('Signed in as: ' + xhr.responseText);
             };
             xhr.send('idtoken=' + id_token);
         

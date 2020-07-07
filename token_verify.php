@@ -10,4 +10,4 @@ $payload = $client->verifyIdToken($id_token);
 if ($payload) {
     $userid = $payload['sub'];
 }
-echo json_encode($$payload, JSON_PRETTY_PRINT);
+echo json_encode($payload, JSON_PRETTY_PRINT);
