@@ -114,7 +114,18 @@ if (isset($_POST['login'])) {
     <script>
         function onSignIn(googleUser) {
             var id_token = googleUser.getAuthResponse().id_token;
-            console.log('token_id:' + id_token);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:3000/auth');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                const response = JSON.parse(xhr.responseText);
+                const email = document.createElement('p');
+                const img = document.createElement('img');
+                
+                console.log('idtoken:' + id_token);
+                console.log('emil:' + email);
+                console.log('img:' + img);
+            };
         }
 
         function signOut() {
