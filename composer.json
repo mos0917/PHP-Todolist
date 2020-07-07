@@ -1,5 +1,6 @@
 {
     "require":{
-        "php":"~7.3.13"
+        "php":"~7.3.13",
+        "google/apiclient": "^2.5"
     }
 }
