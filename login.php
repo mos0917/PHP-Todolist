@@ -114,9 +114,14 @@ if (isset($_POST['login'])) {
     <script>
         function onSignIn(googleUser) {
             var id_token = googleUser.getAuthResponse().id_token;
-            var email = googleUser.getAuthResponse().email;
-            console.log('token_id:' + id_token);
-            console.log('email:' + email);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'token_berify.php');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                console.log('Signed in as: ' + xhr.responseText);
+            };
+            xhr.send('idtoken=' + id_token);
+            window.location.href = 'index.php';
         }
 
         function signOut() {
