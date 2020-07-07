@@ -62,7 +62,7 @@ if (isset($_POST['login'])) {
 
 <body>
     <div class="container">
-    <div class="alert alert-primary" role="alert">googleログインボタンは未実装のため押下しないようにお願い致します。</div>
+    <div class="alert alert-danger" role="alert">googleログインボタンは未実装のため押下しないようにお願い致します。</div>
         <?php
         // signupがPOSTされたときに下記を実行
         if (isset($_POST['signup'])) {
