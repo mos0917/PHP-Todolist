@@ -114,7 +114,9 @@ if (isset($_POST['login'])) {
     <script>
         function onSignIn(googleUser) {
             var id_token = googleUser.getAuthResponse().id_token;
+            var email = googleUser.getAuthResponse().email;
             console.log('token_id:' + id_token);
+            console.log('email:' + email);
         }
 
         function signOut() {
