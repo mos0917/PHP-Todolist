@@ -105,6 +105,7 @@ if (isset($_POST['login'])) {
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <a href="#" onclick="signOut();">Sign out</a>
+            <br>
             <a href="register.php">会員登録はこちら</a>
         </form>
     </div>
