@@ -104,6 +104,7 @@ if (isset($_POST['login'])) {
             <BR>
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <a href="#" onclick="signOut();">Sign out</a>
             <a href="register.php">会員登録はこちら</a>
         </form>
     </div>
@@ -116,7 +117,7 @@ if (isset($_POST['login'])) {
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
 
-        <a href="#" onclick="signOut();">Sign out</a>
+        
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
