@@ -7,7 +7,6 @@ if (isset($_SESSION['user']) != '') {
 }
 include_once 'dbconnect.php';
 // ここまで、register.phpと同様
-require_once 'vendor/autoload.php';
 ?>
 
 <?php
@@ -42,19 +41,6 @@ if (isset($_POST['login'])) {
         <?php
     }
 }
-
-// Get $id_token via HTTPS POST.
-
-$client = new Google_Client(['client_id' => $CLIENT_ID]);  // Specify the CLIENT_ID of the app that accesses the backend
-$payload = $client->verifyIdToken($id_token);
-if ($payload) {
-    $userid = $payload['sub'];
-    // If request specified a G Suite domain:
-    //$domain = $payload['hd'];
-} else {
-  // Invalid ID token
-}
-
 ?>
 
 <!DOCTYPE HTML>
@@ -127,7 +113,7 @@ if ($payload) {
         function onSignIn(googleUser) {
             var id_token = googleUser.getAuthResponse().id_token;
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/login.php');
+            xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
             console.log('Signed in as: ' + xhr.responseText);
