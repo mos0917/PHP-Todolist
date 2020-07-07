@@ -121,7 +121,7 @@ if (isset($_POST['login'])) {
                 console.log('Signed in as: ' + xhr.responseText);
             };
             xhr.send('idtoken=' + id_token);
-            window.location.href = 'index.php';
+            //window.location.href = 'index.php';
         }
 
         function signOut() {

@@ -219,7 +219,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 
 <main role="main" class="flex-shrink-0">
     <div class="container">
-        <div class="alert alert-succes" role="alert">ログイン成功</div>
         <div class="row">
             <div class="col-xs-10 col-lg-10">
                 <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
