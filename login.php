@@ -52,7 +52,7 @@ if (isset($_POST['login'])) {
     <meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com">
    <!-- <meta name="viewport" content="width=width=device-width, initial-scale=1"> -->
     <title>Todo List Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login_style.css">
     <!-- Bootstrap読み込み（スタイリングのため） -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="login_style.css" rel="stylesheet">
