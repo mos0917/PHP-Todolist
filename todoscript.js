@@ -17,12 +17,9 @@ function errChk(){ //タスク登録時のエラーチェック
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
-    console.log('id_token:' + id_token);//id_tokenを表示
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
-    console.log(xhr.open);//postのデバッグ
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    console.log('token_verify.phpにheader付きでpost');
     xhr.onload = function() {
         console.log('Signed in as: ' + xhr.responseText);
     };
