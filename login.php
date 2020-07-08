@@ -120,6 +120,9 @@ if (isset($_POST['login'])) {
             xhr.onload = function() {
                 console.log('Signed in as: ' + xhr.responseText);
             };
+            xhr.onerror = function() {
+                console.log('送信できませんでした。');
+            };
             console.log('send前');
             xhr.send('idtoken=' + id_token);
         }
