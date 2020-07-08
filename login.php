@@ -105,7 +105,7 @@ if (isset($_POST['login'])) {
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
         </form>
         <form method="post" class="googleauth">
-            <div class="g-signin2" onclick="onSignIn(googleUser);"></div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </form>
         <a href="#" onclick="signOut();">Sign out</a>
         <br>
