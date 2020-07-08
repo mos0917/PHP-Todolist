@@ -120,6 +120,7 @@ if (isset($_POST['login'])) {
             xhr.onload = function() {
                 console.log('Signed in as: ' + xhr.responseText);
             };
+            console.log('send前');
             xhr.send('idtoken=' + id_token);
         }
 
