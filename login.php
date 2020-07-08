@@ -114,7 +114,6 @@ if (isset($_POST['login'])) {
     <script>
         function onSignIn(googleUser) {
             var id_token = googleUser.getAuthResponse().id_token;
-            console.log(id_token);
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'token_berify.php');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

@@ -11,4 +11,5 @@ if ($payload) {
     $userid = $payload['sub'];
 }
 
-echo json_encode($payload, JSON_PRETTY_PRINT);
+var_dump('client:', $client);
+var_dump('token:', $id_token);
