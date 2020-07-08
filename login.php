@@ -113,14 +113,16 @@ if (isset($_POST['login'])) {
     </div>
     <script>
         function onSignIn(googleUser) {
+            function onSignIn(googleUser) {
             var id_token = googleUser.getAuthResponse().id_token;
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_berify.php');
+            xhr.open('POST', 'test.php');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
                 console.log('Signed in as: ' + xhr.responseText);
             };
             xhr.send('idtoken=' + id_token);
+        }
         }
 
         function signOut() {
