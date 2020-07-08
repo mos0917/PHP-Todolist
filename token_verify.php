@@ -1,5 +1,6 @@
 <?php
 
+
 require_once 'vendor/autoload.php';
 
 $id_token = filter_input(INPUT_POST, 'id_token');

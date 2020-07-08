@@ -122,6 +122,7 @@ if (isset($_POST['login'])) {
             };
             xhr.send('idtoken=' + id_token);
         }
+        
 
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
