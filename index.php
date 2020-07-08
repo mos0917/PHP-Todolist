@@ -14,6 +14,9 @@ if (!isset($_SESSION['user'])) {
     header('Location: login.php');
 }
 
+if(!isset($_SESSION['login'])){
+    header('Location: login.php');
+}
 // ユーザーIDからユーザー名を取り出す
 $query = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
 $result = $mysqli->query($query);

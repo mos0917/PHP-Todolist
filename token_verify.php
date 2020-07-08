@@ -19,3 +19,6 @@ var_dump('payload:', $payload);
 if ($payload) {
     $userid = $payload['sub'];
 }
+
+$_SESSION['login'] = true;
+exit;

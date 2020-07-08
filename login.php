@@ -103,8 +103,8 @@ if (isset($_POST['login'])) {
             <BR>
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
             <a href="register.php">会員登録はこちら</a>
-            <!--<div class="g-signin2" data-onsuccess="onSignIn" name="id_token"></div>
-            <a href="#" onclick="signOut();">Sign out</a> -->
+            <div class="g-signin2" data-onsuccess="onSignIn" name="id_token"></div>
+            <a href="#" onclick="signOut();">Sign out</a>
         </form>
             <br>
     </div>
