@@ -102,13 +102,11 @@ if (isset($_POST['login'])) {
             </div>
             <BR>
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
-        </form>
-        <form method="post" name="googleauth">
-            <div class="g-signin2" data-onsuccess="onSignIn" name="id_token"></div>
-        </form>
-            <a href="#" onclick="signOut();">Sign out</a>
-            <br>
             <a href="register.php">会員登録はこちら</a>
+        </form>
+        <div class="g-signin2" data-onsuccess="onSignIn" name="id_token"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
+            <br>
     </div>
     <script>
         function onSignIn(googleUser) {
