@@ -1,6 +1,5 @@
 <?php
 
-use GuzzleHttp\Psr7\Response;
 
 session_start();
 require_once 'vendor/autoload.php';
