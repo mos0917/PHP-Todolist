@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 require_once 'vendor/autoload.php';
 
 $id_token = filter_input(INPUT_POST, 'id_token');
@@ -11,3 +10,6 @@ $payload = $client->verifyIdToken($id_token);
 if ($payload) {
     $userid = $payload['sub'];
 }
+
+var_dump('client:', $client);
+var_dump('token:', $id_token);
