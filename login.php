@@ -123,7 +123,6 @@ if (isset($_POST['login'])) {
             xhr.onerror = function() {
                 console.log('送信できませんでした。');
             };
-            console.log('send前');
             xhr.send('idtoken=' + id_token);
         }
 
