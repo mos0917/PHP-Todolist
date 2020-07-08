@@ -4,7 +4,7 @@
 session_start();
 require_once 'vendor/autoload.php';
 
-$id_token = filter_input(INPUT_POST, 'id_token');
+$id_token = $_POST['id_token'];
 
 var_dump('トークン:', $id_token);//id_tokenが表示されるか確認
 
