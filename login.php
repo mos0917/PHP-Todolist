@@ -118,7 +118,6 @@ if (isset($_POST['login'])) {
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
             console.log(xhr.open);//postのデバッグ
-
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             console.log('token_verify.phpにheader付きでpost');
             xhr.onload = function() {
