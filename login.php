@@ -52,7 +52,6 @@ if (isset($_POST['login'])) {
     <meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com">
    <!-- <meta name="viewport" content="width=width=device-width, initial-scale=1"> -->
     <title>Todo List Login</title>
-    <link rel="stylesheet" href="login_style.css">
     <!-- Bootstrap読み込み（スタイリングのため） -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="login_style.css" rel="stylesheet">
@@ -108,25 +107,7 @@ if (isset($_POST['login'])) {
         </form>
             <br>
     </div>
-    <script>
-        function onSignIn(googleUser) {
-            var id_token = googleUser.getAuthResponse().id_token;
-            console.log('id_token:' + id_token);//id_tokenを表示
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
-            console.log(xhr.open);//postのデバッグ
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            console.log('token_verify.phpにheader付きでpost');
-            xhr.onload = function() {
-                console.log('Signed in as: ' + xhr.responseText);
-            };
-            xhr.onerror = function() {
-                console.log('送信できませんでした。');
-            };
-            xhr.send('idtoken=' + id_token);
-        }
 
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
@@ -139,6 +120,8 @@ if (isset($_POST['login'])) {
     <script src="/docs/4.3/assets/js/src/application.js"></script>
     <script src="/docs/4.3/assets/js/src/search.js"></script>
     <script src="/docs/4.3/assets/js/src/ie-emulation-modes-warning.js"></script>
+
+    <script src="todoscript.js"></script>
 </body>
 
 </html>
