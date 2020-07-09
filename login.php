@@ -80,7 +80,8 @@ if (isset($_POST['login'])) {
             } else {
                 ?>
                 <script>
-                    alert("エラーが発生しました。");
+                    alert("ユーザー名、メールアドレスが既に登録されています。再度登録をお願い致します。");
+                    header('Location: register.php');
                 </script>
                 <?php
             }
