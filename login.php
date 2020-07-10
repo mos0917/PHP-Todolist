@@ -61,31 +61,6 @@ if (isset($_POST['login'])) {
 
 <body>
     <div class="container">
-        <?php
-        // signupがPOSTされたときに下記を実行
-        if (isset($_POST['signup'])) {
-            $username = $mysqli->real_escape_string($_POST['username']);
-            $email = $mysqli->real_escape_string($_POST['email']);
-            $password = $mysqli->real_escape_string($_POST['password']);
-            $password = password_hash($password, PASSWORD_BCRYPT);
-            // POSTされた情報をDBに格納する
-            $query = "INSERT INTO users(username,email,password) VALUES('$username','$email','$password')";
-            if ($mysqli->query($query)) {
-                ?>
-                <script>
-                    alert("登録しました");
-                </script>
-
-                <?php
-            } else {
-                ?>
-                <script>
-                    alert("ユーザー名、メールアドレスが既に登録されています。再度登録をお願い致します。");
-                    header('Location: https://blooming-ocean-46381.herokuapp.com/register.php');
-                </script>
-                <?php
-            }
-        } ?>
 
         <form method="post" class="form-signin">
             <div class="text-center mb-4">
