@@ -81,7 +81,7 @@ if (isset($_POST['login'])) {
                 ?>
                 <script>
                     alert("ユーザー名、メールアドレスが既に登録されています。再度登録をお願い致します。");
-                    header('Location: register.php');
+                    header('Location: https://blooming-ocean-46381.herokuapp.com/register.php');
                 </script>
                 <?php
             }
@@ -103,6 +103,7 @@ if (isset($_POST['login'])) {
             <BR>
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
             <a href="register.php">会員登録はこちら</a>
+            <BR>
             <div class="g-signin2" data-onsuccess="onSignIn" name="id_token"></div>
             <a href="#" onclick="signOut();">Sign out</a>
         </form>
