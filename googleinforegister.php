@@ -27,7 +27,7 @@ if (!$_SESSION['login']) {
 
 <form method="post" class="form-signup">
     <div class="text-left mb-4">
-        <h1>会員登録</h1>
+        <h1>会員登録(Googleユーザー)</h1>
     </div>
     <div class="form-group">
             <input type="text" class="form-control" name="username" placeholder="ユーザー名" required />
