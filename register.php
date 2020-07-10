@@ -21,8 +21,31 @@ include_once 'dbconnect.php';
 </head>
 <body>
 <div class="container">
-
-
+    <?php
+            // signupがPOSTされたときに下記を実行
+    if (isset($_POST['signup'])) {
+        $username = $mysqli->real_escape_string($_POST['username']);
+        $email = $mysqli->real_escape_string($_POST['email']);
+        $password = $mysqli->real_escape_string($_POST['password']);
+        $password = password_hash($password, PASSWORD_BCRYPT);
+        // POSTされた情報をDBに格納する
+        $query = "INSERT INTO users(username,email,password) VALUES('$username','$email','$password')";
+        if ($mysqli->query($query)) {
+            ?>
+            <script>
+                alert("登録しました");
+                header('location: login.php');
+            </script>
+    
+            <?php
+        } else {
+            ?>
+            <script>
+                alert("ユーザー名、メールアドレスが既に登録されています。再度登録をお願い致します。");
+            </script>
+            <?php
+        }
+    }       ?>
 
 <form action="login.php" method="post" class="form-signup">
     <div class="text-left mb-4">
