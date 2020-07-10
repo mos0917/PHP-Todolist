@@ -15,7 +15,7 @@ if ($payload) {
     $userid = $payload['sub'];
     var_dump($payload);
 }
-
+/*
 $query = 'SELECT email from users';
 $emailreresult = $mysqli->query($query);
 
@@ -26,3 +26,4 @@ if ($emailreresult === $payload['email']) {
     $_SESSION['login'] =true;
     header('location: googleinforegister.php');
 }
+*/
