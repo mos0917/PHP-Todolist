@@ -33,8 +33,8 @@ include_once 'dbconnect.php';
         if ($mysqli->query($query)) {
             ?>
             <script>
+                header('location: https://blooming-ocean-46381.herokuapp.com/login.php');
                 alert("登録しました");
-                header('location: login.php');
             </script>
     
             <?php
