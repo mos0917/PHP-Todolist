@@ -15,6 +15,9 @@ if ($payload) {
     $userid = $payload['sub'];
     var_dump($payload);
 }
+$_SESSION['login'] = true;
+exit;
+
 /*
 $query = 'SELECT email from users';
 $emailreresult = $mysqli->query($query);
