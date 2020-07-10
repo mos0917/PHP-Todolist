@@ -1,5 +1,4 @@
 <?php
-$uri = $_SERVER['DOCUMENT_ROOT'] . 'https://blooming-ocean-46381.herokuapp.com/login.php';
 session_start();
 if (isset($_SESSION['user']) != '') {
     // ログイン済みの場合はリダイレクト
@@ -20,15 +19,15 @@ if (isset($_POST['signup'])) {
         ?>
     <script>
         alert("登録しました");
+    </script>
+        <?php
         header('location: login.php');
         exit();
-    </script>
-
-        <?php
     } else {
         ?>
     <script>
         alert("ユーザー名、メールアドレスが既に登録されています。再度登録をお願い致します。");
+        exit();
     </script>
         <?php
     }
