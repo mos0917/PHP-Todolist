@@ -55,8 +55,7 @@ if (isset($_POST['login'])) {
     <!-- Bootstrap読み込み（スタイリングのため） -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="login_style.css" rel="stylesheet">
-
-
+    <link rel="shortcut icon" href="../../core/img/fukurouimg.svg">
 </head>
 
 <body>
