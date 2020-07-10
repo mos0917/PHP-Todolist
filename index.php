@@ -153,6 +153,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <meta charset="utf-8">
 <meta name="viewport" content="width=width=device-width, initial-scale=1">
 <link href="index_style.css" rel="stylesheet">
+<link rel="shortcut icon" href="../../core/img/fukurouimg_white.svg">
 <title>Todo List</title>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
