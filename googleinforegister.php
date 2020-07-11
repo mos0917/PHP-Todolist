@@ -51,7 +51,6 @@ if (!$_SESSION['login']) {
     <br>
 
 </form>
-<a href="login.php" onclick="signOut();">Sign out</a>
 
 </div>
 
