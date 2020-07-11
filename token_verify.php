@@ -15,12 +15,17 @@ if ($payload) {
     $userid = $payload['sub'];
     var_dump($payload);
 }
-$_SESSION['login'] = true;
-exit;
+//$_SESSION['login'] = true;
+//exit;
 
-/*
-$query = 'SELECT email from users';
-$emailreresult = $mysqli->query($query);
+$dbh = db_connect();
+
+$sql = 'SELECT email from users';
+$stmt = $dbh->prepare($sql);
+$stmt->execute();
+$dbh = null;
+$emailreresult = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
 if ($emailreresult === $payload['email']) {
     $_SESSION['user'] = true;
@@ -29,4 +34,6 @@ if ($emailreresult === $payload['email']) {
     $_SESSION['login'] =true;
     header('location: googleinforegister.php');
 }
-*/
+
+var_dump($_SESSION);
+exit;
