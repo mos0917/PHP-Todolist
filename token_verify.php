@@ -15,9 +15,9 @@ if ($payload) {
     $userid = $payload['sub'];
     var_dump($payload);
 }
-//$_SESSION['login'] = true;
-//exit;
-
+$_SESSION['login'] = true;
+exit;
+/*
 $dbh = db_connect();
 
 $sql = 'SELECT email from users';
@@ -37,3 +37,4 @@ if ($emailreresult === $payload['email']) {
 
 var_dump($_SESSION);
 exit;
+*/
