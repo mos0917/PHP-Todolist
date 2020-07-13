@@ -18,6 +18,7 @@ if (isset($_POST['gsignup'])) {
     </script>
         <?php
         header('location: index.php');
+        $_SESSION['user'] = 'true';
         exit();
     } else {
         ?>
