@@ -6,7 +6,7 @@ session_start();
 include_once 'dbconnect.php';
 
 // signupがPOSTされたときに下記を実行
-if (isset($_POST['signup'])) {
+if (isset($_POST['gsignup'])) {
     $username = $mysqli->real_escape_string($_POST['username']);
     $email = $mysqli->real_escape_string($_POST['email']);
     $password = $mysqli->real_escape_string($_POST['password']);
@@ -73,12 +73,11 @@ if (isset($_POST['signup'])) {
     </div>
     <br>
 
-    <button type="submit" class="btn btn-lg btn-success btn-block" name="signup">会員登録する</button>
+    <button type="submit" class="btn btn-lg btn-success btn-block" name="gsignup">会員登録する</button>
     <a href="login.php">ログイン画面に戻る</a>
     <br>
 
 </form>
-<a href="#" onclick="signOut();">Sign out</a>
 
 </div>
 

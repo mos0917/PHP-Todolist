@@ -14,7 +14,7 @@ if (isset($_POST['signup'])) {
     $password = $mysqli->real_escape_string($_POST['password']);
     $password = password_hash($password, PASSWORD_BCRYPT);
     // POSTされた情報をDBに格納する
-    $query = "INSERT INTO users(username,email,password) VALUES('$username','$email','$password')";
+    $query = "INSERT INTO users(username,email,password,google_flg) VALUES('$username','$email','$password',0)";
     if ($mysqli->query($query)) {
         ?>
     <script>
