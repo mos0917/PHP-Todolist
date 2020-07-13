@@ -2,9 +2,6 @@
 
 
 session_start();
-if (!$_SESSION['login']) {
-    header('location: login.php');
-}
 
 include_once 'dbconnect.php';
 
@@ -82,15 +79,6 @@ if (isset($_POST['signup'])) {
 
 </form>
 <a href="#" onclick="signOut();">Sign out</a>
-<script>
-    function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        console.log('User signed out.');
-        window.location.href = 'login.php';
-    });
-}
-</script>
 
 </div>
 
