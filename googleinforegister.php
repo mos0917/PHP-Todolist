@@ -1,6 +1,5 @@
 <?php
 
-require_once 'token_verify.php';
 
 session_start();
 if (!$_SESSION['login']) {
