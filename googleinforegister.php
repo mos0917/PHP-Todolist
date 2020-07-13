@@ -1,11 +1,9 @@
 <?php
-
-
 session_start();
 
 include_once 'dbconnect.php';
 
-// signupがPOSTされたときに下記を実行
+// gsignupがPOSTされたときに下記を実行(googleでログインボタンを押下してログインしたとき専用)
 if (isset($_POST['gsignup'])) {
     $username = $mysqli->real_escape_string($_POST['username']);
     $email = $mysqli->real_escape_string($_POST['email']);
@@ -41,18 +39,17 @@ if (isset($_POST['gsignup'])) {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
 <title>Todo List Member registration</title>
-<link rel="stylesheet" href="style.css">
 
 <!-- Bootstrap読み込み（スタイリングのため） -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link href="register_style.css" rel="stylesheet">
+<link href="googleregister_style.css" rel="stylesheet">
 <link rel="shortcut icon" href="../../core/img/fukurouimg_white.svg">
 </head>
 <body>
 <div class="container">
 
 
-<form method="post" class="form-signup">
+<form method="post" class="form-Gsignup">
     <div class="text-left mb-4">
         <h1>会員登録(Googleユーザー)</h1>
     </div>
