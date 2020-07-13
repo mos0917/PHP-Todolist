@@ -1,7 +1,38 @@
 <?php
+
+require_once 'token_verify.php';
+
 session_start();
 if (!$_SESSION['login']) {
     header('location: login.php');
+}
+
+include_once 'dbconnect.php';
+
+// signupがPOSTされたときに下記を実行
+if (isset($_POST['signup'])) {
+    $username = $mysqli->real_escape_string($_POST['username']);
+    $email = $mysqli->real_escape_string($_POST['email']);
+    $password = $mysqli->real_escape_string($_POST['password']);
+    $password = password_hash($password, PASSWORD_BCRYPT);
+    // POSTされた情報をDBに格納する
+    $query = "INSERT INTO users(username,email,password,google_flg) VALUES('$username','$email','$password,1')";
+    if ($mysqli->query($query)) {
+        ?>
+    <script>
+        alert("登録しました");
+    </script>
+        <?php
+        header('location: index.php');
+        exit();
+    } else {
+        ?>
+    <script>
+        alert("登録したメールアドレスは既に登録されています。再度登録をお願い致します。");
+        exit();
+    </script>
+        <?php
+    }
 }
 ?>
 
@@ -30,7 +61,7 @@ if (!$_SESSION['login']) {
         <h1>会員登録(Googleユーザー)</h1>
     </div>
     <div class="form-group">
-            <input type="text" class="form-control" name="username" placeholder="ユーザー名" required />
+            <input type="text" class="form-control" name="username" placeholder="ユーザー名" value="$payload['email']" required />
             <label for="inputEmail">ユーザー名</label>
     </div>
     <div class="form-group">
