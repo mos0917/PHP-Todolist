@@ -15,7 +15,7 @@ if (isset($_POST['signup'])) {
     $password = $mysqli->real_escape_string($_POST['password']);
     $password = password_hash($password, PASSWORD_BCRYPT);
     // POSTされた情報をDBに格納する
-    $query = "INSERT INTO users(username,email,password,google_flg) VALUES('$username','$email','$password,1')";
+    $query = "INSERT INTO users(username,email,password,google_flg) VALUES('$username','$email','$password',1)";
     if ($mysqli->query($query)) {
         ?>
     <script>
@@ -60,7 +60,7 @@ if (isset($_POST['signup'])) {
         <h1>会員登録(Googleユーザー)</h1>
     </div>
     <div class="form-group">
-            <input type="text" class="form-control" name="username" placeholder="ユーザー名" value="$payload['email']" required />
+            <input type="text" class="form-control" name="username" placeholder="ユーザー名" required />
             <label for="inputEmail">ユーザー名</label>
     </div>
     <div class="form-group">
