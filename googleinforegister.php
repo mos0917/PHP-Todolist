@@ -11,14 +11,18 @@ if (isset($_POST['gsignup'])) {
     $password = password_hash($password, PASSWORD_BCRYPT);
     // POSTされた情報をDBに格納する
     $query = "INSERT INTO users(username,email,password,google_flg) VALUES('$username','$email','$password',1)";
-    if ($mysqli->query($query)) {
+    $result = $mysqli->query($query);
+    while ($row = $result->fetch_assoc()) {
+        $user_id = $row['user_id'];
+    }
+    if ($result) {
         ?>
     <script>
         alert("登録しました");
     </script>
         <?php
         header('location: index.php');
-        $_SESSION['user'] = 'true';
+        $_SESSION['user'] = $user_id;
         exit();
     } else {
         ?>
