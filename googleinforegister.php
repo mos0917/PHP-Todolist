@@ -12,9 +12,8 @@ if (isset($_POST['gsignup'])) {
     // POSTされた情報をDBに格納する
     $query = "INSERT INTO users(username,email,password,google_flg) VALUES('$username','$email','$password',1)";
     $result = $mysqli->query($query);
-    while ($row = $result->fetch_assoc()) {
-        $user_id = $row['user_id'];
-    }
+    $row = $result->fetch_assoc();
+    $user_id = $row['user_id'];
     if ($result) {
         ?>
     <script>
