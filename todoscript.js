@@ -27,7 +27,7 @@ function onSignIn(googleUser) {
         console.log('送信できませんでした。');
     };
     xhr.send('idtoken=' + id_token);
-    window.location.href = 'googleinforegister.php';
+    //window.location.href = 'googleinforegister.php';
 }
 
 

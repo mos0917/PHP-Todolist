@@ -3,6 +3,7 @@ session_start();
 
 include_once 'dbconnect.php';
 
+
 // gsignupがPOSTされたときに下記を実行(googleでログインボタンを押下してログインしたとき専用)
 if (isset($_POST['gsignup'])) {
     $username = $mysqli->real_escape_string($_POST['username']);

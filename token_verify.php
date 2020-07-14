@@ -15,8 +15,13 @@ if ($payload) {
     $userid = $payload['sub'];
     var_dump($payload);
 }
+var_dump($payload['email']);
+$_SESSION['login'] = true;
+exit;
+//Todo: DBでレスポンス値のemailがあるかチェックをしてなければgoogleinforegister.phpに
+//あればindex.phpに遷移を指せる
 
-$dbh = db_connect();
+/* $dbh = db_connect();
 
 $sql = 'SELECT email from users';
 $stmt = $dbh->prepare($sql);
@@ -36,3 +41,4 @@ if ($emailreresult === $payload['email']) {
 
 var_dump($_SESSION);
 exit;
+*/
