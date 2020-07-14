@@ -216,6 +216,18 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                 </form>
             </div>
         </nav>
+        <script>
+        function signOut() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init().then(function () {
+                    var auth2 = gapi.auth2.getAuthInstance()
+                    auth2.signOut().then(function () {
+                        console.log('User signed out.');
+                    });
+                });
+            });
+        }
+        </script>
     </header>
 
 <main role="main" class="flex-shrink-0">
