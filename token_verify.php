@@ -16,11 +16,8 @@ if ($payload) {
     var_dump($payload);
 }
 var_dump($payload['email']);
-$_SESSION['login'] = true;
-exit;
 //Todo: DBでレスポンス値のemailがあるかチェックをしてなければgoogleinforegister.phpに
 //データがあればindex.phpに遷移を指せる
-
 $dbh = db_connect();
 
 $sql = 'SELECT email from users';
@@ -28,6 +25,8 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $dbh = null;
 $emailreresult = $stmt->fetch(PDO::FETCH_ASSOC);
+
+var_dump($emailreresult);
 
 
 if ($emailreresult === $payload['email']) {
