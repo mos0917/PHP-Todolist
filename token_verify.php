@@ -23,9 +23,6 @@ $sql = 'SELECT user_id,email from users';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
-//$emailarr = array_values($emailreresult);
-
-
 var_dump($emailreresult);
 
 

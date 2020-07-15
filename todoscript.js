@@ -29,11 +29,10 @@ function onSignIn(googleUser) {
     xhr.send('idtoken=' + id_token);
     //window.location.href = 'googleinforegister.php';
     
-    switch(document.getElementById){
-        case "googletoindex":
-            window.location.href = 'index.php';
-        case "googletoregister":
-            window.location.href = 'googleinforegister.php';
+    if(document.getElementById("googletoindex")){
+        window.location.href = 'index.php';
+    } elseif(document.getElementById("googletoregister"));{
+        window.location.href = "googleinforegister.php";
     }
 }
 
