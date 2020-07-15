@@ -29,9 +29,9 @@ function onSignIn(googleUser) {
     xhr.send('idtoken=' + id_token);
     //window.location.href = 'googleinforegister.php';
     
-    if(document.getElementById("googletoindex")){
+    if(document.getElementById("googletoindex").value = "toindex"){
         window.location.href = 'index.php';
-    } elseif(document.getElementById("googletoregister"));{
+    } elseif(document.getElementById("googletoregister")).value = "toinforegister";{
         window.location.href = "googleinforegister.php";
     }
 }
