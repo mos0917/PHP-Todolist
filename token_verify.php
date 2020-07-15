@@ -23,10 +23,10 @@ $sql = 'SELECT email from users';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
-$emailarr = array_values($emailreresult);
+//$emailarr = array_values($emailreresult);
 
 
-var_dump($emailarr);
+var_dump($emailreresult);
 
 
 if ($emailreresult === $payload['email']) {
