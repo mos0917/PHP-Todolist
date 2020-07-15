@@ -28,11 +28,14 @@ function onSignIn(googleUser) {
     };
     xhr.send('idtoken=' + id_token);
     //window.location.href = 'googleinforegister.php';
+    
+    switch(document.getElementById){
+        case "googletoindex":
+            window.location.href = 'index.php';
+        case "googletoregister":
+            window.location.href = 'googleinforegister.php';
+    }
 }
-
-
-
-
 
 function comptask(){
     var div = document.createElement('div');

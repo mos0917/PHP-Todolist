@@ -19,26 +19,26 @@ var_dump($payload['email']);
 $_SESSION['login'] = true;
 exit;
 //Todo: DBでレスポンス値のemailがあるかチェックをしてなければgoogleinforegister.phpに
-//あればindex.phpに遷移を指せる
+//データがあればindex.phpに遷移を指せる
 
-/* $dbh = db_connect();
+$dbh = db_connect();
 
 $sql = 'SELECT email from users';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $dbh = null;
 $emailreresult = $stmt->fetch(PDO::FETCH_ASSOC);
-var_dump($emailreresult);
 
 
 if ($emailreresult === $payload['email']) {
     $_SESSION['user'] = true;
-    header('location: index.php');
+    ?>
+    <input type="hidden" name="googletoindex">
+    <?php
 } else {
     $_SESSION['login'] =true;
-    header('location: googleinforegister.php');
+    ?>
+    <input type="hidden" name="googletoregister">
+    <?php
 }
-
-var_dump($_SESSION);
 exit;
-*/
