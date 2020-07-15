@@ -19,10 +19,10 @@ if ($payload) {
 //データがあればindex.phpに遷移を指せる
 $dbh = db_connect();
 
-$sql = 'SELECT email from users';
+$sql = 'SELECT user_id,email from users';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
-$emailreresult = $stmt->fetchAll(PDO::FETCH_COLUMN|PDO::FETCH_GROUP);
+$emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
 //$emailarr = array_values($emailreresult);
 
 
