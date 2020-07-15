@@ -22,7 +22,7 @@ $dbh = db_connect();
 $sql = 'SELECT email from users';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
-$emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
+$emailreresult = $stmt->fetchAll(PDO::FETCH_COLUMN|PDO::FETCH_GROUP);
 //$emailarr = array_values($emailreresult);
 
 
