@@ -18,6 +18,8 @@ function errChk(){ //タスク登録時のエラーチェック
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     var xhr = new XMLHttpRequest();
+    var toindex = window.sessionStorage.getItem(['user']);//token_verify.phpのセッション情報を取得
+    var toinforegister = window.sessionStorage.getItem(['login']);//token_verify.phpのセッション情報を取得
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
@@ -29,10 +31,10 @@ function onSignIn(googleUser) {
     xhr.send('idtoken=' + id_token);
     //window.location.href = 'googleinforegister.php';
     
-    if(document.getElementById("googletoindex").value = "toindex"){
+    if(toindex == true){
         window.location.href = 'index.php';
-    } elseif(document.getElementById("googletoregister")).value = "toinforegister";{
-        window.location.href = "googleinforegister.php";
+    }elseif(toinforegister = true){
+        window.location.href = 'googleinforegister.php';
     }
 }
 

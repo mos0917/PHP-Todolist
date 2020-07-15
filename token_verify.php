@@ -28,13 +28,7 @@ var_dump($emailreresult);
 
 if ($emailreresult === $payload['email']) {
     $_SESSION['user'] = true;
-    ?>
-    <input type="hidden" name="googletoindex" value = "toindex">
-    <?php
 } else {
     $_SESSION['login'] =true;
-    ?>
-    <input type="hidden" name="googletoregister" value = "toinforegister">
-    <?php
 }
 exit;
