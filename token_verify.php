@@ -15,7 +15,6 @@ if ($payload) {
     $userid = $payload['sub'];
     var_dump($payload);
 }
-var_dump($payload['email']);
 //Todo: DBでレスポンス値のemailがあるかチェックをしてなければgoogleinforegister.phpに
 //データがあればindex.phpに遷移を指せる
 $dbh = db_connect();
@@ -28,7 +27,7 @@ $emailreresult = $stmt->fetch(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
 $emailarr = array_values($emailreresult);
 
 
-var_dump($emailreresult);
+var_dump($emailarr);
 
 
 if ($emailreresult === $payload['email']) {
