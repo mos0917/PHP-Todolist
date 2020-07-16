@@ -23,12 +23,14 @@ $sql = 'SELECT user_id,email from users';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
-var_dump($emailreresult);
+$emailjson =  json_encode($emailreresult);
+var_dump($emailjson);
 
-
+/*
 if ($emailreresult === $payload['email']) {
     $_SESSION['user'] = true;
 } else {
     $_SESSION['login'] =true;
 }
+*/
 exit;
