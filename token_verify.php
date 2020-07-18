@@ -23,8 +23,12 @@ $sql = 'SELECT user_id,email from users';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
-$emailjson =  json_encode($emailreresult);
-var_dump($emailjson);
+$emailarr = array_values($emailreresult);
+
+
+$emailvalue = ["get"=>$emailarr];
+echo json_encode($emailvalue,JSON_PRETTY_PRINT);
+
 
 /*
 if ($emailreresult === $payload['email']) {
