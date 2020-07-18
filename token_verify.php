@@ -16,7 +16,7 @@ if ($payload) {
     var_dump($payload);
 }
 //Todo: DBでレスポンス値のemailがあるかチェックをしてなければgoogleinforegister.phpに
-//データがあればindex.phpに遷移を指せる
+//Todo: データがあればindex.phpに遷移を指せる
 $dbh = db_connect();
 
 $sql = 'SELECT user_id,email from users';

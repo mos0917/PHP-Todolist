@@ -23,6 +23,8 @@ while ($row = $result->fetch_assoc()) {
     $username = $row['username'];
     $email = $row['email']; //ユーザーidの取り出し
 }
+var_dump($username);//検証用に一時作成
+var_dump($email);//検証用に一時作成
 
 // データベースの切断
 $result->close();
