@@ -18,12 +18,13 @@ if (!isset($_SESSION['user'])) {
 $query = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
 $result = $mysqli->query($query);
 
-var_dump($result);
+
 // ユーザー情報の取り出し
 while ($row = $result->fetch_assoc()) {
     $username = $row['username'];
     $email = $row['email']; //ユーザーidの取り出し
 }
+var_dump($row);
 
 // データベースの切断
 $result->close();
