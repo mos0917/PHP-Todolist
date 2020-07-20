@@ -24,7 +24,7 @@ while ($row = $result->fetch_assoc()) {
     $username = $row['username'];
     $email = $row['email']; //ユーザーidの取り出し
 }
-var_dump($row);
+
 
 // データベースの切断
 $result->close();
@@ -214,7 +214,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     <input type="submit" class="btn btn-outline-info m-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
                 </div>
                 <form action="index.php" method="post">
-                    <input class="btn btn-primary m-sm-1" type="button" name="logout" onclick="location.href='./logout.php?logout';signOut();"  value="ログアウト">
+                    <input class="btn btn-primary m-sm-1" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト">
                 </form>
             </div>
         </nav>
