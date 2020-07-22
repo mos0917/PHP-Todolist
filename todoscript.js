@@ -35,11 +35,7 @@ function onSignIn(googleUser) {
     }elseif(toinforegister = true){
         window.location.href = 'googleinforegister.php';
     }*/
-    if (json.get.email == "") {
-        window.location.href = 'googleinforegister.php';
-    } else {
-        window.location.href = 'index.php';
-    }
+
 }
 
 function comptask(){
