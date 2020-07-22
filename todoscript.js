@@ -27,6 +27,7 @@ function onSignIn(googleUser) {
         console.log('送信できませんでした。');
     };
     xhr.send('idtoken=' + id_token);
+
     //window.location.href = 'googleinforegister.php';
     
     /*if(toindex == true){
@@ -34,6 +35,9 @@ function onSignIn(googleUser) {
     }elseif(toinforegister = true){
         window.location.href = 'googleinforegister.php';
     }*/
+    for(let count = 0; count < 20; count++){
+
+    }
 }
 
 function comptask(){

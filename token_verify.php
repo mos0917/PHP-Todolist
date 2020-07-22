@@ -19,7 +19,7 @@ if ($payload) {
 //Todo: データがあればindex.phpに遷移を指せる
 $dbh = db_connect();
 
-$sql = 'SELECT user_id,email from users';
+$sql = 'SELECT user_id,email from users WHERE email = "'.$payload[email].'"';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
@@ -30,12 +30,7 @@ $emailvalue = ["get"=>$emailarr];
 echo json_encode($emailvalue,JSON_PRETTY_PRINT);
 
 
-for($i = 0; $i > count($emailvalue); $i++) {
-    ?>
-    <span id="emailarr'.$i.'" class="emailarr"></span>
-    <span id="payload'.$i.'" class="payload"></span>
-    <?php
-}
+
 /*
 if ($emailreresult === $payload['email']) {
     $_SESSION['user'] = true;
