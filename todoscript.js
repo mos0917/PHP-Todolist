@@ -20,23 +20,25 @@ function onSignIn(googleUser) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function() {
+    xhr.onload = function () {
         console.log('Signed in as: ' + xhr.responseText);
     };
-    xhr.onerror = function() {
+    xhr.onerror = function () {
         console.log('送信できませんでした。');
     };
     xhr.send('idtoken=' + id_token);
 
     //window.location.href = 'googleinforegister.php';
-    
+
     /*if(toindex == true){
         window.location.href = 'index.php';
     }elseif(toinforegister = true){
         window.location.href = 'googleinforegister.php';
     }*/
-    for(let count = 0; count < 20; count++){
-
+    if (json.get.email == "") {
+        window.location.href = 'googleinforegister.php';
+    } else {
+        window.location.href = 'index.php'
     }
 }
 
