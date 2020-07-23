@@ -35,7 +35,9 @@ function onSignIn(googleUser) {
     }elseif(toinforegister = true){
         window.location.href = 'googleinforegister.php';
     }*/
-    if (json.get.email == "") {
+    var emaila_json = json.get.email;
+
+    if (emailjson == "") {
         window.location.href = 'googleinforegister.php';
     } else {
         window.location.href = 'index.php';
