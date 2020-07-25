@@ -35,6 +35,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     } else {
         window.location.href = 'index.php';
     }
+
 }
 
 function comptask(){
