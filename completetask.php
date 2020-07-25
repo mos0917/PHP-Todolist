@@ -24,5 +24,4 @@ $arraytask = array_values($comptask);
 
 $getvalue = $arraytask;
 $arraytask = ["get"=>$getvalue];
-//echo json_encode($comptask, JSON_PRETTY_PRINT);
 echo json_encode($arraytask, JSON_PRETTY_PRINT);
