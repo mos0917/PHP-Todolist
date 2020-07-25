@@ -17,7 +17,7 @@ if ($payload) {
 }
 //Todo: DBでレスポンス値のemailがあるかチェックをしてなければgoogleinforegister.phpに
 //Todo: データがあればindex.phpに遷移を指せる
-/*$dbh = db_connect();
+$dbh = db_connect();
 
 $sql = 'SELECT user_id,email from users WHERE email = "'.$payload[email].'"';
 $stmt = $dbh->prepare($sql);
@@ -28,6 +28,7 @@ $emailarr = array_values($emailreresult);
 
 $emailvalue = ["get"=>$emailarr];
 echo json_encode($emailvalue,JSON_PRETTY_PRINT);
-*/
+
+
 
 exit;
