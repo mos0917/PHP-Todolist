@@ -24,17 +24,18 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
         console.log('Signed in as: ' + xhr.responseText);
+        if (jsonemail == "") {
+            window.location.href = 'googleinforegister.php';
+        } else {
+            window.location.href = 'index.php';
+        }
     };
     xhr.onerror = function () {
         console.log('送信できませんでした。');
     };
     xhr.send('idtoken=' + id_token);
 
-    if (jsonemail == "") {
-        window.location.href = 'googleinforegister.php';
-    } else {
-        window.location.href = 'index.php';
-    }
+
 
 }
 
