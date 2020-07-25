@@ -17,13 +17,12 @@ function errChk(){ //タスク登録時のエラーチェック
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
-    var emailjson = json.get.email;
+    //var emailjson = json.get.email;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
         console.log('Signed in as: ' + xhr.responseText);
-
     };
     xhr.onerror = function () {
         console.log('送信できませんでした。');
