@@ -30,18 +30,12 @@ function onSignIn(googleUser) {
     };
     xhr.send('idtoken=' + id_token);
 
-    //window.location.href = 'googleinforegister.php';
 
-    /*if(toindex == true){
-        window.location.href = 'index.php';
-    }elseif(toinforegister = true){
-        window.location.href = 'googleinforegister.php';
-    }*/
-    if (emailjson == "") {
+    /*if (emailjson == "") {
         window.location.href = 'googleinforegister.php';
     } else {
         window.location.href = 'index.php';
-    }
+    }*/
 
 
 }

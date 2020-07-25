@@ -29,13 +29,4 @@ $emailarr = array_values($emailreresult);
 $emailvalue = ["get"=>$emailarr];
 echo json_encode($emailvalue,JSON_PRETTY_PRINT);
 
-
-
-/*
-if ($emailreresult === $payload['email']) {
-    $_SESSION['user'] = true;
-} else {
-    $_SESSION['login'] =true;
-}
-*/
 exit;
