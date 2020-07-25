@@ -15,7 +15,7 @@ function errChk(){ //タスク登録時のエラーチェック
     }
 }
 
-function onSignIn(googleUser) {
+function onSignIn(googleUser) {//googleでログインボタンを押下したときの処理
     var id_token = googleUser.getAuthResponse().id_token;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
@@ -27,12 +27,6 @@ function onSignIn(googleUser) {
         console.log('送信できませんでした。');
     };
     xhr.send('idtoken=' + id_token);
-
-    if (json.get.email == "") {
-        window.location.href = 'googleinforegister.php';
-    } else {
-        window.location.href = 'index.php';
-    }
 }
 
 function comptask(){
