@@ -17,7 +17,6 @@ function errChk(){ //タスク登録時のエラーチェック
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
-    //var emailjson = json.get.email;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -35,8 +34,6 @@ function onSignIn(googleUser) {
     } else {
         window.location.href = 'index.php';
     }*/
-
-
 }
 
 function comptask(){
