@@ -17,23 +17,25 @@ function errChk(){ //タスク登録時のエラーチェック
 
 function onSignIn(googleUser) {//googleでログインボタンを押下したときの処理
     var id_token = googleUser.getAuthResponse().id_token;
-    var jsonemail = JSON.parse('<?php echo $emailvalue; ?>'); //token_verify.phpで取得したjsoonを格納
-
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
-        if(xhr.responseText == jsonemail){
-            window.location.href = 'googleinforegister.php';
-        }else {
-            window.location.href = 'index.php';
-        }
+
         console.log('Signed in as: ' + xhr.responseText);
     };
     xhr.onerror = function () {
         console.log('送信できませんでした。');
     };
     xhr.send('idtoken=' + id_token);
+
+    var jsonemail = JSON.parse('<?php echo $emailvalue; ?>'); //token_verify.phpで取得したjsoonを格納
+    if(jsonemail == xhr.responseText){
+        window.location.href = 'googleinforegister.php';
+    }else {
+        window.location.href = 'index.php';
+    }
+
 }
 
 function comptask(){

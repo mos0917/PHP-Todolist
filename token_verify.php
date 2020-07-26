@@ -13,7 +13,7 @@ $client = new Google_Client(['client_id' => CLIENT_ID]);
 $payload = $client->verifyIdToken($id_token);
 if ($payload) {
     $userid = $payload['sub'];
-    var_dump($payload['email']);
+    var_dump($userid);
 }
 //Todo: DBでレスポンス値のemailがあるかチェックをしてなければgoogleinforegister.phpに
 //Todo: データがあればindex.phpに遷移を指せる
