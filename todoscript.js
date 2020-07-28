@@ -30,6 +30,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.send('idtoken=' + id_token);
 
     var jsonemail = JSON.parse('<?php echo $emailvalue; ?>'); //token_verify.phpで取得したjsoonを格納
+    console.log(jsonemail);
     if(jsonemail == xhr.responseText){
         window.location.href = 'googleinforegister.php';
     }else {

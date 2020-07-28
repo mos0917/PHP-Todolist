@@ -13,7 +13,7 @@ $client = new Google_Client(['client_id' => CLIENT_ID]);
 $payload = $client->verifyIdToken($id_token);
 if ($payload) {
     $userid = $payload['sub'];
-    var_dump($payload['email']);
+    //var_dump($payload['email']);
 }
 //Todo: DBでレスポンス値のemailがあるかチェックをしてなければgoogleinforegister.phpに
 //Todo: データがあればindex.phpに遷移を指せる
@@ -27,6 +27,9 @@ $emailarr = array_values($emailreresult);
 
 
 $emailvalue = ["get"=>$emailarr];
-echo json_encode($emailvalue,JSON_PRETTY_PRINT);
+//echo json_encode($emailvalue,JSON_PRETTY_PRINT);
 
+if ($payload['email'] == $emailvalue){
+
+}
 exit;
