@@ -21,19 +21,19 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
+        var jsonemail = JSON.parse('<?php echo $emailvalue; ?>'); //token_verify.phpで取得したjsoonを格納
         console.log('Signed in as: ' + xhr.responseText);
+
+        if(jsonemail == xhr.responseText){
+            window.location.href = 'googleinforegister.php';
+        }else {
+            window.location.href = 'index.php';
+        }
     };
     xhr.onerror = function () {
         console.log('送信できませんでした。');
     };
     xhr.send('idtoken=' + id_token);
-
-    //var jsonemail = JSON.parse('<?php echo $emailvalue; ?>'); //token_verify.phpで取得したjsoonを格納
-    /*if(jsonemail == xhr.responseText){
-        window.location.href = 'googleinforegister.php';
-    }else {
-        window.location.href = 'index.php';
-    }*/
 
 }
 
