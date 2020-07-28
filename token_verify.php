@@ -24,7 +24,7 @@ define('CLIENT_ID', '375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleus
 $client = new Google_Client(['client_id' => CLIENT_ID]);
 
 $payload = $client->verifyIdToken($id_token);
-var_dump($payload);
+//var_dump($payload);
 if ($payload) {
     var_dump($payload['email']);
 }
