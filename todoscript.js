@@ -29,10 +29,12 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     };
     xhr.send('idtoken=' + id_token);
 
-    if(loginflg == true){
-        window.location.href = 'index.php';
-    }else {
+
+
+    if(!loginflg){
         window.location.href = 'googleinforegister.php';
+    }else {
+        window.location.href = 'index.php';
     }
 
 }

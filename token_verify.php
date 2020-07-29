@@ -32,7 +32,7 @@ echo json_encode($emailvalue,JSON_PRETTY_PRINT);
 if($payload['email'] == $emailvalue){
     $loginflg = 'true';
 }else{
-    $loginflg = 'false';
+    $loginflg = '';
 }
 
 exit;
