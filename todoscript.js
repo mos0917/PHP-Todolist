@@ -30,7 +30,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.send('idtoken=' + id_token);
 
 
-
+    console.log('loginflg');
     if(!loginflg){
         window.location.href = 'index.php';
     }else {
