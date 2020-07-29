@@ -30,9 +30,9 @@ $emailvalue = ["get"=>$emailarr];
 echo json_encode($emailvalue,JSON_PRETTY_PRINT);
 
 if($payload['email'] == $emailvalue){
-    $loginflg = 'true';
+    $_SESSION = 'user';
 }else{
-    $loginflg = '';
+    $_SESSION = 'login';
 }
 
 exit;
