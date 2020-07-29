@@ -17,7 +17,7 @@ function errChk(){ //タスク登録時のエラーチェック
 
 function onSignIn(googleUser) {//googleでログインボタンを押下したときの処理
     var id_token = googleUser.getAuthResponse().id_token;
-    var loginflg = '<?php echo $_SESSION; ?>';
+    var loginflg = "<?php echo $loginflg; ?>";
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -31,7 +31,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
 
 
     console.log(loginflg);
-    if(!loginflg){
+    if(loginflg == true){
         window.location.href = 'index.php';
     }else {
         window.location.href = 'googleinforegister.php';
