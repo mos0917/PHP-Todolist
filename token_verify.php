@@ -34,12 +34,8 @@ if($payload['email'] == $emailvalue){
 }else{
     $loginflg = 'false';
 }
+
 ?>
 
 <script type="text/javascript">var loginflg = "<?= $loginflg ?>";</script>
-
-<?php
-
-exit;
-?>
 <script src="todoscript.js"></script>
