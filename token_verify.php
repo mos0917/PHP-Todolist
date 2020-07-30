@@ -37,9 +37,9 @@ if($payload['email'] == $emailvalue){
 ?>
 
 <script type="text/javascript">var loginflg = "<?= $loginflg ?>";</script>
-<script src="todoscript.js"></script>
+
 <?php
 
 exit;
 ?>
-
+<script src="todoscript.js"></script>
