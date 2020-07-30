@@ -30,7 +30,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
 
 
     console.log(loginflg);
-    if(loginflg == true){
+    if(loginflg === true){
         window.location.href = 'index.php';
     }else {
         window.location.href = 'googleinforegister.php';
