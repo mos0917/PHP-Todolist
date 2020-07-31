@@ -30,12 +30,12 @@ $emailvalue = ["get"=>$emailarr];
 echo json_encode($emailvalue,JSON_PRETTY_PRINT);
 
 if($payload['email'] == $emailvalue){
-    $loginflg = 'true';
+    $loginflg = true;
 }else{
-    $loginflg = 'false';
+    $loginflg = false;
 }
 exit;
 ?>
 
-<!--<script type="text/javascript">var loginflg = "<?= $loginflg ?>";</script> -->
+<script type="text/javascript">var loginflg = "<?= $loginflg ?>";</script>
 <script type="text/javascript" src="todoscript.js"></script>
