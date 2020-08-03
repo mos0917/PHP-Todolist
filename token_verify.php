@@ -20,15 +20,16 @@ $sql = 'SELECT user_id,email from users WHERE email = "'.$payload[email].'"';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
-$emailarr = array_values($emailreresult);
+//$emailarr = array_values($emailreresult);
 
 if($payload['email'] == $emailarr){
     $loginflg = true;
 }else{
     $loginflg = false;
 }
+
 var_dump($payload['email']);
-var_dump($emailarr);
+var_dump($emailreresult);
 var_dump($loginflg);
 
 echo json_encode($loginflg,JSON_PRETTY_PRINT);
