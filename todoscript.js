@@ -21,7 +21,12 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
-        console.log('Signed in as: ' + xhr.responseText);
+        console.log(loginflg);
+        if(loginflg === true){
+            window.location.href = 'index.php';
+        }else {
+            window.location.href = 'googleinforegister.php';
+        }
     };
     xhr.onerror = function () {
         console.log('送信できませんでした。');
@@ -29,11 +34,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.send('idtoken=' + id_token);
 
 
-    if(loginflg === true){
-        window.location.href = 'index.php';
-    }else {
-        window.location.href = 'googleinforegister.php';
-    }
+
 
 }
 
