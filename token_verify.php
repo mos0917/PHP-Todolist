@@ -32,6 +32,7 @@ if($payload['email'] == $emailvalue){
 }else{
     $loginflg = false;
 }
+var_dump($emailvalue);
 var_dump($loginflg);
 
 echo json_encode($loginflg,JSON_PRETTY_PRINT);
