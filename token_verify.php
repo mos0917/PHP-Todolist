@@ -27,7 +27,7 @@ if($payload['email'] == $emailarr){
 }else{
     $loginflg = false;
 }
-var_dump($payload);
+var_dump($payload['email']);
 var_dump($emailarr);
 var_dump($loginflg);
 
