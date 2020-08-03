@@ -22,7 +22,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
-        console.log('Signed in as: ' + xhr.response);
+        console.log('Signed in as: ' + xhr.responseText);
         if(loginflg === true){
             window.location.href = 'index.php';
         }else {
