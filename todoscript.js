@@ -22,9 +22,8 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
-        var loginflg = '<?php echo $loginflg ?>';
         console.log('Signed in as: ' + xhr.responseText);
-        if(loginflg === true){
+        if(xhr.responseText === true){
             window.location.href = 'index.php';
         }else {
             window.location.href = 'googleinforegister.php';
