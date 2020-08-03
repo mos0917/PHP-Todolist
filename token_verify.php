@@ -27,9 +27,6 @@ if($payload['email'] == $emailreresult){
 }else{
     $loginflg = false;
 }
-var_dump($payload['email']);
-var_dump($emailreresult);
-var_dump($loginflg);
 
 echo json_encode($loginflg,JSON_PRETTY_PRINT);
 exit;
