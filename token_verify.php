@@ -16,7 +16,7 @@ $payload = $client->verifyIdToken($id_token);
 
 $dbh = db_connect();
 
-$sql = 'SELECT user_id,email from users WHERE email = "'.$payload[email].'"';
+$sql = 'SELECT email from users WHERE email = "'.$payload[email].'"';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetch(PDO::FETCH_ASSOC);
