@@ -19,15 +19,14 @@ $dbh = db_connect();
 $sql = 'SELECT email from users WHERE email = "'.$payload[email].'"';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
-$emailreresult = $stmt->fetchAll(PDO::FETCH_COLUMN);
-//$emailarr = array_values($emailreresult);
+$emailreresult = $stmt->fetch(PDO::FETCH_COLUMN);
+
 
 if($payload['email'] == $emailreresult){
     $loginflg = true;
 }else{
     $loginflg = false;
 }
-
 var_dump($payload['email']);
 var_dump($emailreresult);
 var_dump($loginflg);
