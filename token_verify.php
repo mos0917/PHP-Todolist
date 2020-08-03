@@ -19,7 +19,7 @@ $dbh = db_connect();
 $sql = 'SELECT user_id,email from users WHERE email = "'.$payload[email].'"';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
-$emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$emailreresult = $stmt->fetch(PDO::FETCH_ASSOC);
 //$emailarr = array_values($emailreresult);
 
 if($payload['email'] == $emailreresult){
