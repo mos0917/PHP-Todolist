@@ -25,7 +25,6 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
 $emailarr = array_values($emailreresult);
-$emailvalue = ["get"=>$emailarr];
 
 if($payload['email'] == $emailvalue){
     $loginflg = true;
@@ -33,7 +32,7 @@ if($payload['email'] == $emailvalue){
     $loginflg = false;
 }
 var_dump($emailvalue);
-var_dump($loginflg);
+var_dump($emailarr);
 
 echo json_encode($loginflg,JSON_PRETTY_PRINT);
 exit;
