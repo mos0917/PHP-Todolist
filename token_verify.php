@@ -25,15 +25,15 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
 $emailarr = array_values($emailreresult);
-
 $emailvalue = ["get"=>$emailarr];
-echo json_encode($emailvalue,JSON_PRETTY_PRINT);
 
 if($payload['email'] == $emailvalue){
     $loginflg = true;
 }else{
     $loginflg = false;
 }
+
+echo json_encode($loginflg,JSON_PRETTY_PRINT);
 exit;
 ?>
 
