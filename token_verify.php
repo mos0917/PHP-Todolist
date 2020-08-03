@@ -37,5 +37,5 @@ echo json_encode($loginflg,JSON_PRETTY_PRINT);
 exit;
 ?>
 
-<script type="text/javascript">var loginflg = "<?php $loginflg ?>";</script>
+<script type="text/javascript">var loginflg = JSON.parse('<?php $loginflg ?>');</script>
 <script type="text/javascript" src="todoscript.js"></script>
