@@ -12,10 +12,6 @@ define('CLIENT_ID', '375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleus
 $client = new Google_Client(['client_id' => CLIENT_ID]);
 
 $payload = $client->verifyIdToken($id_token);
-//var_dump($payload);
-if ($payload) {
-    var_dump($payload['email']);
-}
 
 
 $dbh = db_connect();
@@ -31,7 +27,8 @@ if($payload['email'] == $emailarr){
 }else{
     $loginflg = false;
 }
-var_dump($emailreresult);
+var_dump($payload);
+var_dump($emailarr);
 var_dump($loginflg);
 
 echo json_encode($loginflg,JSON_PRETTY_PRINT);
