@@ -22,7 +22,7 @@ $stmt->execute();
 $emailreresult = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
 //$emailarr = array_values($emailreresult);
 
-if($payload['email'] == $emailarr){
+if($payload['email'] == $emailreresult){
     $loginflg = true;
 }else{
     $loginflg = false;
