@@ -18,10 +18,11 @@ function errChk(){ //タスク登録時のエラーチェック
 function onSignIn(googleUser) {//googleでログインボタンを押下したときの処理
     var id_token = googleUser.getAuthResponse().id_token;
     var xhr = new XMLHttpRequest();
+    var loginflg = "<?= $loginflg ?>";
     xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
-        console.log(loginflg);
+        console.log('Signed in as: ' + xhr.responseText);
         if(loginflg === true){
             window.location.href = 'index.php';
         }else {
@@ -32,10 +33,6 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
         console.log('送信できませんでした。');
     };
     xhr.send('idtoken=' + id_token);
-
-
-
-
 }
 
 function comptask(){
