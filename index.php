@@ -2,7 +2,6 @@
 date_default_timezone_set('Asia/Tokyo');
 
 require_once 'functions.php';
-require_once 'token_verify.php';
 
 $date = date('Y-m-d H:i:s'); //現在日付の取得
 
