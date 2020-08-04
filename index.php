@@ -10,9 +10,9 @@ $updateerrors = array();
 
 session_start();
 include_once 'dbconnect.php';
-if (!isset($_SESSION['user'])) {
+/*if (!isset($_SESSION['user'])) {
     header('Location: login.php');
-}
+}*/
 
 // ユーザーIDからユーザー名を取り出す
 $query = "SELECT * FROM users WHERE user_id={$_SESSION['user']}";
