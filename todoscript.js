@@ -23,7 +23,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
         console.log(xhr.responseText);
-        if(xhr.responseText === true){
+        if(xhr.responseText === 'true'){
             window.location.href = 'index.php';
         }else {
             window.location.href = 'googleinforegister.php';
