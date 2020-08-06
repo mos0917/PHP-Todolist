@@ -11,6 +11,11 @@ $updateerrors = array();
 session_start();
 include_once 'dbconnect.php';
 if (!isset($_SESSION['user'])) {
+    ?>
+    <script>
+
+    </script>
+<?php
     header('Location: login.php');
 }
 

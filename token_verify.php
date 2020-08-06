@@ -24,6 +24,7 @@ $emailreresult = $stmt->fetch(PDO::FETCH_COLUMN);
 
 if($payload['email'] == $emailreresult){
     $loginflg = true;
+    $_SESSION['user'] = $emailreresult;
 }else{
     $loginflg = false;
 }
