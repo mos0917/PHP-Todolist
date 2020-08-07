@@ -16,15 +16,17 @@ $payload = $client->verifyIdToken($id_token);
 
 $dbh = db_connect();
 
-$sql = 'SELECT email from users WHERE email = "'.$payload[email].'"';
-$stmt = $dbh->prepare($sql);
-$stmt->execute();
-$emailreresult = $stmt->fetch(PDO::FETCH_COLUMN);
+$sql = 'SELECT user_id,email from users WHERE email = "'.$payload[email].'"';
+$sqlresult = $mysqli->query($sql);
 
+while ($row = $sqlresult->fetch_assoc()) {
+    $userid = $row['user_id'];
+    $email = $row['email'];
+}
 
-if($payload['email'] == $emailreresult){
+if($payload['email'] == $email){
     $loginflg = true;
-    $_SESSION['user'] = $emailreresult;
+    $_SESSION['user'] = $userid;
 }else{
     $loginflg = false;
 }
