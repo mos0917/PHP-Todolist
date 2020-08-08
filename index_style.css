@@ -14,23 +14,6 @@ body {
   min-height: 100vh;
 }
 
-.sns_login > span {
-  display: flex;
-  align-items: center;
-}
-.sns_login > span:before,
-.sns_login > span:after {
-  border-top: 1px solid;
-  content: "";
-  flex-grow: 1;
-}
-.sns_login > span:before {
-  margin-right: 1rem;
-}
-.sns_login > span:after {
-  margin-left: 1rem;
-}
-
 main > .container {
   padding: 60px 15px 0;
   flex: 1;

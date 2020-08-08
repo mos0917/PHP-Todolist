@@ -79,6 +79,23 @@ body {
   color: #777;
 }
 
+.sns_login > span {
+  display: flex;
+  align-items: center;
+}
+.sns_login > span:before,
+.sns_login > span:after {
+  border-top: 1px solid;
+  content: "";
+  flex-grow: 1;
+}
+.sns_login > span:before {
+  margin-right: 1rem;
+}
+.sns_login > span:after {
+  margin-left: 1rem;
+}
+
 /* Edge用フォールバック
 -------------------------------------------------- */
 @supports (-ms-ime-align: auto) {
