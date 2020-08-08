@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
 }
 
-sns_login span::before .sns_login span::after{
+.sns_login span:before .sns_login span:after{
   content: '';
   position: absolute;
   top: 50%;
@@ -22,6 +22,12 @@ sns_login span::before .sns_login span::after{
   width: 20%;
   height: 1px;
   background-color: #ddd;
+}
+.sns_login span:before{
+  left: 0;
+}
+.sns_login span:after{
+  left: 0;
 }
 main > .container {
   padding: 60px 15px 0;
