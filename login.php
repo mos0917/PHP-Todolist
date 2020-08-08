@@ -80,7 +80,7 @@ if (isset($_POST['login'])) {
         </form>
         <BR>
         <div class="g-signin2" data-onsuccess="onSignIn" name="id_token"></div>
-        <!--<a href="#" onclick="signOut();">Sign out</a>
+        <a href="#" onclick="signOut();">Sign out</a>
         <script>
             function signOut() {
                 var auth2 = gapi.auth2.getAuthInstance();
@@ -88,7 +88,7 @@ if (isset($_POST['login'])) {
                     console.log('User signed out.');
                 });
             }
-        </script> -->
+        </script>
         
     </div>
 
