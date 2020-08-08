@@ -154,6 +154,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <meta charset="utf-8">
 <meta name="viewport" content="width=width=device-width, initial-scale=1">
+<meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com">
 <link href="index_style.css" rel="stylesheet">
 <link rel="shortcut icon" href="../../core/img/fukurouimg_white.svg">
 <title>Todo List</title>
@@ -221,6 +222,12 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         var auth2 = gapi.auth2.getAuthInstance();
                         auth2.signOut().then(function () {
                             console.log('User signed out.');
+                        });
+                    }
+
+                    function onLoad() {
+                        gapi.load('auth2', function() {
+                            gapi.auth2.init();
                         });
                     }
                 </script>
@@ -437,9 +444,9 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 </footer>
 
 
-
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
 
 <script src="todoscript.js"></script>
 </body>
