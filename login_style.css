@@ -95,6 +95,10 @@ body {
 .sns_login > span:after {
   margin-left: 1rem;
 }
+.g-signin2 {
+  width: 100%;
+  height: auto;
+}
 
 /* Edge用フォールバック
 -------------------------------------------------- */
