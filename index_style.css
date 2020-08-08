@@ -14,20 +14,19 @@ body {
   min-height: 100vh;
 }
 
-.sns_login {
+.sns_login.span {
   display: flex;
   align-items: center;
 }
-.sns_login:before,
-.sns_login:after {
+.sns_login.span {
   border-top: 1px solid;
   content: "";
   flex-grow: 1;
 }
-.sns_login:before {
+.sns_login.span {
   margin-right: 1rem;
 }
-.sns_login:after {
+.sns_login.span {
   margin-left: 1rem;
 }
 
