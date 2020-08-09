@@ -82,7 +82,7 @@ if (isset($_POST['login'])) {
             <div class="sns_login">
                 <span>または</span>
                 <div class="g-signin2" data-onsuccess="onSignIn" name="id_token" data-theme="dark"></div><!--googleでログインするときのリンク -->
-                <a data-onsuccess="onSignIn" name="id_token" class="googlelogin">
+                <button type="button" class="g-signin2" data_onsuccess="onSignIn" name="id_token"></button>
 
 
                 </a>
