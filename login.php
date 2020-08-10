@@ -81,11 +81,21 @@ if (isset($_POST['login'])) {
 
             <div class="sns_login">
                 <span>または</span>
-                <div class="g-signin2" data-onsuccess="onSignIn" name="id_token" data-theme="dark"></div><!--googleでログインするときのリンク -->
-                <button type="button" onclick="onSignIn()" name="id_token"></button>
+                <div class="g-signin2"></div><!--googleでログインするときのリンク -->
+                <script>
+                    function renderButton() {
+                        gapi.signin2.render('g-signin2', {
+                            'scope': 'profile email',
+                            'width': 390,
+                            'height': 50,
+                            'longtitle': true,
+                            'theme': 'dark',
+                            'onsuccess': onSignIn
+                        });
+                    }
+                </script>
 
 
-                </a>
             </div>
         </form>
 
