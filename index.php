@@ -14,21 +14,6 @@ if (!isset($_SESSION['user'])) {
     header('Location: login.php');
 }
 
-// ユーザーIDからユーザー名を取り出す
-$query = "SELECT * FROM users WHERE user_id={$_SESSION['user']}";
-$result = $mysqli->query($query);
-
-
-// ユーザー情報の取り出し
-while ($row = $result->fetch_assoc()) {
-    $username = $row['username'];
-    $email = $row['email']; //ユーザーidの取り出し
-}
-
-
-// データベースの切断
-$result->close();
-
 if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     $name = $_POST['name'];
     $memo = $_POST['memo'];
@@ -143,6 +128,19 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 
     $dbh = null;
 }
+
+// ユーザーIDからユーザー名を取り出す
+$query = "SELECT * FROM users WHERE user_id={$_SESSION['user']}";
+$result = $mysqli->query($query);
+
+
+// ユーザー情報の取り出し
+while ($row = $result->fetch_assoc()) {
+    $username = $row['username'];
+    $email = $row['email']; //ユーザーidの取り出し
+}
+// データベースの切断
+$result->close();
 
 
 ?>
