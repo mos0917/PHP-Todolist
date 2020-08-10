@@ -76,6 +76,7 @@ if (isset($_POST['login'])) {
             </div>
             <BR>
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
+            <BR>
             <a href="register.php">会員登録はこちら</a>
             <BR>
 
