@@ -61,26 +61,26 @@ if (isset($_POST['login'])) {
 <body>
     <div class="container">
 
-        <form method="post" class="form-signin m-4" >
-            <div class="text-center mb-4">
+        <form method="post" class="form-signin">
+            <div class="text-center">
                 <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
             </div>
-            <div class="form-group m-4">
+            <div class="form-group">
                 <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required autofocus />
                 <label for="inputEmail">メールアドレス</label>
             </div>
-            <div class="form-group m-4">
+            <div class="form-group">
                 <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
                 <label for="inputEmail">パスワード</label>
             </div>
             <BR>
-            <button type="submit" class="btn btn-lg btn-primary btn-block m-4" name="login">ログインする</button>
+            <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
             <BR>
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
 
-            <div class="sns_login m-4">
+            <div class="sns_login">
                 <span>または</span>
                 <BR>
                 <div class="g-signin2" data-width="390" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" name="id_token" data-theme="dark"></div><!--googleでログインするときのリンク -->
