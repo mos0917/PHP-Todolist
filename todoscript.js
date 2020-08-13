@@ -1,3 +1,6 @@
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
     /**
      * 確認ダイアログの返り値によりフォーム送信
     */
