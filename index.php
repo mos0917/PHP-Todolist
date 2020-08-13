@@ -156,24 +156,6 @@ $result->close();
 <link href="index_style.css" rel="stylesheet">
 <link rel="shortcut icon" href="../../core/img/fukurouimg_white.svg">
 <title>Todo List</title>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">使用方法</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
-            </div><!-- /.modal-footer -->
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -205,9 +187,9 @@ $result->close();
                     </li>
                 </ul>
                 <div>
-                    <button type="button" class="btn btn-outline-warning m-sm-1" data-toggle="modal" data-target="#exampleModal">
-                        使用方法
-                    </button>
+                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
+                        <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>使用方法</button>
+                    </span>
                 </div>
                 <div>
                     <input type="submit" class="btn btn-outline-info m-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
@@ -443,13 +425,7 @@ $result->close();
 <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
-<script>
-    $('.navbar-nav>li>a , .dropdown-menu>a').on('click', function(){
-        if(this.id != 'navbarDropdown'){
-            $('.navbar-collapse').collapse('hide');
-        }
-    });
-    </script>
+
 <script src="todoscript.js"></script>
 </body>
 </html>
