@@ -191,10 +191,10 @@ $result->close();
                       <button class="btn btn-link" style="pointer-events: none;" type="button" disabled>使用方法</button>
                     </span>
 
-                    <input type="submit" class="btn btn-link" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
-                    <!--<form action="index.php" method="post"> -->
-                        <input class="btn btn-link" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
-                    <!--</form> -->
+                    <input type="submit" class="btn btn-link comptask" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
+
+                    <input class="btn btn-link" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
+
                     <script>
                         function signOut() {
                             var auth2 = gapi.auth2.getAuthInstance();

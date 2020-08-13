@@ -5,6 +5,9 @@ body {
 header > .navbar-brand{
   color:#ffffff
 }
+header > .comptask {
+margin-right: 10px;
+}
 
 body {
   margin: 0;
