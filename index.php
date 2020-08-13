@@ -187,8 +187,8 @@ $result->close();
                     </li>
                 </ul>
                 <div>
-                    <button type="button" class="btn btn-outline-warning" data-toggle="tooltip" data-placement="bottom" title="Tooltipbottom">
-                        以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。
+                    <button type="button" class="btn btn-outline-warning" data-toggle="tooltip" data-placement="bottom" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
+                        使用方法
                     </button>
                 </div>
                 <div>
