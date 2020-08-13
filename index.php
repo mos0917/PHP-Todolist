@@ -190,27 +190,26 @@ $result->close();
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
                       <button class="btn btn-outline-warning" style="pointer-events: none;" type="button" disabled>使用方法</button>
                     </span>
-                </div>
-                <div>
-                    <input type="submit" class="btn btn-outline-info m-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
-                </div>
-                <form action="index.php" method="post">
-                    <input class="btn btn-primary m-sm-1" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
-                </form>
-                <script>
-                    function signOut() {
-                        var auth2 = gapi.auth2.getAuthInstance();
-                        auth2.signOut().then(function () {
-                            console.log('User signed out.');
-                        });
-                    }
 
-                    function onLoad() {
-                        gapi.load('auth2', function() {
-                            gapi.auth2.init();
-                        });
-                    }
-                </script>
+                    <input type="submit" class="btn btn-outline-info m-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
+                    <form action="index.php" method="post">
+                        <input class="btn btn-primary m-sm-1" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
+                    </form>
+                    <script>
+                        function signOut() {
+                            var auth2 = gapi.auth2.getAuthInstance();
+                            auth2.signOut().then(function () {
+                                console.log('User signed out.');
+                            });
+                        }
+
+                        function onLoad() {
+                            gapi.load('auth2', function() {
+                                gapi.auth2.init();
+                            });
+                        }
+                    </script>
+                </div>
             </div>
         </nav>
     </header>
@@ -315,7 +314,6 @@ $result->close();
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                    <button type="button" class="btn btn-primary">完了</button>
                 </div>
             </div>
         </div>
