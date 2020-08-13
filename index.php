@@ -188,12 +188,12 @@ $result->close();
                 </ul>
                 <div>
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
-                      <button class="btn btn-outline-warning" style="pointer-events: none;" type="button" disabled>使用方法</button>
+                      <button class="btn btn-link" style="pointer-events: none;" type="button" disabled>使用方法</button>
                     </span>
 
-                    <input type="submit" class="btn btn-outline-info m-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
+                    <input type="submit" class="btn btn-link" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
                     <!--<form action="index.php" method="post"> -->
-                        <input class="btn btn-primary m-sm-1" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
+                        <input class="btn btn-link" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
                     <!--</form> -->
                     <script>
                         function signOut() {
