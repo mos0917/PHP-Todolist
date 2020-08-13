@@ -187,9 +187,9 @@ $result->close();
                     </li>
                 </ul>
                 <div>
-                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
-                        <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>使用方法</button>
-                    </span>
+                    <button type="button" class="btn btn-outline-warning" data-toggle="tooltip" data-placement="bottom" title="Tooltipbottom">
+                        以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。
+                    </button>
                 </div>
                 <div>
                     <input type="submit" class="btn btn-outline-info m-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
