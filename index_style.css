@@ -1,5 +1,6 @@
 html,
 body {
+  padding-top: 5rem;
   height: 100%;
 }
 header > .navbar-brand{
