@@ -192,9 +192,9 @@ $result->close();
                     </span>
 
                     <input type="submit" class="btn btn-outline-info m-sm-1" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
-                    <form action="index.php" method="post">
+                    <!--<form action="index.php" method="post"> -->
                         <input class="btn btn-primary m-sm-1" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
-                    </form>
+                    <!--</form> -->
                     <script>
                         function signOut() {
                             var auth2 = gapi.auth2.getAuthInstance();
