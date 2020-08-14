@@ -259,7 +259,7 @@ $result->close();
                     </ul>
                 </div>
                 <div class="col align-self-center">
-                    <input class="btn btn-outline-success" type="submit" name="submit" value="登録">
+                    <input class="btn btn-success" type="submit" name="submit" value="登録">
                 </div>
             </div>
         </form>
@@ -386,10 +386,10 @@ $result->close();
                                                     <button type="button" class="btn btn-btn btn-secondary" id="resettaskmodal" data-dismiss="modal">閉じる</button>
                                                 </div>
                                                 <div class="col-lg-2 align-self-center text-right">
-                                                    <button type="submit" class="btn btn-danger" name="delete" value="delete" >削除</button>
+                                                    <button type="submit" class="btn btn-outline-danger" name="delete" value="delete" >削除</button>
                                                 </div>
                                                 <div class="col-lg-2 align-self-center text-right">
-                                                    <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
+                                                    <button type="submit" class="btn btn-outline-primary" name="modify" value="modify">更新</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -401,8 +401,8 @@ $result->close();
                         <form action="index.php" method="post">
                             <input type="hidden" name="method" value="put">
                             <input type="hidden" name="id" value="'.$task['id'].'">
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
-                            <button type="show" class="btn btn-danger" >完了</button>
+                            <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
+                            <button type="show" class="btn btn-outline-danger" >完了</button>
                         </form>
                     </dd>
                 </div>
