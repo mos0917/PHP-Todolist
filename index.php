@@ -388,7 +388,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                                     <button type="button" class="btn btn-outline-secondary" id="resettaskmodal" data-dismiss="modal">閉じる</button>
                                                 </div>
                                                 <div class="col-lg-2 align-self-center text-right">
-                                                    <button type="submit" class="btn btn-primary" name="modify" value="modify">更新</button>
+                                                    <button type="submit" class="btn btn-info" name="modify" value="modify">更新</button>
                                                 </div>
                                             </div>
                                         </form>
