@@ -401,8 +401,8 @@ $result->close();
                         <form action="index.php" method="post">
                             <input type="hidden" name="method" value="put">
                             <input type="hidden" name="id" value="'.$task['id'].'">
-                            <button type="button" class=""btn btn-outline-secondary" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
-                            <button type="show" class="btn btn-outline-light" >完了</button>
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
+                            <button type="show" class="btn btn-outline-info" >完了</button>
                         </form>
                     </dd>
                 </div>
