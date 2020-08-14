@@ -12,10 +12,16 @@ margin-right: 10px;
 header > .navbar-expand-md{
   background-color: #107585;
 }
-header > .nav-item {
+header > a.nav-item {
   color: #ffffff;
 }
-header > .exbutton ,header > .comptask ,header > .logout {
+header > li.nav-item{
+  color: #ffffff;
+}
+header > li.nav-item.dropdown{
+  color: #ffffff;
+}
+header > span.d-inline-block.exbutton ,header > input.btn.btn-link.comptask ,header > input.btn.btn-link.logout {
   color: #ffffff;
 }
 
