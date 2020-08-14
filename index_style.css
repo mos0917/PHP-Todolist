@@ -9,15 +9,11 @@ header > .comptask {
 margin-right: 10px;
 }
 
-header > .navbar{
+header > .navbar-expand-md{
   background-color: #107585;
 }
-
-header > .nav-link{
-  background-color: #ffffff;
-}
-header > .exbutton ,header > .comptask ,header > .logout {
-  background-color: #ffffff;
+header > .navbar-collapse{
+  color: #ffffff;
 }
 
 body {
