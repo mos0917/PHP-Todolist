@@ -12,9 +12,13 @@ margin-right: 10px;
 header > .navbar-expand-md{
   background-color: #107585;
 }
-header > .navbar-collapse{
+header > .nav-item {
   color: #ffffff;
 }
+header > .exbutton ,header > .comptask ,header > .logout {
+  color: #ffffff;
+}
+
 
 body {
   margin: 0;
