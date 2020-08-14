@@ -161,7 +161,7 @@ $result->close();
 <body class="d-flex flex-column h-100">
     <header>
         <!-- 固定ナビゲーションバー -->
-        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: skyblue">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: steelblue">
             <a class="py-2" href="index.php">
                 <img src="../../core/img/fukurouimg_white.svg" width="24" height="24"></img>
             </a>
