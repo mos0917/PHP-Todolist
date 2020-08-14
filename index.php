@@ -177,11 +177,11 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: #ffffff;">カレンダー</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle disabled" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff;>ドロップダウン</a>
+                        <a class="nav-link dropdown-toggle disabled" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff;">ドロップダウン</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="#" style="color: #ffffff;">リンク1</a>
-                            <a class="dropdown-item" href="#" style="color: #ffffff;">リンク2</a>
-                            <a class="dropdown-item" href="#" style="color: #ffffff;">リンク3</a>
+                            <a class="dropdown-item" href="#">リンク1</a>
+                            <a class="dropdown-item" href="#">リンク2</a>
+                            <a class="dropdown-item" href="#">リンク3</a>
                         </div>
                     </li>
                 </ul>
