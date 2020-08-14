@@ -381,7 +381,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                                         </li> 
                                                     </ul>
                                                 </div>
-                                                <div class="col-lg-2 align-self-center text-left">
+                                                <div class="col-lg-8 align-self-center text-right">
                                                     <button type="submit" class="btn btn-outline-danger" name="delete" value="delete" >削除</button>
                                                 </div>
                                                 <div class="col-lg-2 align-self-center text-right">
