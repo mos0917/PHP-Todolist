@@ -174,10 +174,10 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         <a class="nav-link" href="index.php" style="color: #ffffff;">ホーム <span class="sr-only"(現位置)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: #ffffff;">カレンダー</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">カレンダー</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle disabled" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff;">ドロップダウン</a>
+                        <a class="nav-link dropdown-toggle disabled" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ドロップダウン</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="#">リンク1</a>
                             <a class="dropdown-item" href="#">リンク2</a>
@@ -186,7 +186,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </li>
                 </ul>
                 <div>
-                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" style="color: #ffffff;" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
+                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
                       <button class="btn btn-link exbutton" style="pointer-events: none;" type="button" disabled>使用方法</button>
                     </span>
 
