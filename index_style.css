@@ -12,10 +12,9 @@ margin-right: 10px;
 header > .navbar-expand-md{
   background-color: #107585;
 }
-header > .nav-link {
+header > .btn.btn-link.exbutton {
   color: #ffffff;
 }
-
 
 body {
   margin: 0;
