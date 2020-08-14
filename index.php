@@ -160,7 +160,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <body class="d-flex flex-column h-100">
     <header>
         <!-- 固定ナビゲーションバー -->
-        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #919191;">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #404040;">
             <a class="py-2" href="index.php">
                 <img src="../../core/img/fukurouimg_white.svg" width="24" height="24"></img>
             </a>
@@ -171,13 +171,13 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <div class="collapse navbar-collapse" id="navbar-header">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php" style="color: #ffffff">>ホーム <span class="sr-only"(現位置)</span></a>
+                        <a class="nav-link" href="index.php" >ホーム <span class="sr-only"(現位置)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: #ffffff">カレンダー</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">カレンダー</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle disabled" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff">ドロップダウン</a>
+                        <a class="nav-link dropdown-toggle disabled" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ドロップダウン</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="#">リンク1</a>
                             <a class="dropdown-item" href="#">リンク2</a>
@@ -186,13 +186,13 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </li>
                 </ul>
                 <div>
-                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
+                    <span class="d-inline-block exbutton" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
                       <button class="btn btn-link" style="pointer-events: none;" type="button" disabled>使用方法</button>
                     </span>
 
                     <input type="submit" class="btn btn-link comptask" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()">
 
-                    <input class="btn btn-link" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
+                    <input class="btn btn-link logout" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト">
 
                     <script>
                         function signOut() {
