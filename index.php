@@ -171,7 +171,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
             <div class="collapse navbar-collapse" id="navbar-header">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">ホーム <span class="sr-only" style="color: #ffffff">(現位置)</span></a>
+                        <a class="nav-link" href="index.php" style="color: #ffffff">>ホーム <span class="sr-only"(現位置)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: #ffffff">カレンダー</a>
