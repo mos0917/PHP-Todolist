@@ -6,12 +6,13 @@ function errChk(){ //タスク登録時のエラーチェック
     var taskname = document.getElementById(taskname).value;
     var taskvalue = document.getElementById(taskvalue).value;
 
-    //if(taskname === "" || taskvalue === ""){
-        if(!taskname.match(/\S/g) || !taskvalue.match(/\S/g)){
+    if(taskname === "" || taskvalue === ""){
+        if(!taskname.match(/\S/) || !taskvalue.match(/\S/)){
             alert("タスク名、またはまたは内容に不備があります。");
             return false;
         }
-    //}
+
+    }
 }
 
 
