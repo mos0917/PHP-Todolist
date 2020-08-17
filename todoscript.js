@@ -1,22 +1,14 @@
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
-    /**
-     * 確認ダイアログの返り値によりフォーム送信
-    */
-function submitChk () {
-    /* 確認ダイアログ表示 */
-    var flag = confirm ( "登録してもよろしいですか？\n取り消す場合は[キャンセル]ボタンを押して下さい");
-    /* send_flg が TRUEなら送信、FALSEなら送信しない */
-    return flag;
-}
 
 function errChk(){ //タスク登録時のエラーチェック
-    if(document.getElementById('taskname').value === '' || document.getElementById('taskvalue').value === ''){
+    if(document.getElementById('taskname').value === "" || document.getElementById('taskvalue').value === ""){
         alert("タスク名、またはまたは内容に不備があります。");
         return false;
     }
 }
+
 
 function onSignIn(googleUser) {//googleでログインボタンを押下したときの処理
     var id_token = googleUser.getAuthResponse().id_token;
