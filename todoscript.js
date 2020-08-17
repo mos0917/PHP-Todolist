@@ -3,8 +3,8 @@ $(function () {
 })
 
 function errChk(){ //タスク登録時のエラーチェック
-    var taskname = document.getElementById(taskname).value;
-    var taskvalue = document.getElementById(taskvalue).value;
+    var taskname = document.getElementById('taskname').value;
+    var taskvalue = document.getElementById('taskvalue').value;
 
     if(taskname === "" || taskvalue === ""){
         //if(!taskname.match(/\S/) || !taskvalue.match(/\S/)){
