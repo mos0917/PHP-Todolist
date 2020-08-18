@@ -280,6 +280,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         <?php
                         for ($count = 0; $count < 20; $count++) {
                                 echo '<div class="col-lg-12">
+                                    <input type="hidden" id="comptaskid'.$count.'" class="completetaskid">
                                     <ul>
                                         <li>
                                             <span>タスク名:</span>

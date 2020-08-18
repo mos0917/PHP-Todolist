@@ -44,6 +44,9 @@ function comptask(){
     .then((json) => {
     console.log(json)
         for(let count=0;count <20; count++){
+            div = document.getElementById("comptaskid" + count)
+            div.innerHTML = json.get[count].id
+
             div = document.getElementById("comptaskname" + count)
             div.innerHTML = json.get[count].name
 
