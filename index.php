@@ -316,8 +316,8 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-info" name="undotask" value="undo">選択したタスクを元に戻す</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                    <button type="submit" class="btn btn-info" name="undotask" value="undo">選択したタスクを元に戻す</button>
                 </div>
             </div>
         </div>
