@@ -31,6 +31,14 @@ body {
   word-break: break-all;
 }
 
+.completetaskname {
+  word-break: break-all;
+}
+
+.completetaskvalue {
+  word-break: break-all;
+}
+
 main > .container {
   padding: 60px 15px 0;
   flex: 1;
