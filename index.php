@@ -326,17 +326,15 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     $stmt->execute();
     $dbh = null;
 
-    echo '<dl>';
-
     while ($task = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo'<div class="container">
                 <div class="row">
                 <div class="col-xs-12 col-lg-3">
-                    ■タスク名:wordwrap('.$task['name'].',10,"<br />",false)
+                    ■タスク名:'.$task['name'].'
                 </div>
                 <br>
                 <div class="col-xs-12 col-lg-3">
-                    ■内容:wordwrap('.$task['memo'].',10,"<br />",false)
+                    ■内容:'.$task['memo'].'
                 </div>
                 <br>
                 <div class="col-xs-12 col-lg-3">
