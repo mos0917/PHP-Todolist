@@ -360,7 +360,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                                     <ul>
                                                         <li>
                                                             <span>タスク名</span>
-                                                            <input type="text" class="form-control" id="edittaskname" name="editname" value="'.$task['name'].'">
+                                                            <input type="text" class="form-control" id="edittaskname" name="editname" maxlength="30" value="'.$task['name'].'">
                                                         </li>
                                                     </ul>
                                                 </div>
