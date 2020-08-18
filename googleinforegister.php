@@ -73,7 +73,6 @@ if (isset($_POST['gsignup'])) {
     <br>
 
     <button type="submit" class="btn btn-lg btn-success btn-block" name="gsignup">会員登録する</button>
-    <a href="login.php">ログイン画面に戻る</a>
     <br>
 
 </form>
