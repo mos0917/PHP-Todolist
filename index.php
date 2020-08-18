@@ -232,7 +232,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     <ul>
                         <li>
                             <span>タスク名</span>
-                            <input type="text" class="form-control" id="taskname" name="name" value="<?php if (isset($name)) {
+                            <input type="text" maxlength="25" class="form-control" id="taskname" name="name" value="<?php if (isset($name)) {
                                 echo $name;
                                                                                                      } ?>">
                         </li>
