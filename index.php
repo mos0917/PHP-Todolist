@@ -306,6 +306,14 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                         </li> 
                                     </ul>
                                 </div>
+                                <div class="col-lg-12">
+                                    <ul>
+                                        <li>
+                                            <input class="undochecklabel" type="checkbox" id="undocheck">
+                                            <label class="undochecklabel" for="undocheck">選択</label>
+                                        </li>
+                                    </ul>
+                                </div>
                             ';
                         }
                         ?>
