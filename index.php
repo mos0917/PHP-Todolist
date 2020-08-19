@@ -279,38 +279,39 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     <div class="row">
                         <?php
                         for ($count = 0; $count < 20; $count++) {
-                                echo '<form name="closecompletetask">
-                                        <div class="col-lg-12">
-                                            <input type="hidden" id="comptaskid'.$count.'" class="completetaskid">
-                                            <ul>
-                                                <li>
-                                                    <span>タスク名:</span>
-                                                    <span id="comptaskname'.$count.'" class="completetaskname"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <ul>
-                                                <li>
-                                                    <span>内容:</span>
-                                                    <span id="comptaskvalue'.$count.'" class="completetaskvalue"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <ul>
-                                                <li>
-                                                    <span>期限:</span>
-                                                    <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date"></span>
-                                                </li> 
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-12 border-bottom">
-                                            <input class="undocheckinput" type="checkbox" id="undocheck'.$count.'">
-                                            <label class="undochecklabel" for="undocheck'.$count.'">選択</label>
-                                        </div>
-                                      </form>
-                                ';
+                                echo '<div class="col-lg-12">
+                                    <input type="hidden" id="comptaskid'.$count.'" class="completetaskid">
+                                    <ul>
+                                        <li>
+                                            <span>タスク名:</span>
+                                            <span id="comptaskname'.$count.'" class="completetaskname">
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12">
+                                    <ul>
+                                        <li>
+                                            <span>内容:</span>
+                                            <span id="comptaskvalue'.$count.'" class="completetaskvalue">
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12">
+                                    <ul>
+                                        <li>
+                                            <span>期限:</span>
+                                            <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date">
+                                            </span>
+                                        </li> 
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12 border-bottom">
+                                    <input class="undocheckinput" type="checkbox" id="undocheck'.$count.'">
+                                    <label class="undochecklabel" for="undocheck'.$count.'">選択</label>
+                                </div>
+                            ';
                         }
                         ?>
                     </div>
