@@ -143,6 +143,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 }
 
 if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処理
+    var_dump($_POST['undo']);
     $undoid = $_POST['undoid'];
 
     $dbh = db_connect();
