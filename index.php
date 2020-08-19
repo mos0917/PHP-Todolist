@@ -321,7 +321,7 @@ if(isset($_POST['undo'])){//取り消しボタンを押下したときの処理
                                         </li> 
                                     </ul>
                                 </div>
-                                <div class="col-lg-12 border-bottom">//TODO: フォームを作る
+                                <div class="col-lg-12 border-bottom">
                                     <form action="index.php" method="post">
                                         <button type="submit" class="btn btn-info" name="undo" value="undo" data-dismiss="modal">元に戻す</button>
                                     </form>
