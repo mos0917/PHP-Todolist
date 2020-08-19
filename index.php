@@ -322,8 +322,7 @@ if(isset($_POST['undo'])){//取り消しボタンを押下したときの処理
                                     </ul>
                                 </div>
                                 <div class="col-lg-12 border-bottom">
-                                    <input class="undocheckinput" type="checkbox" id="undocheck'.$count.'">
-                                    <label class="undochecklabel" for="undocheck'.$count.'">選択</label>
+                                    <button type="submit" class="btn btn-info" name="undo" value="undo">元に戻す</button>
                                 </div>
                             ';
                         }
