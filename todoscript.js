@@ -60,10 +60,12 @@ function comptask(){
     .catch((error) => console.log(error));
 }
 
-document.getElementById("resettaskmodal").onclick = function(){
+document.getElementById("resettaskmodal").onclick = function() {
     document.edittaskform.reset();
 }
 
-document.getElementById("clesecomptask").onclick = function(){
-    document.getElementsByClassName("undocheckinput").reset();
+document.getElementById("closecomptask").onclick = function () {
+    document.closecompletetask.reset();
 }
+
+
