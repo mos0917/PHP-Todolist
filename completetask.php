@@ -21,6 +21,8 @@ $stmt->execute();
 $comptask = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
 $arraytask = array_values($comptask);
 
+var_dump($getvalue);
+
 
 $getvalue = $arraytask;
 $arraytask = ["get"=>$getvalue];
