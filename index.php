@@ -142,7 +142,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     $dbh = null;
 }
 
-if(isset($_POST['undotask'])){//取り消しボタンを押下したときの処理
+if(isset($_POST['undo'])){//取り消しボタンを押下したときの処理
     $undoid = $_POST['undoid'];
 
     $dbh = db_connect();
@@ -332,7 +332,7 @@ if(isset($_POST['undotask'])){//取り消しボタンを押下したときの処
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                    <button type="submit" class="btn btn-info" name="undotask" value="undo">選択したタスクを元に戻す</button>
+                    <button type="submit" class="btn btn-info" name="undo" value="undo">選択したタスクを元に戻す</button>
                 </div>
             </div>
         </div>
