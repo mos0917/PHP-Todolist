@@ -65,7 +65,8 @@ document.getElementById("resettaskmodal").onclick = function() {
 }
 
 function closecomptask () {
-    document.closecompletetask.reset();
+    var checkbox = document.getElementById("undocheck");
+    checkbox.checked = false;
 }
 
 
