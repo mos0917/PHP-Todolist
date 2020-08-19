@@ -142,6 +142,20 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     $dbh = null;
 }
 
+if(isset($_POST['undotask'])){//取り消しボタンを押下したときの処理
+    $undoid = $_POST['undoid'];
+
+    $dbh = db_connect();
+
+    $sql = 'UPDATE tasks SET done = 0 where id = ?';
+    $stmt = $dbh->prepare($sql);
+
+    $stmt->bindValue(1, $undoid, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $dbh = null;
+}
+
 ?>
 
 <!doctype html>
@@ -280,7 +294,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         <?php
                         for ($count = 0; $count < 20; $count++) {
                                 echo '<div class="col-lg-12">
-                                    <input type="hidden" id="comptaskid'.$count.'" class="completetaskid">
+                                    <input type="hidden" name="undoid" id="comptaskid'.$count.'" class="completetaskid">
                                     <ul>
                                         <li>
                                             <span>タスク名:</span>
