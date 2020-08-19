@@ -64,12 +64,4 @@ document.getElementById("resettaskmodal").onclick = function() {
     document.edittaskform.reset();
 }
 
-function closecomptask () {
-    for(let count=0; count < 20; count++){
-        var checkbox = document.getElementById("undocheck" + count);
-        checkbox.checked = false;
-    }
-
-}
-
 
