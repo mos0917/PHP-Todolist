@@ -298,6 +298,13 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                                         <form action="index.php" method="post" name="undotask">
                                     <ul>
                                         <li>
+                                            <span>ID:</span>
+                                            <span id="comptaskid'.$count.'" class="completetaskid">
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
                                             <span>タスク名:</span>
                                             <span id="comptaskname'.$count.'" class="completetaskname">
                                             </span>
@@ -323,7 +330,6 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                                     </ul>
                                 </div>
                                 <div class="col-lg-12 border-bottom">
-                                        <input type="hidden" name="undoid" id="comptaskid'.$count.'" class="completetaskid">
                                         <button type="submit" class="btn btn-info" name="undo" value="undo">元に戻す</button>
                                 </div>
                                </form>
