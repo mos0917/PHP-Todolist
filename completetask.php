@@ -6,7 +6,7 @@ include_once 'dbconnect.php';
 
 $dbh = db_connect();
 
-$query = 'SELECT * FROM users WHERE user_id='.$_SESSION['user'].'';
+$query = 'SELECT * FROM users WHERE user_id="'.$_SESSION['user'].'"';
 $result = $mysqli->query($query);
 // ユーザー情報の取り出し
 while ($row = $result->fetch_assoc()) {
