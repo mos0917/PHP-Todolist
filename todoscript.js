@@ -65,8 +65,11 @@ document.getElementById("resettaskmodal").onclick = function() {
 }
 
 function closecomptask () {
-    var checkbox = document.getElementById("undocheck");
-    checkbox.checked = false;
+    for(let count=0; count < 20; count++){
+        var checkbox = document.getElementById("undocheck" + count);
+        checkbox.checked = false;
+    }
+
 }
 
 
