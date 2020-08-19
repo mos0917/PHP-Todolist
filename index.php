@@ -321,8 +321,10 @@ if(isset($_POST['undo'])){//取り消しボタンを押下したときの処理
                                         </li> 
                                     </ul>
                                 </div>
-                                <div class="col-lg-12 border-bottom">
-                                    <button type="submit" class="btn btn-info" name="undo" value="undo">元に戻す</button>
+                                <div class="col-lg-12 border-bottom">//TODO: フォームを作る
+                                    <form action="index.php" method="post">
+                                        <button type="submit" class="btn btn-info" name="undo" value="undo" data-dismiss="modal">元に戻す</button>
+                                    </form>
                                 </div>
                             ';
                         }
@@ -331,7 +333,6 @@ if(isset($_POST['undo'])){//取り消しボタンを押下したときの処理
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                    <button type="submit" class="btn btn-info" name="undo" value="undo">選択したタスクを元に戻す</button>
                 </div>
             </div>
         </div>
