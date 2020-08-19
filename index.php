@@ -279,48 +279,45 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     <div class="row">
                         <?php
                         for ($count = 0; $count < 20; $count++) {
-                                echo '<div class="col-lg-12">
-                                    <input type="hidden" id="comptaskid'.$count.'" class="completetaskid">
-                                    <ul>
-                                        <li>
-                                            <span>タスク名:</span>
-                                            <span id="comptaskname'.$count.'" class="completetaskname">
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-12">
-                                    <ul>
-                                        <li>
-                                            <span>内容:</span>
-                                            <span id="comptaskvalue'.$count.'" class="completetaskvalue">
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-12">
-                                    <ul>
-                                        <li>
-                                            <span>期限:</span>
-                                            <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date">
-                                            </span>
-                                        </li> 
-                                    </ul>
-                                </div>
-                                <div class="col-lg-12 border-bottom">
-                                    <input class="undocheckinput" type="checkbox" id="undocheck'.$count.'">
-                                    <label class="undochecklabel" for="undocheck'.$count.'">選択</label>
-                                </div>
-                            ';
+                                echo '<form name="closecompletetask">
+                                        <div class="col-lg-12">
+                                            <input type="hidden" id="comptaskid'.$count.'" class="completetaskid">
+                                            <ul>
+                                                <li>
+                                                    <span>タスク名:</span>
+                                                    <span id="comptaskname'.$count.'" class="completetaskname"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <ul>
+                                                <li>
+                                                    <span>内容:</span>
+                                                    <span id="comptaskvalue'.$count.'" class="completetaskvalue"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <ul>
+                                                <li>
+                                                    <span>期限:</span>
+                                                    <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date"></span>
+                                                </li> 
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-12 border-bottom">
+                                            <input class="undocheckinput" type="checkbox" id="undocheck'.$count.'">
+                                            <label class="undochecklabel" for="undocheck'.$count.'">選択</label>
+                                        </div>
+                                      </form>
+                                ';
                         }
                         ?>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <form name="closecompletetask">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closecomptask">閉じる</button>
-                        <button type="submit" class="btn btn-info" name="undotask" value="undo">選択したタスクを元に戻す</button>
-                    </form>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closecomptask()">閉じる</button>
+                    <button type="submit" class="btn btn-info" name="undotask" value="undo">選択したタスクを元に戻す</button>
                 </div>
             </div>
         </div>
@@ -366,7 +363,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                                 <ul>
                                                     <li>
                                                         <span>タスク名</span>
-                                                        <input type="text" class="form-control" id="edittaskname" name="editname" maxlength="30" value="'.$task['name'].'">
+                                                        <input type="text" class="form-control" id="edittaskname" name="editname" maxlength="25" value="'.$task['name'].'">
                                                     </li>
                                                 </ul>
                                             </div>

@@ -64,7 +64,7 @@ document.getElementById("resettaskmodal").onclick = function() {
     document.edittaskform.reset();
 }
 
-document.getElementById("closecomptask").onclick = function () {
+function closecomptask () {
     document.closecompletetask.reset();
 }
 
