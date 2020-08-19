@@ -142,7 +142,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     $dbh = null;
 }
 
-if(isset($_POST['undo'])){//取り消しボタンを押下したときの処理
+if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処理
     $undoid = $_POST['undoid'];
 
     $dbh = db_connect();
@@ -294,7 +294,6 @@ if(isset($_POST['undo'])){//取り消しボタンを押下したときの処理
                         <?php
                         for ($count = 0; $count < 20; $count++) {
                                 echo '<div class="col-lg-12">
-                                    <input type="hidden" name="undoid" id="comptaskid'.$count.'" class="completetaskid">
                                     <ul>
                                         <li>
                                             <span>タスク名:</span>
@@ -322,8 +321,9 @@ if(isset($_POST['undo'])){//取り消しボタンを押下したときの処理
                                     </ul>
                                 </div>
                                 <div class="col-lg-12 border-bottom">
-                                    <form action="index.php" method="post">
-                                        <button type="submit" class="btn btn-info" name="undo" value="undo" data-dismiss="modal">元に戻す</button>
+                                    <form action="index.php" method="post" name="undotask">
+                                        <input type="hidden" name="undoid" id="comptaskid'.$count.'" class="completetaskid">
+                                        <button type="submit" class="btn btn-info" name="undo" value="undo">元に戻す</button>
                                     </form>
                                 </div>
                             ';
