@@ -143,8 +143,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 }
 
 if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処理
-    var_dump($_POST['undo']);
-    $undoid = $_POST['undoid'];
+    $undoid = $_POST['undotaskid'];
 
     $dbh = db_connect();
 
@@ -299,7 +298,7 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                                     <ul>
                                         <li>
                                             <span>ID:</span>
-                                            <span id="comptaskid'.$count.'" class="completetaskid">
+                                            <input type="hidden" name="undotaskid" id="comptaskid'.$count.'" class="completetaskid">
                                             </span>
                                         </li>
                                     </ul>
