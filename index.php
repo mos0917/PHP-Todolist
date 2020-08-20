@@ -290,46 +290,46 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                     </button>
                 </div>
                 <div class="modal-body" id="modalbody">
-                    <div class="row">
-                        <?php
-                        for ($count = 0; $count < 20; $count++) {
+                    <form action="index.php" method="post" name="undotask">
+                        <div class="row">
+                            <?php
+                            for ($count = 0; $count < 20; $count++) {
                                 echo '<div class="col-lg-12">
-                                        <form action="index.php" method="post" name="undotask">
-                                        <input type="hidden" name="undotaskid" id="comptaskid'.$count.'" class="completetaskid">
-                                    <ul>
-                                        <li>
-                                            <span>タスク名:</span>
-                                            <span id="comptaskname'.$count.'" class="completetaskname">
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-12">
-                                    <ul>
-                                        <li>
-                                            <span>内容:</span>
-                                            <span id="comptaskvalue'.$count.'" class="completetaskvalue">
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-12">
-                                    <ul>
-                                        <li>
-                                            <span>期限:</span>
-                                            <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date">
-                                            </span>
-                                        </li> 
-                                    </ul>
-                                </div>
-                                <div class="col-lg-12 border-bottom">
-                                        <button type="submit" class="btn btn-info" name="undo" value="undo">元に戻す</button>
-                                </div>
-                               </form>
-                            ';
-                        }
+                                          <input type="hidden" name="undotaskid" id="comptaskid'.$count.'" class="completetaskid">
+                                          <ul>
+                                              <li>
+                                                  <span>タスク名:</span>
+                                                  <span id="comptaskname'.$count.'" class="completetaskname">
+                                                  </span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="col-lg-12">
+                                          <ul>
+                                              <li>
+                                                  <span>内容:</span>
+                                                  <span id="comptaskvalue'.$count.'" class="completetaskvalue">
+                                                  </span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="col-lg-12">
+                                          <ul>
+                                              <li>
+                                                  <span>期限:</span>
+                                                  <span id="compdeadline_date'.$count.'" class="completetaskdeadline_date">
+                                                  </span>
+                                              </li> 
+                                          </ul>
+                                      </div>
+                                      <div class="col-lg-12 border-bottom">
+                                          <button type="submit" class="btn btn-info" name="undo" value="undo">元に戻す</button>
+                                      </div>
+                                ';
+                            }
                         ?>
-                    </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
