@@ -295,13 +295,7 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                         for ($count = 0; $count < 20; $count++) {
                                 echo '<div class="col-lg-12">
                                         <form action="index.php" method="post" name="undotask">
-                                    <ul>
-                                        <li>
-                                            <span>ID:</span>
-                                            <input type="hidden" name="undotaskid" id="comptaskid'.$count.'" class="completetaskid">
-                                            </span>
-                                        </li>
-                                    </ul>
+                                        <input type="hidden" name="undotaskid" id="comptaskid'.$count.'" class="completetaskid">
                                     <ul>
                                         <li>
                                             <span>タスク名:</span>
