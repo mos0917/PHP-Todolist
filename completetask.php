@@ -15,7 +15,7 @@ while ($row = $result->fetch_assoc()) {
 }
 
 
-$compsql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 1 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC limit 20 offset 0';
+$compsql = 'SELECT id, tasks.* FROM tasks WHERE done = 1 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC limit 20 offset 0';
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
 $comptask = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
