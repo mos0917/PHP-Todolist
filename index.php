@@ -5,8 +5,7 @@ session_start();
 require_once 'functions.php';
 include_once 'dbconnect.php';
 
-$date = date('Y-m-d H:i:s'); //現在日付の取得
-
+$nowdate = date('Y-m-d H:i:s'); //現在日付の取得
 
 if (!isset($_SESSION['user'])) {
     header('Location: login.php');
@@ -57,7 +56,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
         $stmt->bindvalue(1, $email, PDO::PARAM_STR);
         $stmt->bindValue(2, $name, PDO::PARAM_STR);
         $stmt->bindValue(3, $memo, PDO::PARAM_STR);
-        $stmt->bindValue(4, $date, PDO::PARAM_STR);
+        $stmt->bindValue(4, $nowdate, PDO::PARAM_STR);
         $stmt->bindValue(5, $deaddate, PDO::PARAM_STR);
 
         $stmt->execute();
@@ -117,7 +116,7 @@ if (isset($_POST['modify'])) { //更新ボタン押下時の処理
         $stmt->bindValue('1', $editname, PDO::PARAM_STR);
         $stmt->bindValue('2', $editmemo, PDO::PARAM_STR);
         $stmt->bindValue('3', $editdeaddate, PDO::PARAM_STR);
-        $stmt->bindValue('4', $date, PDO::PARAM_STR);
+        $stmt->bindValue('4', $nowdate, PDO::PARAM_STR);
         $stmt->bindValue('5', $editid, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -135,7 +134,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 
     $sql = 'UPDATE tasks SET delete_flg = 1 WHERE id = ?';
     $stmt = $dbh->prepare($sql);
-
     $stmt->bindValue(1, $delid, PDO::PARAM_INT);
     $stmt->execute();
 
@@ -202,25 +200,8 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
                         <button class="btn btn-link exbutton" style="pointer-events: none; color: #ffffff;" type="button" disabled>使用方法</button>
                     </span>
-
                     <input type="submit" class="btn btn-link comptask" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()" style="color: #ffffff;">
-
                     <input class="btn btn-link logout" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト" style="color: #ffffff;">
-
-                    <script>
-                        function signOut() {
-                            var auth2 = gapi.auth2.getAuthInstance();
-                            auth2.signOut().then(function () {
-                                console.log('User signed out.');
-                            });
-                        }
-
-                        function onLoad() {
-                            gapi.load('auth2', function() {
-                                gapi.auth2.init();
-                            });
-                        }
-                    </script>
                 </div>
             </div>
         </nav>
