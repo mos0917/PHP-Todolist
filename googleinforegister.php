@@ -2,6 +2,7 @@
 session_start();
 
 include_once 'dbconnect.php';
+include_once 'token_verify.php';
 
 
 // gsignupがPOSTされたときに下記を実行(googleでログインボタンを押下してログインしたとき専用)
@@ -56,11 +57,11 @@ if (isset($_POST['gsignup'])) {
         <h1>会員登録(Googleユーザー)</h1>
     </div>
     <div class="form-group">
-            <input type="text" class="form-control" name="username" placeholder="ユーザー名" required />
+            <input type="text" class="form-control" name="username" placeholder="ユーザー名" value="'.$userid.'" required />
             <label for="inputEmail">ユーザー名</label>
     </div>
     <div class="form-group">
-        <input type="email"  class="form-control" name="email" placeholder="メールアドレス" required />
+        <input type="email"  class="form-control" name="email" placeholder="メールアドレス" value="'.$email.'" required />
         <label for="inputEmail">メールアドレス</label>
     </div>
     <div class="form-group">

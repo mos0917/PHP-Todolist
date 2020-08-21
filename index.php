@@ -1,15 +1,13 @@
 <?php
 date_default_timezone_set('Asia/Tokyo');
 
+session_start();
 require_once 'functions.php';
+include_once 'dbconnect.php';
 
 $date = date('Y-m-d H:i:s'); //現在日付の取得
 
-$errors = array();
-$updateerrors = array();
 
-session_start();
-include_once 'dbconnect.php';
 if (!isset($_SESSION['user'])) {
     header('Location: login.php');
 }
@@ -18,16 +16,17 @@ if (!isset($_SESSION['user'])) {
 $query = "SELECT * FROM users WHERE user_id={$_SESSION['user']}";
 $result = $mysqli->query($query);
 
-
 // ユーザー情報の取り出し
 while ($row = $result->fetch_assoc()) {
     $username = $row['username'];
     $email = $row['email']; //ユーザーidの取り出し
 }
+
 // データベースの切断
 $result->close();
 
 if (isset($_POST['submit'])) { //登録ボタン押下時の処理
+    $errors = array();
     $name = $_POST['name'];
     $memo = $_POST['memo'];
     $deaddate = $_POST['deadline_date'];
@@ -86,6 +85,7 @@ if (isset($_POST['method']) && ($_POST['method'] === 'put')) { //完了ボタン
 }
 
 if (isset($_POST['modify'])) { //更新ボタン押下時の処理
+    $updateerrors = array();
     $editid = $_POST['editdelid'];
     $editname = $_POST['editname'];
     $editmemo = $_POST['editmemo'];
@@ -157,7 +157,6 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
 }
 
 ?>
-
 <!doctype html>
 <html>
 <head>
