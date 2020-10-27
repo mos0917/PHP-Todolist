@@ -14,11 +14,6 @@ if (isset($_POST['gsignup'])) {
     // POSTされた情報をDBに格納する
     $query = "INSERT INTO users(username,email,password,google_flg) VALUES('$username','$email','$password',1)";
     if ($mysqli->query($query)) {
-        ?>
-    <script>
-        alert("登録しました");
-    </script>
-        <?php
         header('location: index.php');
         $_SESSION['user'] = 'true';
         exit();
@@ -28,12 +23,10 @@ if (isset($_POST['gsignup'])) {
         alert("登録したメールアドレスは既に登録されています。再度登録をお願い致します。");
         exit();
     </script>
-        <?php
+<?php
     }
 }
 ?>
-
-
 
 
 <!DOCTYPE HTML>
@@ -73,7 +66,7 @@ if (isset($_POST['gsignup'])) {
     </div>
     <br>
 
-    <button type="submit" class="btn btn-lg btn-success btn-block" name="gsignup">会員登録する</button>
+    <button type="submit" class="btn btn-lg btn-success btn-block" name="gsignup">登録する</button>
     <br>
 
 </form>

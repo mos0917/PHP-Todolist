@@ -197,6 +197,9 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                     </li>
                 </ul>
                 <div>
+                    <span>
+                        <a class="nav-link" href="#" ><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                    </span>
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
                         <button class="btn btn-link exbutton" style="pointer-events: none; color: #ffffff;" type="button" disabled>使用方法</button>
                     </span>
@@ -321,8 +324,7 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                                               <button type="submit" class="btn btn-info" name="undo" value="undo">元に戻す</button>
                                           </div>
                                     ';
-                                }
-                            ?>
+                                }?>
                             </div>
                         </form>
                     </div>
@@ -334,6 +336,7 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
         </div>
 
         <?php
+        //登録下タスクの表示
         $dbh = db_connect();
 
         $sql = 'SELECT id, name, memo, deadline_date FROM tasks WHERE done = 0 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC';

@@ -14,13 +14,11 @@ while ($row = $result->fetch_assoc()) {
     $email = $row['email']; //ユーザーidの取り出し
 }
 
-
 $compsql = 'SELECT id, tasks.* FROM tasks WHERE done = 1 and delete_flg = 0 and email = "'.$email.'" ORDER BY id DESC limit 20 offset 0';
 $stmt = $dbh->prepare($compsql);
 $stmt->execute();
 $comptask = $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
 $arraytask = array_values($comptask);
-
 
 $getvalue = $arraytask;
 $arraytask = ["get"=>$getvalue];
