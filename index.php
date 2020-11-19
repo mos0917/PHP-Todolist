@@ -198,7 +198,7 @@ if (isset($_POST['undo'])) {//取り消しボタンを押下したときの処�
                 </ul>
                 <div>
                     <span>
-                        <a class="nav-link" href="#" ><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                        <a class="nav-link" href="#" ><span class="glyphicon glyphicon-question-sign" aria-hidden="false"></a>
                     </span>
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
                         <button class="btn btn-link exbutton" style="pointer-events: none; color: #ffffff;" type="button" disabled>使用方法</button>
