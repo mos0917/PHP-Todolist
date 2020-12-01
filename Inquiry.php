@@ -26,15 +26,15 @@ include_once 'dbconnect.php';
         </div>
         <div class="form-group">
             <input type="email" id="inputUser" class="form-control" placeholder="ログインユーザー名" required="" autofocus="" kl_vkbd_parsed="true">
-            <label for="inputEmail">ログインユーザー名</label>
+            <label for="inputUser">ログインユーザー名</label>
         </div>
         <div class="form-group">
             <input type="email" id="inputEmail" class="form-control" placeholder="ログインメールアドレス" required="" autofocus="" kl_vkbd_parsed="true">
             <label for="inputEmail">ログインメールアドレス</label>
         </div>
         <div class="form-group">
-            <textarea class="form-control"></textarea>
-            <label for="value">問い合わせ内容</label>
+            <input type="textarea" id="inputvalue" class="form-control" placeholder="問い合わせ内容" required="" autofocus="" kl_vkbd_parsed="true">
+            <label for="inputvalue">問い合わせ内容</label>
         </div>
         <br>
     </form>
