@@ -25,11 +25,11 @@ include_once 'dbconnect.php';
             <h1>問い合わせ</h1>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="username" placeholder="ログインユーザー名" required />
+            <input type="email" id="inputUser" class="form-control" placeholder="ログインユーザー名" required="" autofocus="" kl_vkbd_parsed="true">
             <label for="inputEmail">ログインユーザー名</label>
         </div>
         <div class="form-group">
-            <input type="email"  class="form-control" name="email" placeholder="ログインメールアドレス" required />
+            <input type="email" id="inputEmail" class="form-control" placeholder="ログインメールアドレス" required="" autofocus="" kl_vkbd_parsed="true">
             <label for="inputEmail">ログインメールアドレス</label>
         </div>
         <div class="form-group">
@@ -37,16 +37,13 @@ include_once 'dbconnect.php';
             <label for="value">問い合わせ内容</label>
         </div>
         <br>
-
-        <button type="submit" class="btn btn-lg btn-success btn-block" name="signup">登録する</button>
-        <a href="login.php">ログイン画面に戻る</a>
     </form>
 
         <div class="form-group">
             <label class="col-sm-3"></label>
             <div class="col-sm-9">
-                <button class="btn btn-default">リセット</button>
-                <button class="btn btn-default">送信する</button>
+                <button class="btn btn-outline-secondary">リセット</button>
+                <button class="btn btn-outline-success">送信する</button>
             </div>
         </div>
     </form>
