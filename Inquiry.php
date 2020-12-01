@@ -20,27 +20,27 @@ include_once 'dbconnect.php';
 </head>
 <body>
 <div class="container">
-    <form action="" method="" class="inquiryform">
-        <div class="form-group">
-            <label class="col-sm-3 control-label" for="name1">ログイン名</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" name="">
-            </div>
+    <form method="post" class="form-inquiry">
+        <div class="text-left mb-4">
+            <h1>問い合わせ</h1>
         </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="ログインユーザー名" required />
+            <label for="inputEmail">ログインユーザー名</label>
+        </div>
+        <div class="form-group">
+            <input type="email"  class="form-control" name="email" placeholder="ログインメールアドレス" required />
+            <label for="inputEmail">ログインメールアドレス</label>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control"></textarea>
+            <label for="value">問い合わせ内容</label>
+        </div>
+        <br>
 
-        <div class="form-group">
-            <label class="col-sm-3 control-label" for="email">ログインメールアドレス</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" name="">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-sm-3 control-label" for="ask1">問い合わせ内容</label>
-            <div class="col-sm-6">
-                <textarea rows="7" name="" class="form-control"></textarea>
-            </div>
-        </div>
+        <button type="submit" class="btn btn-lg btn-success btn-block" name="signup">登録する</button>
+        <a href="login.php">ログイン画面に戻る</a>
+    </form>
 
         <div class="form-group">
             <label class="col-sm-3"></label>
