@@ -140,20 +140,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     $dbh = null;
 }
 
-if (isset($_POST['undo'])) {//元に戻すボタン押下時の処理
-    $undoid = $_POST['undotaskid'];
-
-    $dbh = db_connect();
-
-    $sql = 'UPDATE tasks SET done = 0 where id = ?';
-    $stmt = $dbh->prepare($sql);
-
-    $stmt->bindValue(1, $undoid, PDO::PARAM_INT);
-    $stmt->execute();
-
-    $dbh = null;
-}
-
 ?>
 <!doctype html>
 <html>
@@ -289,7 +275,6 @@ if (isset($_POST['undo'])) {//元に戻すボタン押下時の処理
                         </button>
                     </div>
                     <div class="modal-body" id="modalbody">
-                        <form action="index.php" method="post" name="undotask">
                             <div class="row">
                                 <?php
                                 for ($count = 0; $count < 20; $count++) {
@@ -325,8 +310,7 @@ if (isset($_POST['undo'])) {//元に戻すボタン押下時の処理
                                     ';
                                 }?>
                             </div>
-                        </form>
-                    </div>
+                        </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
                     </div>
