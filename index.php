@@ -321,6 +321,7 @@ if (isset($_POST['undo'])) {//元に戻すボタン押下時の処理
                                                   </li> 
                                               </ul>
                                           </div>
+                                            <div class="col-lg-12 border-bottom"></div>
                                     ';
                                 }?>
                             </div>
