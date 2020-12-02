@@ -10,13 +10,12 @@ include_once 'dbconnect.php';
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
-    <title>Todo List Member registration</title>
+    <title>Todo List Inquiry</title>
     <link rel="stylesheet" href="style.css">
 
     <!-- Bootstrap読み込み（スタイリングのため） -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="register_style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../../core/img/fukurouimg_white.svg">
 </head>
 <body>
 <div class="container">
