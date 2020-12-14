@@ -36,7 +36,6 @@ include_once 'dbconnect.php';
             <textarea class="form-control" id="inoutvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
             <!--<input type="textarea" id="inputvalue" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">-->
             <br>
-    </form>
 
         <div class="form-group">
             <label class="col-sm-3"></label>
