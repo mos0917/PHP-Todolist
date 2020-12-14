@@ -40,9 +40,9 @@ include_once 'dbconnect.php';
         <div class="form-group">
             <label class="col-sm-3"></label>
             <div class="col-sm-9">
-                <button class="btn btn-outline-secondary">リセット</button>
+                <button  type="reset" class="btn btn-outline-secondary">リセット</button>
                 <button class="btn btn-outline-success">送信する</button>
-                <input type="reset"  class="btn btn-outline-secondary" value="リセット">
+
             </div>
         </div>
     </form>
