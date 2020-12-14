@@ -25,7 +25,7 @@ include_once 'dbconnect.php';
             <h1>問い合わせ</h1>
         </div>
         <div class="form-group">
-            <input type="email" id="inputUser" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+            <input type="email" id="inputUser" class="form-control" required="" autofocus="">
             <label for="inputUser">ログインユーザー名</label>
         </div>
         <div class="form-group">
