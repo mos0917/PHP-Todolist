@@ -25,7 +25,7 @@ include_once 'dbconnect.php';
             <h1>問い合わせ</h1>
         </div>
             <label for="inputUser">ログインユーザー名</label>
-            <input type="email" id="inputUser" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+            <input type="text" id="inputUser" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
             <br>
 
             <label for="inputEmail">ログインメールアドレス</label>
@@ -42,6 +42,7 @@ include_once 'dbconnect.php';
             <div class="col-sm-9">
                 <button class="btn btn-outline-secondary">リセット</button>
                 <button class="btn btn-outline-success">送信する</button>
+                <input type="reset" value="リセット">
             </div>
         </div>
     </form>
