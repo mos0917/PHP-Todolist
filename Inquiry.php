@@ -33,7 +33,7 @@ include_once 'dbconnect.php';
             <label for="inputEmail">ログインメールアドレス</label>
         </div>
         <div class="form-group">
-            <textarea class="form-control" id="inoutvalue" rows="3" required="" autofocus=""></textarea>
+            <textarea class="form-control" id="inoutvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
             <!--<input type="textarea" id="inputvalue" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">-->
             <label for="inputvalue">問い合わせ内容</label>
         </div>
