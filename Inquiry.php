@@ -4,6 +4,19 @@ session_start();
 // DBとの接続
 include_once 'dbconnect.php';
 
+if($_POST['post']){
+    mb_language('japanese');
+    mb_internal_encoding('UTF-8');
+    $user = $_POST['loginuser'];
+    $mailadd = $_POST['loginmailadd'];
+    $inqueryvalue = $_POST['inqueryvalue'];
+    $header = "From: shonan.fireball@gmail.com\nReply-To: shonan.fireball@gmail.com\n";
+    if(mb_send_mail($user,$mailadd,$inqueryvalue,$header)) {
+        echo "問い合わせを送信しました。";
+    }else{
+        echo "問い合わせの送信に失敗しました。";
+    }
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="ja">
@@ -25,15 +38,15 @@ include_once 'dbconnect.php';
             <h1>問い合わせ</h1>
         </div>
             <label for="inputUser">ログインユーザー名</label>
-            <input type="text" id="inputUser" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+            <input type="text" id="inputUser" name="loginuser" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
             <br>
 
             <label for="inputEmail">ログインメールアドレス</label>
-            <input type="email" id="inputEmail" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+            <input type="email" id="inputEmail" name="loginmailadd" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
             <br>
 
             <label for="inputvalue">問い合わせ内容</label>
-            <textarea class="form-control" id="inoutvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
+            <textarea class="form-control" id="inoutvalue" name="inqueryvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
             <!--<input type="textarea" id="inputvalue" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">-->
             <br>
 
