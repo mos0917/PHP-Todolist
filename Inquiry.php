@@ -25,15 +25,16 @@ include_once 'dbconnect.php';
             <h1>問い合わせ</h1>
         </div>
         <div class="form-group">
-            <input type="email" id="inputUser" class="form-control" placeholder="ログインユーザー名" required="" autofocus="" kl_vkbd_parsed="true">
+            <input type="email" id="inputUser" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
             <label for="inputUser">ログインユーザー名</label>
         </div>
         <div class="form-group">
-            <input type="email" id="inputEmail" class="form-control" placeholder="ログインメールアドレス" required="" autofocus="" kl_vkbd_parsed="true">
+            <input type="email" id="inputEmail" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
             <label for="inputEmail">ログインメールアドレス</label>
         </div>
         <div class="form-group">
-            <input type="textarea" id="inputvalue" class="form-control" placeholder="問い合わせ内容" required="" autofocus="" kl_vkbd_parsed="true">
+            <textarea class="form-control" id="inoutvalue" rows="3" required="" autofocus=""></textarea>
+            <!--<input type="textarea" id="inputvalue" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">-->
             <label for="inputvalue">問い合わせ内容</label>
         </div>
         <br>
