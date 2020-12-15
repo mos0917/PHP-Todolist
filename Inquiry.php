@@ -12,10 +12,17 @@ if($_POST['post']){
     $inqueryvalue = $_POST['inqueryvalue'];
     $header = "From: shonan.fireball@gmail.com\nReply-To: shonan.fireball@gmail.com\n";
     if(mb_send_mail($user,$mailadd,$inqueryvalue,$header)) {
-        echo "問い合わせを送信しました。";
-    }else{
+        ?>
+        <div class="alert alert-success" role="alert">
+            メールの送信に成功しました。
+        </div>
+    <?php}else{
         echo "問い合わせの送信に失敗しました。";
-    }
+    }?>
+        <div class="alert alert-danger" role="alert">
+            メールの送信に失敗しました。
+        </div>
+    <?php
 }
 ?>
 <!DOCTYPE HTML>
