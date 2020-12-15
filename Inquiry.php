@@ -4,6 +4,19 @@ session_start();
 // DBとの接続
 include_once 'dbconnect.php';
 
+if($_POST['post']){
+    mb_language('japanese');
+    mb_internal_encoding('UTF-8');
+    $user = $_POST['loginuser'];
+    $mailadd = $_POST['loginmailadd'];
+    $inqueryvalue = $_POST['inqueryvalue'];
+    $header = "From: shonan.fireball@gmail.com\nReply-To: shonan.fireball@gmail.com\n";
+    if(mb_send_mail($user,$mailadd,$inqueryvalue,$header)) {
+        echo "問い合わせの送信に成功しました。";
+    }else{
+        echo "問い合わせの送信に失敗しました。";
+    }
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="ja">
