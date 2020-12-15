@@ -24,9 +24,9 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     xhr.onload = function () {
         console.log(xhr.responseText);
         if(xhr.responseText === 'true'){
-            window.location.href = 'index.php';
+            window.location.href = 'https://blooming-ocean-46381.herokuapp.com/index.php';
         }else {
-            window.location.href = 'googleinforegister.php';
+            window.location.href = 'https://blooming-ocean-46381.herokuapp.com/googleinforegister.php';
         }
     };
     xhr.onerror = function () {

@@ -28,7 +28,6 @@ if (isset($_POST['gsignup'])) {
 }
 ?>
 
-
 <!DOCTYPE HTML>
 <html lang="ja">
 <head>
