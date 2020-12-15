@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
+
 include_once 'dbconnect.php';
 include_once 'token_verify.php';
 

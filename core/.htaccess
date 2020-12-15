@@ -1,4 +1,3 @@
 <Files ~ "\.(dwt|php)$">
 Deny from all
 </Files>
-php_flag display_errors on
