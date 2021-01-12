@@ -61,25 +61,28 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
-<script src="config.js"></script>
-<script>
-    var uiConfig = {
-        // ログイン完了時のリダイレクト先
-        signInSuccessUrl: '/../../index.php',
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
+    <script src="config.js"></script>
+    <script>
+        //----------------------------------------------
+        // Firebase UIの設定
+        //----------------------------------------------
+        var uiConfig = {
+            // ログイン完了時のリダイレクト先
+            signInSuccessUrl: 'index.php',
 
-        // 利用する認証機能
-        signInOptions: [
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        ]
-    };
+            // 利用する認証機能
+            signInOptions: [
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID
+            ],
+        };
 
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    ui.start('#firebaseui-auth-container', uiConfig);
-</script>
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
 
     <div class="container">
 

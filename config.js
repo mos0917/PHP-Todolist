@@ -1,7 +1,6 @@
 //firebaseの設定値
-// Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCfr-SRsboT6mNPc8RBVZpTnDp64EbQzSA",
     authDomain: "todo-list-e74b4.firebaseapp.com",
     projectId: "todo-list-e74b4",
