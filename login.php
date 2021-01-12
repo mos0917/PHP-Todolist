@@ -69,12 +69,12 @@ if (isset($_POST['login'])) {
 <script>
     var uiConfig = {
         // ログイン完了時のリダイレクト先
-        signInSuccessUrl: '/auth/google/done.html',
+        signInSuccessUrl: '/../../index.php',
 
         // 利用する認証機能
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        ],
+        ]
     };
 
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
