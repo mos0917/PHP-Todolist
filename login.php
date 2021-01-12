@@ -65,23 +65,6 @@ if (isset($_POST['login'])) {
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
     <script src="config.js"></script>
-    <script>
-        //----------------------------------------------
-        // Firebase UIの設定
-        //----------------------------------------------
-        var uiConfig = {
-            // ログイン完了時のリダイレクト先
-            signInSuccessUrl: 'index.php',
-
-            // 利用する認証機能
-            signInOptions: [
-                firebase.auth.GoogleAuthProvider.PROVIDER_ID
-            ],
-        };
-
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
 
 
     <div class="container">
@@ -104,6 +87,23 @@ if (isset($_POST['login'])) {
             <BR>
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
+            <script>
+                //----------------------------------------------
+                // Firebase UIの設定
+                //----------------------------------------------
+                var uiConfig = {
+                    // ログイン完了時のリダイレクト先
+                    signInSuccessUrl: 'index.php',
+
+                    // 利用する認証機能
+                    signInOptions: [
+                        firebase.auth.GoogleAuthProvider.PROVIDER_ID
+                    ],
+                };
+
+                var ui = new firebaseui.auth.AuthUI(firebase.auth());
+                ui.start('#firebaseui-auth-container', uiConfig);
+            </script>
 
 
             <!--<div class="sns_login">
