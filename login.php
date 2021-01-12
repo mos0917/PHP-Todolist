@@ -87,6 +87,8 @@ if (isset($_POST['login'])) {
             <BR>
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
+
+            <div id="firebaseui-auth-container"></div>
             <script>
                 //----------------------------------------------
                 // Firebase UIの設定
