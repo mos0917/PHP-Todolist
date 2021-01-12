@@ -14,7 +14,7 @@ function errChk(){ //タスク登録時のエラーチェック
     }
 }
 
-
+/*
 function onSignIn(googleUser) {//googleでログインボタンを押下したときの処理
     var id_token = googleUser.getAuthResponse().id_token;
     var xhr = new XMLHttpRequest();
@@ -34,7 +34,7 @@ function onSignIn(googleUser) {//googleでログインボタンを押下した�
     };
     xhr.send('idtoken=' + id_token);
 }
-
+*/
 function comptask(){
     var div = document.createElement('div');
 

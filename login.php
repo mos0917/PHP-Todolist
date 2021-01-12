@@ -48,8 +48,10 @@ if (isset($_POST['login'])) {
 
 <head>
     <meta charset="utf-8" />
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com">
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com"> -->
     <!-- <meta name="viewport" content="width=width=device-width, initial-scale=1"> -->
     <title>Todo List Login</title>
     <!-- Bootstrap読み込み（スタイリングのため） -->
@@ -59,6 +61,28 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+<script src="config.js"></script>
+<script>
+    var uiConfig = {
+        // ログイン完了時のリダイレクト先
+        signInSuccessUrl: '/auth/google/done.html',
+
+        // 利用する認証機能
+        signInOptions: [
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID
+        ],
+    };
+
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('#firebaseui-auth-container', uiConfig);
+</script>
+
     <div class="container">
 
         <form method="post" class="form-signin">
@@ -81,11 +105,11 @@ if (isset($_POST['login'])) {
             <BR>
 
 
-            <div class="sns_login">
+            <!--<div class="sns_login">
                 <span>または</span>
                 <BR>
-                <div class="g-signin2" data-width="390" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" name="id_token" data-theme="dark"></div><!--googleでログインするときのリンク -->
-            </div>
+                <div class="g-signin2" data-width="390" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" name="id_token" data-theme="dark"></div>
+            </div> -->
         </form>
 
     </div>
