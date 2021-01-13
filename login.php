@@ -95,7 +95,7 @@ if (isset($_POST['login'])) {
                 //----------------------------------------------
                 var uiConfig = {
                     // ログイン完了時のリダイレクト先
-                    signInSuccessUrl: 'index.php',
+                    signInSuccessUrl: '../../index.php',
 
                     // 利用する認証機能
                     signInOptions: [
