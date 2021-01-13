@@ -101,11 +101,6 @@ if (isset($_POST['login'])) {
                             // or whether we leave that to developer to handle.
                             return true;
                         },
-                        uiShown: function() {
-                            // The widget is rendered.
-                            // Hide the loader.
-                            document.getElementById('loader').style.display = 'none';
-                        }
                     },
                     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
                     signInFlow: 'popup',
@@ -116,10 +111,9 @@ if (isset($_POST['login'])) {
                         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
                         firebase.auth.TwitterAuthProvider.PROVIDER_ID,
                         firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                        firebase.auth.PhoneAuthProvider.PROVIDER_ID
                     ],
                 };
+                window.href='index.php';
 
                 var ui = new firebaseui.auth.AuthUI(firebase.auth());
                 ui.start('#firebaseui-auth-container', uiConfig);
