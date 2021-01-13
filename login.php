@@ -90,6 +90,7 @@ if (isset($_POST['login'])) {
 
             <div id="firebaseui-auth-container"></div>
             <script>
+                var ui = new firebaseui.auth.AuthUI(firebase.auth());
                 //----------------------------------------------
                 // Firebase UIの設定
                 //----------------------------------------------
@@ -104,7 +105,7 @@ if (isset($_POST['login'])) {
                     },
                     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
                     signInFlow: 'popup',
-                    signInSuccessUrl: './index.php',
+                    signInSuccessUrl:'./index.php',
                     signInOptions: [
                         // Leave the lines as is for the providers you want to offer your users.
                         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -114,7 +115,7 @@ if (isset($_POST['login'])) {
                     ],
                 };
 
-                var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
                 ui.start('#firebaseui-auth-container', uiConfig);
             </script>
 
