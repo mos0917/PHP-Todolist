@@ -94,6 +94,7 @@ if (isset($_POST['login'])) {
                 // Firebase UIの設定
                 //----------------------------------------------
                 var uiConfig = {
+                    signInFlow: 'popup',
                     // ログイン完了時のリダイレクト先
                     signInSuccessUrl: '../../index.php',
 
