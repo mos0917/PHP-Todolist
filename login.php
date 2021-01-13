@@ -88,43 +88,40 @@ if (isset($_POST['login'])) {
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
 
-            <div id="firebaseui-auth-container"></div>
-            <script>
-                var ui = new firebaseui.auth.AuthUI(firebase.auth());
-                //----------------------------------------------
-                // Firebase UIの設定
-                //----------------------------------------------
-                var uiConfig = {
-                    callbacks: {
-                        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                            // User successfully signed in.
-                            // Return type determines whether we continue the redirect automatically
-                            // or whether we leave that to developer to handle.
-                            return true;
-                        },
-                    },
-                    // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-                    signInFlow: 'popup',
-                    signInSuccessUrl:'./index.php',
-                    signInOptions: [
-                        // Leave the lines as is for the providers you want to offer your users.
-                        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                        firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-                        firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                    ],
-                };
-
-
-                ui.start('#firebaseui-auth-container', uiConfig);
-            </script>
-
-
             <!--<div class="sns_login">
                 <span>または</span>
                 <BR>
-                <div class="g-signin2" data-width="390" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" name="id_token" data-theme="dark"></div>
-            </div> -->
+                <div id="firebaseui-auth-container"></div>
+                <script>
+                    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+                    //----------------------------------------------
+                    // Firebase UIの設定
+                    //----------------------------------------------
+                    var uiConfig = {
+                        callbacks: {
+                            signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                                // User successfully signed in.
+                                // Return type determines whether we continue the redirect automatically
+                                // or whether we leave that to developer to handle.
+                                return true;
+                            },
+                        },
+                        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+                        signInFlow: 'popup',
+                        signInSuccessUrl:'./index.php',
+                        signInOptions: [
+                            // Leave the lines as is for the providers you want to offer your users.
+                            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                            firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                        ],
+                    };
+
+
+                    ui.start('#firebaseui-auth-container', uiConfig);
+                </script>
+            </div>-->
         </form>
 
     </div>
