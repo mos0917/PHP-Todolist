@@ -86,7 +86,7 @@ if (isset($_POST['login'])) {
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
 
-            <!--<div class="sns_login">
+            <div class="sns_login">
                 <span>または</span>
                 <BR>
                 <div id="firebaseui-auth-container"></div>
@@ -112,7 +112,7 @@ if (isset($_POST['login'])) {
                             }
                         },
                         signInFlow: 'popup',
-                        signInSuccessUrl: './index.php',
+                        signInSuccessUrl: 'index.php',
                         signInOptions: [
                             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                             firebase.auth.EmailAuthProvider.PROVIDER_ID,
@@ -120,7 +120,7 @@ if (isset($_POST['login'])) {
                     };
                     ui.start('#firebaseui-auth-container', uiConfig);
                 </script>
-            </div>-->
+            </div>
         </form>
 
     </div>
