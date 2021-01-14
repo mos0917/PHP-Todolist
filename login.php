@@ -48,8 +48,11 @@ if (isset($_POST['login'])) {
 
 <head>
     <meta charset="utf-8" />
+    <script defer src="/__/firebase/5.3.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <script defer src="/__/firebase/init.js"></script>
     <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com"> -->
     <!-- <meta name="viewport" content="width=width=device-width, initial-scale=1"> -->
