@@ -119,7 +119,7 @@ if (isset($_POST['login'])) {
                         }
                     },
                     signInFlow: 'popup',
-                    signInSuccessUrl: './index.html',
+                    signInSuccessUrl: './index.php',
                     signInOptions: [
                         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                         firebase.auth.EmailAuthProvider.PROVIDER_ID,
