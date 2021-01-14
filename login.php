@@ -90,7 +90,9 @@ if (isset($_POST['login'])) {
             <BR>
 
             <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
             <script>
+                // Initialize Firebase
                 var firebaseConfig = {
                     apiKey: "AIzaSyCfr-SRsboT6mNPc8RBVZpTnDp64EbQzSA",
                     authDomain: "todo-list-e74b4.firebaseapp.com",
@@ -100,6 +102,11 @@ if (isset($_POST['login'])) {
                     appId: "1:102176473496:web:50a47c0b1e5397b93f6bed",
                     measurementId: "G-YZ31FBSYVB"
                 };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+            </script>
+
+            <script type="text/javascript">
                 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
                 var uiConfig = {
@@ -112,7 +119,7 @@ if (isset($_POST['login'])) {
                         }
                     },
                     signInFlow: 'popup',
-                    signInSuccessUrl: 'index.php',
+                    signInSuccessUrl: './index.html',
                     signInOptions: [
                         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                         firebase.auth.EmailAuthProvider.PROVIDER_ID,
