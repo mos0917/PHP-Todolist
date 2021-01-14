@@ -116,7 +116,7 @@ if (isset($_POST['login'])) {
                 var uiConfig = {
                     callbacks: {
                         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                            sessionStorage.setItem('user','user');
+                            <?php $_SESSION['user'] = $user_id; ?>
                             return true;
                         },
                         uiShown: function() {
