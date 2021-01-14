@@ -116,18 +116,25 @@ if (isset($_POST['login'])) {
                         },
                         uiShown: function() {
                             document.getElementById('loader').style.display = 'none';
-                        }
+                        },
                     },
                     signInFlow: 'popup',
                     signInSuccessUrl: './index.php',
                     signInOptions: [
                         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                        firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                        firebase.auth.GithubAuthProvider.PROVIDER_ID
+
                     ],
                 };
+            </script>
+            <?php
+                $_SESSION['user'] = $user_id;
+            ?>
+            <script>
                 ui.start('#firebaseui-auth-container', uiConfig);
             </script>
-
 
         </form>
 
