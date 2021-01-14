@@ -89,10 +89,6 @@ if (isset($_POST['login'])) {
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
 
-            <div class="sns_login">
-                <span>または</span>
-                <BR>
-            </div>
             <div id="firebaseui-auth-container"></div>
             <script>
                 var firebaseConfig = {
@@ -123,11 +119,8 @@ if (isset($_POST['login'])) {
                     ],
                 };
                 ui.start('#firebaseui-auth-container', uiConfig);
-                <?php
-                $_SESSION['user'] = $user_id;
-                ?>
-
             </script>
+
         </form>
 
     </div>
