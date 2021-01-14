@@ -88,6 +88,10 @@ if (isset($_POST['login'])) {
             <BR>
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
+            <div class="sns_login">
+                <span>または</span>
+                <BR>
+            </div>
 
             <div id="firebaseui-auth-container"></div>
             <div id="loader">Loading...</div>
