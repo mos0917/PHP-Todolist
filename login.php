@@ -112,6 +112,7 @@ if (isset($_POST['login'])) {
                 var uiConfig = {
                     callbacks: {
                         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                            sessionStorage.setItem('user','user');
                             return true;
                         },
                         uiShown: function() {
