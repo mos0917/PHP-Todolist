@@ -89,44 +89,7 @@ if (isset($_POST['login'])) {
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
 
-            <div id="firebaseui-auth-container"></div>
-            <div id="loader">Loading...</div>
-            <script>
-                // Initialize Firebase
-                var firebaseConfig = {
-                    apiKey: "AIzaSyCfr-SRsboT6mNPc8RBVZpTnDp64EbQzSA",
-                    authDomain: "todo-list-e74b4.firebaseapp.com",
-                    projectId: "todo-list-e74b4",
-                    storageBucket: "todo-list-e74b4.appspot.com",
-                    messagingSenderId: "102176473496",
-                    appId: "1:102176473496:web:50a47c0b1e5397b93f6bed",
-                    measurementId: "G-YZ31FBSYVB"
-                };
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);
-            </script>
 
-            <script type="text/javascript">
-                var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-                var uiConfig = {
-                    callbacks: {
-                        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                            return true;
-                        },
-                        uiShown: function() {
-                            document.getElementById('loader').style.display = 'none';
-                        }
-                    },
-                    signInFlow: 'popup',
-                    signInSuccessUrl: './index.php',
-                    signInOptions: [
-                        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                    ],
-                };
-                ui.start('#firebaseui-auth-container', uiConfig);
-            </script>
 
         </form>
 
