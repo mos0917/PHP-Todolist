@@ -89,8 +89,8 @@ if (isset($_POST['login'])) {
             <div class="sns_login">
                 <span>または</span>
                 <BR>
-                <div id="firebaseui-auth-container"></div>
             </div>
+            <div id="firebaseui-auth-container"></div>
             <script>
                 var firebaseConfig = {
                     apiKey: "AIzaSyCfr-SRsboT6mNPc8RBVZpTnDp64EbQzSA",
