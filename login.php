@@ -119,6 +119,10 @@ if (isset($_POST['login'])) {
                         ],
                     };
                     ui.start('#firebaseui-auth-container', uiConfig);
+                    <?php
+                        $_SESSION['user'] = $user_id;
+                    ?>
+
                 </script>
             </div>
         </form>
