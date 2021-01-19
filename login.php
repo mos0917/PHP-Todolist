@@ -41,6 +41,7 @@ if (isset($_POST['login'])) {
         <?php
     }
 }
+$_SESSION['user'] = $user_id;
 ?>
 
 <!DOCTYPE HTML>
