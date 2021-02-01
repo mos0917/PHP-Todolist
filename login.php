@@ -134,15 +134,6 @@ $_SESSION['user'] = $user_id;
                         firebase.auth.GithubAuthProvider.PROVIDER_ID
 
                     ],
-                    login.addEventListener('click',function(e){
-                        var mailaddress = document.getElementById('exampleInputEmail1').value;
-                        var password = document.getElementById('exampleInputPassword').value;
-
-                        firebase.auth().signInWithEmailAndPassword(mailAddress, password)
-                        .catch(function(error){
-                            alert('ログインできません('+error.message+')');
-                        });
-                    });
                 };
             </script>
 
