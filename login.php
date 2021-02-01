@@ -41,8 +41,8 @@ include_once 'dbconnect.php';
         <?php
     }
 }
-$_SESSION['user'] = $user_id;
-?>*/
+$_SESSION['user'] = $user_id;*/
+?>
 
 <!DOCTYPE HTML>
 <html lang="ja">
