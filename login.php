@@ -95,22 +95,53 @@ $_SESSION['user'] = $user_id;*/
                 <BR>
             </div>
 
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
             <script>
-                //新規登録処理
-                register.addEventListener('click', function(e) {
-                    var mailAddress = document.getElementById('exampleInputEmail').value;
-                    var password = document.getElementById('exampleInputPassword').value;
-
-                    firebase.auth().createUserWithEmailAndPassword(mailAddress, password)
-                        .catch(function(error) {
-                            alert('登録できません（' + error.message + '）');
-                        });
-                });
+                // Initialize Firebase
+                var firebaseConfig = {
+                    apiKey: "AIzaSyCfr-SRsboT6mNPc8RBVZpTnDp64EbQzSA",
+                    authDomain: "todo-list-e74b4.firebaseapp.com",
+                    projectId: "todo-list-e74b4",
+                    storageBucket: "todo-list-e74b4.appspot.com",
+                    messagingSenderId: "102176473496",
+                    appId: "1:102176473496:web:50a47c0b1e5397b93f6bed",
+                    measurementId: "G-YZ31FBSYVB"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
             </script>
 
-        </form>
-        <button class="btn btn-lg btn-success btn-block" name="register">新規登録する</button>
+            <script type="text/javascript">
+                var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
+                var uiConfig = {
+                    callbacks: {
+                        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                            <?php $_SESSION['user'] = $user_id; ?>
+                            return true;
+                        },
+                        uiShown: function() {
+                            document.getElementById('loader').style.display = 'none';
+                        },
+                    },
+                    signInFlow: 'popup',
+                    signInSuccessUrl: './index.php',
+                    signInOptions: [
+                        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                        firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                        firebase.auth.GithubAuthProvider.PROVIDER_ID
+
+                    ],
+                };
+            </script>
+
+            <script>
+                ui.start('#firebaseui-auth-container', uiConfig);
+            </script>
+        </form>
     </div>
 
 
