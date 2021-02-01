@@ -71,7 +71,7 @@ $_SESSION['user'] = $user_id;
 
     <div class="container">
 
-        <form method="post" class="form-signin">
+        <!--<form method="post" class="form-signin">
             <div class="text-center">
                 <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
@@ -92,7 +92,7 @@ $_SESSION['user'] = $user_id;
             <div class="sns_login">
                 <span>または</span>
                 <BR>
-            </div>
+            </div>-->
 
             <div id="firebaseui-auth-container"></div>
             <div id="loader">Loading...</div>
@@ -127,6 +127,7 @@ $_SESSION['user'] = $user_id;
                     signInFlow: 'popup',
                     signInSuccessUrl: './index.php',
                     signInOptions: [
+                        firebase.auth.EmailAuthProvider.PROVIDER_ID,
                         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
                         firebase.auth.TwitterAuthProvider.PROVIDER_ID,
