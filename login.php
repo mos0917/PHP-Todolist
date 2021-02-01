@@ -86,7 +86,7 @@ $_SESSION['user'] = $user_id;*/
             </div>
             <BR>
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
-            <button class="btn btn-lg btn-success btn-block" name="register">新規登録する</button>
+
             <BR>
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
@@ -109,6 +109,7 @@ $_SESSION['user'] = $user_id;*/
             </script>
 
         </form>
+        <button class="btn btn-lg btn-success btn-block" name="register">新規登録する</button>
 
     </div>
 
