@@ -19,8 +19,7 @@
         appId: "1:102176473496:web:50a47c0b1e5397b93f6bed",
         measurementId: "G-YZ31FBSYVB"
     };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+
 
     //新規登録処理
     register.addEventListener('click', function(e) {
