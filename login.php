@@ -76,12 +76,12 @@ $_SESSION['user'] = $user_id;
                 <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
             </div>
-            <!--<div class="form-group">
+            <div class="form-group">
                 <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="メールアドレス" required autofocus />
                 <label for="inputEmail">メールアドレス</label>
             </div>
             <div class="form-group">
-                <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword1" name="password" placeholder="パスワード" required />
+                <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword" name="password" placeholder="パスワード" required />
                 <label for="inputEmail">パスワード</label>
             </div>
             <BR>
@@ -92,7 +92,7 @@ $_SESSION['user'] = $user_id;
             <div class="sns_login">
                 <span>または</span>
                 <BR>
-            </div>-->
+            </div>
 
             <div id="firebaseui-auth-container"></div>
             <div id="loader">Loading...</div>
@@ -134,6 +134,15 @@ $_SESSION['user'] = $user_id;
                         firebase.auth.GithubAuthProvider.PROVIDER_ID
 
                     ],
+                    login.addEventListener('click',function(e){
+                        var mailaddress = document.getElementById('exampleInputEmail1').value;
+                        var password = document.getElementById('exampleInputPassword').value;
+
+                        firebase.auth().signInWithEmailAndPassword(mailAddress, password)
+                        .catch(function(error){
+                            alert('ログインできません('+error.message+')');
+                        });
+                    });
                 };
             </script>
 
