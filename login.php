@@ -135,7 +135,7 @@ $_SESSION['user'] = $user_id;*/
                         firebase.auth.GithubAuthProvider.PROVIDER_ID
 
                     ],
-                };
+                };  
             </script>
 
             <script>
