@@ -201,7 +201,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         <button class="btn btn-link exbutton" style="pointer-events: none; color: #ffffff;" type="button" disabled>使用方法</button>
                     </span>
                     <input type="submit" class="btn btn-link comptask" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()" style="color: #ffffff;">
-                    <input class="btn btn-link logout" type="button" name="logout" onclick="location.href='./logout.php?logout'"  value="ログアウト" style="color: #ffffff;">
+                    <input class="btn btn-link logout" type="button" name="logout" onclick="location.href='./login.php'"  value="ログアウト" style="color: #ffffff;">
                 </div>
             </div>
         </nav>
