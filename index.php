@@ -200,21 +200,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </span>
                     <input type="submit" class="btn btn-link comptask" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()" style="color: #ffffff;">
                     <input class="btn btn-link logout" type="button" name="logout" onclick="signOut(),location.href='./logout.php?logout'"  value="ログアウト" style="color: #ffffff;">
-
-                    <script>
-                        function signOut() {
-                            var auth2 = gapi.auth2.getAuthInstance();
-                            auth2.signOut().then(function () {
-                                console.log('User signed out.');
-                            });
-                        }
-
-                        function onLoad() {
-                            gapi.load('auth2', function() {
-                                gapi.auth2.init();
-                            });
-                        }
-                    </script>
                 </div>
             </div>
         </nav>
