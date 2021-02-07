@@ -153,6 +153,8 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com">
 <link href="index_style.css" rel="stylesheet">
 <link rel="shortcut icon" href="../../core/img/fukurouimg_white.svg">
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 <title>Todo List</title>
 </head>
 
