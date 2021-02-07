@@ -71,12 +71,12 @@ $_SESSION['user'] = $user_id;*/
 
     <div class="container">
 
-        <!--<form method="post" class="form-signin">
+        <form method="post" class="form-signin">
             <div class="text-center">
                 <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="メールアドレス" required autofocus />
                 <label for="inputEmail">メールアドレス</label>
             </div>
