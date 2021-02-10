@@ -85,12 +85,12 @@ $_SESSION['user'] = $user_id;*/
                 <label for="inputEmail">パスワード</label>
             </div>
             <BR>
-            <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
+            <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>-->
 
             <BR>
             <a href="register.php" class="m-4">会員登録はこちら</a>
             <BR>
-            <div class="sns_login">
+            <!--<div class="sns_login">
                 <span>または</span>
                 <BR>
             </div>-->
