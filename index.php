@@ -8,6 +8,7 @@ require_once 'functions.php';
 include_once 'dbconnect.php';
 
 $nowdate = date('Y-m-d H:i:s'); //現在日付の取得
+header('location:login.php');
 
 /*if (!isset($_SESSION['user'])) {
     header('Location: login.php');
