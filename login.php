@@ -54,9 +54,7 @@ $_SESSION['user'] = $user_id;*/
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
     <script defer src="/__/firebase/init.js"></script>
-    <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com"> -->
-    <!-- <meta name="viewport" content="width=width=device-width, initial-scale=1"> -->
+
     <title>Todo List Login</title>
     <!-- Bootstrap読み込み（スタイリングのため） -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
