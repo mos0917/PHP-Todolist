@@ -63,4 +63,19 @@ document.getElementById("resettaskmodal").onclick = function() {
     document.edittaskform.reset();
 }
 
+//ログイン状態の確認
+/*var config = {
+    apiKey: "AIzaSyCfr-SRsboT6mNPc8RBVZpTnDp64EbQzSA",
+    authDomain: "todo-list-e74b4.firebaseapp.com",
+};
+firebase.initializeApp(config);
 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in.
+        console.log('auth user', user);
+    } else {
+        // No user is signed in.
+    }
+});
+*/
