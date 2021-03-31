@@ -50,6 +50,7 @@ $_SESSION['user'] = $user_id;*/
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <script defer src="/__/firebase/5.3.1/firebase-app.js"></script>
     <script defer src="/__/firebase/5.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
