@@ -67,93 +67,93 @@ $_SESSION['user'] = $user_id;*/
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
-
-    <div class="container">
-
-        <form method="post" class="form-signin">
-            <div class="text-center">
-                <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
-                <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
-            </div>
-            <!--<div class="form-group">
-                <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="メールアドレス" required autofocus />
-                <label for="inputEmail">メールアドレス</label>
-            </div>
-            <div class="form-group">
-                <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword" name="password" placeholder="パスワード" required />
-                <label for="inputEmail">パスワード</label>
-            </div>
-            <BR>
-            <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>-->
-
-            <BR>
-            <a href="register.php" class="m-4">会員登録はこちら</a>
-            <BR>
-            <!--<div class="sns_login">
-                <span>または</span>
+    <main class="loginform">
+        <div class="container">
+            <form method="post" class="form-signin">
+                <div class="text-center">
+                    <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
+                    <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
+                </div>
+                <!--<div class="form-group">
+                    <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="メールアドレス" required autofocus />
+                    <label for="inputEmail">メールアドレス</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" pattern="^([a-zA-Z0-9]{8,})$" class="form-control" id="exampleInputPassword" name="password" placeholder="パスワード" required />
+                    <label for="inputEmail">パスワード</label>
+                </div>
                 <BR>
-            </div>-->
+                <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>-->
 
-            <div id="firebaseui-auth-container"></div>
-            <div id="loader">Loading...</div>
-            <script>
-                // Initialize Firebase
-                var firebaseConfig = {
-                    apiKey: "AIzaSyCfr-SRsboT6mNPc8RBVZpTnDp64EbQzSA",
-                    authDomain: "todo-list-e74b4.firebaseapp.com",
-                    projectId: "todo-list-e74b4",
-                    storageBucket: "todo-list-e74b4.appspot.com",
-                    messagingSenderId: "102176473496",
-                    appId: "1:102176473496:web:50a47c0b1e5397b93f6bed",
-                    measurementId: "G-YZ31FBSYVB"
-                };
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);
-            </script>
+                <BR>
+                <a href="register.php" class="m-4">会員登録はこちら</a>
+                <BR>
+                <!--<div class="sns_login">
+                    <span>または</span>
+                    <BR>
+                </div>-->
 
-            <script type="text/javascript">
-                var ui = new firebaseui.auth.AuthUI(firebase.auth());
+                <div id="firebaseui-auth-container"></div>
+                <div id="loader">Loading...</div>
+                <script>
+                    // Initialize Firebase
+                    var firebaseConfig = {
+                        apiKey: "AIzaSyCfr-SRsboT6mNPc8RBVZpTnDp64EbQzSA",
+                        authDomain: "todo-list-e74b4.firebaseapp.com",
+                        projectId: "todo-list-e74b4",
+                        storageBucket: "todo-list-e74b4.appspot.com",
+                        messagingSenderId: "102176473496",
+                        appId: "1:102176473496:web:50a47c0b1e5397b93f6bed",
+                        measurementId: "G-YZ31FBSYVB"
+                    };
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                </script>
 
-                var uiConfig = {
-                    callbacks: {
-                        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                            return true;
+                <script type="text/javascript">
+                    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+                    var uiConfig = {
+                        callbacks: {
+                            signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                                return true;
+                            },
+                            uiShown: function() {
+                                document.getElementById('loader').style.display = 'none';
+                            },
                         },
-                        uiShown: function() {
-                            document.getElementById('loader').style.display = 'none';
-                        },
-                    },
-                    signInFlow: 'popup',
-                    signInSuccessUrl: './index.php',
-                    signInOptions: [
-                        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                        signInFlow: 'popup',
+                        signInSuccessUrl: './index.php',
+                        signInOptions: [
+                            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 
-                    ],
-                };
+                        ],
+                    };
 
-                firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-                    .then(() => {
-                        // Existing and future Auth states are now persisted in the current
-                        // session only. Closing the window would clear any existing state even
-                        // if a user forgets to sign out.
-                        // ...
-                        // New sign-in will be persisted with session persistence.
-                        return firebase.auth().signInWithEmailAndPassword(email, password);
-                    })
-                    .catch((error) => {
-                        // Handle Errors here.
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
-                    });
+                    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+                        .then(() => {
+                            // Existing and future Auth states are now persisted in the current
+                            // session only. Closing the window would clear any existing state even
+                            // if a user forgets to sign out.
+                            // ...
+                            // New sign-in will be persisted with session persistence.
+                            return firebase.auth().signInWithEmailAndPassword(email, password);
+                        })
+                        .catch((error) => {
+                            // Handle Errors here.
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                        });
 
-            </script>
+                </script>
 
-            <script>
-                ui.start('#firebaseui-auth-container', uiConfig);
-            </script>
-        </form>
-    </div>
+                <script>
+                    ui.start('#firebaseui-auth-container', uiConfig);
+                </script>
+            </form>
+        </div>
+    </main>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
