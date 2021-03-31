@@ -63,7 +63,7 @@ $_SESSION['user'] = $user_id;*/
     <link rel="shortcut icon" href="../../core/img/fukurouimg_white.svg">
 </head>
 
-<body>
+<body class="text-center">
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
