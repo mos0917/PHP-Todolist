@@ -67,7 +67,6 @@ $_SESSION['user'] = $user_id;*/
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
-    <main class="loginform">
         <div class="container">
             <form method="post" class="form-signin">
                 <div class="text-center">
@@ -153,7 +152,7 @@ $_SESSION['user'] = $user_id;*/
                 </script>
             </form>
         </div>
-    </main>
+
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
