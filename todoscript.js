@@ -79,3 +79,15 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 */
+
+const user = firebase.auth().currentUser;
+const name, email, photoUrl;
+
+if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+}
+
+console.log(name);
+console.log(email);
