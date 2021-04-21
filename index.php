@@ -2,7 +2,7 @@
 date_default_timezone_set('Asia/Tokyo');
 
 ini_set("display_errors", 'On');
-//error_reporting(E_ALL);
+error_reporting(E_ALL);
 session_start();
 require_once 'functions.php';
 include_once 'dbconnect.php';

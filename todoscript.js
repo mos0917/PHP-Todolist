@@ -59,9 +59,3 @@ function comptask(){
     .catch((error) => console.log(error));
 }
 
-document.getElementById("resettaskmodal").onclick = function() {
-    document.edittaskform.reset();
-}
-
-console.log(name);
-console.log(email);
