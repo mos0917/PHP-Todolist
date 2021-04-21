@@ -11,7 +11,7 @@ include_once 'dbconnect.php';
 ?>
 
 <?php
-/*if (isset($_POST['login'])) {
+if (isset($_POST['login'])) {
     $email = $mysqli->real_escape_string($_POST['email']);
     $password = $mysqli->real_escape_string($_POST['password']);
     // クエリの実行
@@ -42,7 +42,7 @@ include_once 'dbconnect.php';
         <?php
     }
 }
-$_SESSION['user'] = $user_id;*/
+$_SESSION['user'] = $user_id;
 ?>
 
 <!DOCTYPE HTML>
