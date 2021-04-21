@@ -191,7 +191,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         </svg>
                     </a>
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="以下に「タスク名」、「内容」、「期限日」を入力し、「登録」ボタンを押下してください。">
-                        <button class="btn btn-link exbutton" style="pointer-events: none;" type="button" disabled>使用方法</button>
+                        <button class="btn btn-link exbutton" style="pointer-events: none; color: #ffffff;" type="button" disabled>使用方法</button>
                     </span>
                     <input type="submit" class="btn btn-link comptask" data-toggle="modal" data-target="#completedtask" name="completedtask" value="完了済みタスク" onclick="comptask()" style="color: #ffffff;">
                     <input class="btn btn-link logout" type="button" name="logout" onclick="location.href='./login.php'"  value="ログアウト" style="color: #ffffff;">
