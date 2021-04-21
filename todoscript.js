@@ -34,30 +34,6 @@ function comptask(){//完了済みタスクを表示させるための処理
         .catch((error) => console.log(error));
 }
 
-/*$(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})*/
 
-/*
-function onSignIn(googleUser) {//googleでログインボタンを押下したときの処理
-    var id_token = googleUser.getAuthResponse().id_token;
-    var xhr = new XMLHttpRequest();
-
-    xhr.open('POST', 'https://blooming-ocean-46381.herokuapp.com/token_verify.php');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function () {
-        console.log(xhr.responseText);
-        if(xhr.responseText === 'true'){
-            window.location.href = 'https://blooming-ocean-46381.herokuapp.com/index.php';
-        }else {
-            window.location.href = 'https://blooming-ocean-46381.herokuapp.com/googleinforegister.php';
-        }
-    };
-    xhr.onerror = function () {
-        console.log('送信できませんでした。');
-    };
-    xhr.send('idtoken=' + id_token);
-}
-*/
 
 
