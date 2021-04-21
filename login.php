@@ -73,7 +73,7 @@ $_SESSION['user'] = $user_id;*/
                     <img class="mb-4" src="../../core/img/fukurouimg.svg" alt="" width="72" height="72">
                     <h1 class="h3 mb-3 font-weight-normal">Todo List ログイン</h1>
                 </div>
-                <!--<div class="form-group">
+                <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="メールアドレス" required autofocus />
                     <label for="inputEmail">メールアドレス</label>
                 </div>
@@ -82,17 +82,17 @@ $_SESSION['user'] = $user_id;*/
                     <label for="inputEmail">パスワード</label>
                 </div>
                 <BR>
-                <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>-->
+                <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
 
                 <BR>
                 <a href="register.php" class="m-4">会員登録はこちら</a>
                 <BR>
-                <!--<div class="sns_login">
+                <div class="sns_login">
                     <span>または</span>
                     <BR>
-                </div>-->
+                </div>
 
-                <div id="firebaseui-auth-container"></div>
+                <!--<div id="firebaseui-auth-container"></div>
                 <div id="loader">Loading...</div>
                 <script>
                     // Initialize Firebase
@@ -150,7 +150,7 @@ $_SESSION['user'] = $user_id;*/
                 <script>
                     ui.start('#firebaseui-auth-container', uiConfig);
                 </script>
-            </form>
+            </form>-->
 
 
 
