@@ -144,24 +144,16 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
 <!doctype html>
 <html>
 <head>
-<script src="todoscript.js"></script>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <meta charset="utf-8">
 <meta name="viewport" content="width=width=device-width, initial-scale=1">
-<meta name = "google-signin-client_id" content = "375099930470-tebhlghcqj0g78541lm6ge3gre656esr.apps.googleusercontent.com">
 <link href="index_style.css" rel="stylesheet">
 <link rel="shortcut icon" href="../../core/img/fukurouimg_white.svg">
-<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 <title>Todo List</title>
 </head>
 
 <body class="d-flex flex-column h-100">
-    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
-    <script src="config.js"></script>
-
     <header>
         <!-- 固定ナビゲーションバー -->
         <nav class="navbar navbar-expand-md navbar-light fixed-top">
@@ -416,6 +408,6 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
 
-
+    <script src="todoscript.js"></script>
 </body>
 </html>
