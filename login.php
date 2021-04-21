@@ -85,10 +85,11 @@ $_SESSION['user'] = $user_id;
                 <button type="submit" class="btn btn-lg btn-primary btn-block" name="login">ログインする</button>
 
                 <BR>
-                <a href="register.php" class="m-4">会員登録はこちら</a>
-                <BR>
+
                 <div class="sns_login">
                     <span>または</span>
+                    <BR>
+                    <a href="register.php" class="m-4">会員登録はこちら</a>
                     <BR>
                 </div>
 
