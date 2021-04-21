@@ -78,7 +78,7 @@
                 "guzzlehttp/psr7": "^1.2",
                 "monolog/monolog": "^1.17|^2.0",
                 "php": ">=5.4",
-                "phpseclib/phpseclib": "~0.3.10||~2.0"
+                "phpseclib/phpseclib": "2.0.31"
             },
             "require-dev": {
                 "cache/filesystem-adapter": "^0.3.2",
