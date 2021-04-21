@@ -3,7 +3,7 @@ date_default_timezone_set('Asia/Tokyo');
 
 ini_set("display_errors", 'On');
 error_reporting(E_ALL);
-//session_start();
+session_start();
 require_once 'functions.php';
 include_once 'dbconnect.php';
 
@@ -24,7 +24,7 @@ while ($row = $result->fetch_assoc()) {
 }
 
 // データベースの切断
-$result->close();*/
+$result->close();
 
 if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     $errors = array();
