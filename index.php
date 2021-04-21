@@ -1,8 +1,6 @@
 <?php
 date_default_timezone_set('Asia/Tokyo');
 
-ini_set("display_errors", 'On');
-error_reporting(E_ALL);
 session_start();
 require_once 'functions.php';
 include_once 'dbconnect.php';
@@ -30,7 +28,7 @@ if (isset($_POST['submit'])) { //登録ボタン押下時の処理
     $errors = array();
     $name = $_POST['name'];
     $memo = $_POST['memo'];
-    $deaddate = $_POST['deadline_date';s
+    $deaddate = $_POST['deadline_date'];
 
     if ($_POST['deadline_date'] === '') { //期限日がnullの場合NULLを入れる(0000-00-00回避)
         $deaddate = null;
