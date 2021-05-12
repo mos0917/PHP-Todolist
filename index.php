@@ -331,69 +331,29 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                             ■期限日:'.$task['deadline_date'].'
                         </div>
                         <dd>
-                        <div class="modal fade" id="edittask'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="label1">Todo編集画面</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="index.php" method="post" name="edittaskform">
-                                            <input type="hidden" name="editdelid" value="'.$task['id'].'">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <ul>
-                                                        <li>
-                                                            <span>タスク名</span>
-                                                            <input type="text" class="form-control" id="edittaskname" name="editname" maxlength="25" value="'.$task['name'].'">
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                <ul>
-                                                        <li>
-                                                            <span>内容</span>
-                                                            <textarea class="form-control" id="edittaskvalue" rows="1" name="editmemo">'.$task['memo'].'</textarea>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-12 border-bottom">
-                                                    <ul>
-                                                        <li>
-                                                            <span>期限</span>
-                                                            <br>
-                                                            <input type="date" name="editdeadline_date" value="'.$task['deadline_date'].'">
-                                                        </li> 
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-8 align-self-center text-right">
-                                                    <button type="submit" class="btn btn-outline-danger" name="delete" value="delete" >削除</button>
-                                                </div>
-                                                <div class="col-lg-2 align-self-center text-right">
-                                                    <button type="button" class="btn btn-outline-secondary" id="resettaskmodal" data-dismiss="modal">閉じる</button>
-                                                </div>
-                                                <div class="col-lg-2 align-self-center text-right">
-                                                    <button type="submit" class="btn btn-info" name="modify" value="modify">更新</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Launch demo modal
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                ...
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
                             </div>
+                          </div>
                         </div>
-    
-                            <form action="index.php" method="post">
-                                <input type="hidden" name="method" value="put">
-                                <input type="hidden" name="id" value="'.$task['id'].'">
-                                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#edittask'.$task['id'].'">編集</button>
-                                <button type="show" class="btn btn-outline-info" >完了</button>
-                            </form>
-                        </dd>
-                    </div>
-                </div>
                 <HR>
             ';
         }
