@@ -29,7 +29,7 @@
                     <a class="nav-link" href="index.php" style="color: #ffffff;">ホーム <span class="sr-only"(現位置)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">カレンダー</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1">カレンダー</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle disabled" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ドロップダウン</a>
