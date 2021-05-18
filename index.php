@@ -172,7 +172,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                         <a class="nav-link" href="index.php" style="color: #ffffff;">ホーム <span class="sr-only"(現位置)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a  href="calendar.php" class="nav-link" tabindex="-1">カレンダー</a>
+                        <a class="nav-link" href="calendar.php" tabindex="-1" style="color: #ffffff;">カレンダー</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle disabled" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ドロップダウン</a>
