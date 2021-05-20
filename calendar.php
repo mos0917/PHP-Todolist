@@ -1,3 +1,31 @@
+<?php
+date_default_timezone_set('Asia/Tokyo');
+
+session_start();
+require_once 'functions.php';
+include_once 'dbconnect.php';
+
+$nowdate = date('Y-m-d H:i:s'); //現在日付の取得
+
+if (!isset($_SESSION['user'])) {//セッションがないユーザーはログイン画面に遷移させる
+    header('Location: login.php');
+}
+
+// ユーザーIDからユーザー名を取り出す
+$query = "SELECT * FROM users WHERE user_id={$_SESSION['user']}";
+$result = $mysqli->query($query);
+
+// ユーザー情報の取り出し
+while ($row = $result->fetch_assoc()) {
+    $username = $row['username'];
+    $email = $row['email']; //ユーザーidの取り出し
+}
+
+// データベースの切断
+$result->close();
+?>
+
+
 <!doctype html>
 <html>
     <head>
