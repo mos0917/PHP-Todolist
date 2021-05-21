@@ -2,19 +2,16 @@
 session_start();
 
 
-if($_POST['submit']){
+if($_POST['post']){
     mb_language("japanese");
     mb_internal_encoding("UTF-8");
     $to = "taskmanage706@gmail.com";
-    console.log("ここまでは来てる");
     $subject = $_POST['inputsummary'];
-    console.log("ここまでは来てる");
     $message = $_POST['inputvalue'];
-    console.log("ここまでは来てる");
     if(mb_send_mail($to,$subject,$message)) {
-        alert("問い合わせの送信に成功しました。");
+        echo "問い合わせの送信に成功しました";
     }else{
-        alert("問い合わせの送信に失敗しました。");
+        echo "問い合わせの送信に失敗しました";
     }
 }
 ?>
@@ -33,7 +30,7 @@ if($_POST['submit']){
 </head>
 <body>
 <div class="container">
-    <form method="post" class="form-inquiry">
+    <form action="inquiry.php" method="post" class="form-inquiry">
         <div class="text-left mb-4">
             <h1>問い合わせ</h1>
         </div>
