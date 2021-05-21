@@ -46,7 +46,7 @@ if($_POST['inquirysubmit']){
             <br>
 
             <label for="inputsummary">問い合わせ概要</label>
-            <input type="email" id="inputsummary" name="inquirysummary" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+            <input type="text" id="inputsummary" name="inquirysummary" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
             <br>
 
             <label for="inputvalue">問い合わせ内容</label>
