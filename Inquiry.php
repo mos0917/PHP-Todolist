@@ -4,7 +4,7 @@ session_start();
 // DBとの接続
 include_once 'dbconnect.php';
 
-if($_POST['inquirysubmit']){
+if($_POST['submit']){
     mb_language('japanese');
     mb_internal_encoding('UTF-8');
     $to = "taskmanage706@gmail.com";
