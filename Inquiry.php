@@ -57,7 +57,7 @@ if($_POST['inquirysubmit']){
             <label class="col-sm-3"></label>
             <div class="col-sm-9">
                 <button  type="reset" class="btn btn-outline-secondary">リセット</button>
-                <button class="btn btn-outline-success" name="inquirysubmit">送信する</button>
+                <button type="submit" class="btn btn-outline-success" name="submit">送信する</button>
 
             </div>
         </div>
