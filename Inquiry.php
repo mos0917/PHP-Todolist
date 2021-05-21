@@ -4,14 +4,14 @@ session_start();
 // DBとの接続
 include_once 'dbconnect.php';
 
-if($_POST['post']){
+if($_POST['inquirysubmit']){
     mb_language('japanese');
     mb_internal_encoding('UTF-8');
-    $user = $_POST['loginuser'];
-    $mailadd = $_POST['loginmailadd'];
-    $inqueryvalue = $_POST['inqueryvalue'];
-    $header = "From: shonan.fireball@gmail.com\nReply-To: shonan.fireball@gmail.com\n";
-    if(mb_send_mail($user,$mailadd,$inqueryvalue,$header)) {
+    $to = "taskmanage706@gmail.com";
+    $subject = $_POST['inputsummary'];
+    $message = $_POST['inqueryvalue'];
+    $headers = "From:"+$_POST['loginmailadd'];
+    if(mb_send_mail($to,$subject,$message,$headers)) {
         echo "問い合わせの送信に成功しました。";
     }else{
         echo "問い合わせの送信に失敗しました。";
@@ -45,6 +45,10 @@ if($_POST['post']){
             <input type="email" id="inputEmail" name="loginmailadd" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
             <br>
 
+            <label for="inputsummary">問い合わせ概要</label>
+            <input type="email" id="inputsummary" name="inquirysummary" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+            <br>
+
             <label for="inputvalue">問い合わせ内容</label>
             <textarea class="form-control" id="inoutvalue" name="inqueryvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
             <!--<input type="textarea" id="inputvalue" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">-->
@@ -54,7 +58,7 @@ if($_POST['post']){
             <label class="col-sm-3"></label>
             <div class="col-sm-9">
                 <button  type="reset" class="btn btn-outline-secondary">リセット</button>
-                <button class="btn btn-outline-success">送信する</button>
+                <button class="btn btn-outline-success" name="inquirysubmit">送信する</button>
 
             </div>
         </div>
