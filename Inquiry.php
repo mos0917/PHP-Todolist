@@ -1,15 +1,16 @@
 <?php
 session_start();
 
-// DBとの接続
-include_once 'dbconnect.php';
 
 if($_POST['submit']){
-    mb_language('japanese');
-    mb_internal_encoding('UTF-8');
+    mb_language("japanese");
+    mb_internal_encoding("UTF-8");
     $to = "taskmanage706@gmail.com";
+    console.log("ここまでは来てる");
     $subject = $_POST['inputsummary'];
+    console.log("ここまでは来てる");
     $message = $_POST['inputvalue'];
+    console.log("ここまでは来てる");
     if(mb_send_mail($to,$subject,$message)) {
         alert("問い合わせの送信に成功しました。");
     }else{
