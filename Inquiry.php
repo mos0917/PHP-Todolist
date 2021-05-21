@@ -9,8 +9,8 @@ if($_POST['submit']){
     mb_internal_encoding('UTF-8');
     $to = "taskmanage706@gmail.com";
     $subject = $_POST['inputsummary'];
-    $message = $_POST['inqueryvalue'];
-    if(mb_send_mail($to,$subject,$message,$headers)) {
+    $message = $_POST['inputvalue'];
+    if(mb_send_mail($to,$subject,$message)) {
         alert("問い合わせの送信に成功しました。");
     }else{
         alert("問い合わせの送信に失敗しました。");
@@ -49,7 +49,7 @@ if($_POST['submit']){
             <br>
 
             <label for="inputvalue">問い合わせ内容</label>
-            <textarea class="form-control" id="inoutvalue" name="inqueryvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
+            <textarea class="form-control" id="inputvalue" name="inputvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
             <!--<input type="textarea" id="inputvalue" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">-->
             <br>
 
