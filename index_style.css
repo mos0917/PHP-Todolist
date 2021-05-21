@@ -23,9 +23,6 @@ body {
   background-color: #f5f5f5;
   min-height: 100vh;
 }
-main > .modalbuttons{
-  justify-content: space-evenly;
-}
 
 .row .displaytaskname {
   word-break: break-all;
