@@ -331,7 +331,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                             ■期限日:'.$task['deadline_date'].'
                         </div>
                         <dd>
-                                                <div class="modal fade" id="edittask'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal fade" id="edittask'.$task['id'].'" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -373,7 +373,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="modal footer">
+                                    <div class="modal-footer">
                                         <div class="col-lg-8 align-self-center text-right">
                                             <button type="submit" class="btn btn-outline-danger" name="delete" value="delete" >削除</button>
                                         </div>
