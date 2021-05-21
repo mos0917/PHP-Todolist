@@ -30,7 +30,7 @@ if($_POST['post']){
 </head>
 <body>
 <div class="container">
-    <form action="inquiry.php" method="post" class="form-inquiry">
+    <form action="./Inquiry.php" method="post" class="form-inquiry">
         <div class="text-left mb-4">
             <h1>問い合わせ</h1>
         </div>
