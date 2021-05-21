@@ -10,11 +10,10 @@ if($_POST['inquirysubmit']){
     $to = "taskmanage706@gmail.com";
     $subject = $_POST['inputsummary'];
     $message = $_POST['inqueryvalue'];
-    $headers = "From:"+$_POST['loginmailadd'];
     if(mb_send_mail($to,$subject,$message,$headers)) {
-        echo "問い合わせの送信に成功しました。";
+        alert("問い合わせの送信に成功しました。");
     }else{
-        echo "問い合わせの送信に失敗しました。";
+        alert("問い合わせの送信に失敗しました。");
     }
 }
 ?>
