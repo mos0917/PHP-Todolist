@@ -88,9 +88,5 @@ $result->close();
             <BR>
             <BR>
             <BR>
-            <BR>
-            <div class="col-xs-10 col-lg-10">
-                <span>■ログイン中のユーザー:<?php echo $username; ?> さん</span>
-            </div>
             <iframe src="https://calendar.google.com/calendar/embed?height=1000&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%230B8043&amp;title=Todo%20Plans&amp;showPrint=0&amp;showTabs=1&amp;showCalendars=1&amp;showTz=1&amp;showTitle=1" style="border:solid 1px #777" width="1000" height="1000" frameborder="0" scrolling="no"></iframe>
         </main>
