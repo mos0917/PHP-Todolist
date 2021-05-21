@@ -247,7 +247,7 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                     </div>
                     <div class="col align-self-center">
                         <input class="btn btn-success" type="submit" name="submit" value="登録">
-                        <input type="reset" value="リセット">
+                        <input type="reset" class="btn btn-outline-secondary" value="リセット">
                     </div>
                 </div>
             </form>
