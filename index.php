@@ -370,19 +370,19 @@ if (isset($_POST['delete'])) { //削除ボタン押下時の処理追加
                                                     </ul>
                                                 </div>
                                                 <BR>
-                                                <div class="modal footer">
-                                                    <div class="col-lg-8 align-self-center text-right">
-                                                       <button type="submit" class="btn btn-outline-danger" name="delete" value="delete" >削除</button>
-                                                    </div>
-                                                    <div class="col-lg-2 align-self-center text-right">
-                                                       <button type="button" class="btn btn-outline-secondary" id="resettaskmodal" data-dismiss="modal">閉じる</button>
-                                                    </div>
-                                                    <div class="col-lg-2 align-self-center text-right">
-                                                        <button type="submit" class="btn btn-info" name="modify" value="modify">更新</button>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </form>
+                                    </div>
+                                    <div class="modal footer">
+                                        <div class="col-lg-8 align-self-center text-right">
+                                            <button type="submit" class="btn btn-outline-danger" name="delete" value="delete" >削除</button>
+                                        </div>
+                                        <div class="col-lg-2 align-self-center text-right">
+                                            <button type="button" class="btn btn-outline-secondary" id="resettaskmodal" data-dismiss="modal">閉じる</button>
+                                        </div>
+                                        <div class="col-lg-2 align-self-center text-right">
+                                            <button type="submit" class="btn btn-info" name="modify" value="modify">更新</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
