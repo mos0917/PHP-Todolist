@@ -2,7 +2,26 @@
 session_start();
 
 
-if($_POST['post']){
+require 'vendor/autoload.php';
+$email = new SendGridMailMail();
+$email->setFrom("test@example.com", "送信者A");
+$email->setSubject("TestMail漢字");
+$email->addTo("taskmanage706@gmail.com", "受信者B");
+$email->addContent("text/plain", "日本語 English");
+$sendgrid = new SendGrid(getenv('SENDGRID_API_KEY'));
+try {
+    $response = $sendgrid->send($email);
+    print $response->statusCode() . "n";
+    print_r($response->headers());
+    print $response->body() . "n";
+} catch (Exception $e) {
+    echo 'Caught exception: ' . $e->getMessage() . "n";
+}
+
+
+
+
+if($_POST['inquirysubmit']){
     mb_language("japanese");
     mb_internal_encoding("UTF-8");
     $to = "taskmanage706@gmail.com";
@@ -15,6 +34,7 @@ if($_POST['post']){
     }
 }
 ?>
+
 <!DOCTYPE HTML>
 <html lang="ja">
 <head>
@@ -55,7 +75,7 @@ if($_POST['post']){
             <label class="col-sm-3"></label>
             <div class="col-sm-9">
                 <button  type="reset" class="btn btn-outline-secondary">リセット</button>
-                <button type="submit" class="btn btn-outline-success" name="submit">送信する</button>
+                <button type="submit" class="btn btn-outline-success" name="inquirysubmit">送信する</button>
 
             </div>
         </div>

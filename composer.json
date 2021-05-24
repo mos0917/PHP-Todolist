@@ -1,6 +1,7 @@
 {
     "require":{
         "php":"~7.3.13",
-        "google/apiclient": "^2.5"
+        "google/apiclient": "^2.5",
+        "sendgrid/sendgrid": "~7"
     }
 }
