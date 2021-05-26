@@ -73,40 +73,42 @@ if($_POST['inquirysubmit']){
             </div>
         </nav>
     </header>
+    <main role="main" class="flex-shrink-0">
 
-    <div class="container">
-        <form action="./Inquiry.php" method="post" class="form-inquiry">
-            <div class="text-left mb-4">
-                <h1>問い合わせ</h1>
-            </div>
-                <label for="inputUser">ログインユーザー名</label>
-                <input type="text" id="inputUser" name="loginuser" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
-                <br>
-
-                <label for="inputEmail">ログインメールアドレス</label>
-                <input type="email" id="inputEmail" name="loginmailadd" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
-                <br>
-
-                <label for="inputsummary">問い合わせ概要</label>
-                <input type="text" id="inputsummary" name="inquirysummary" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
-                <br>
-
-                <label for="inputvalue">問い合わせ内容</label>
-                <textarea class="form-control" id="inputvalue" name="inputvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
-                <!--<input type="textarea" id="inputvalue" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">-->
-                <br>
-
-            <div class="form-group">
-                <label class="col-sm-3"></label>
-                <div class="col-sm-9">
-                    <button  type="reset" class="btn btn-outline-secondary">リセット</button>
-                    <button type="submit" class="btn btn-outline-success" name="inquirysubmit">送信する</button>
-
+        <div class="container">
+            <form action="./Inquiry.php" method="post" class="form-inquiry">
+                <div class="text-left mb-4">
+                    <h1>問い合わせ</h1>
                 </div>
-            </div>
-        </form>
+                    <label for="inputUser">ログインユーザー名</label>
+                    <input type="text" id="inputUser" name="loginuser" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+                    <br>
 
-    </div>
+                    <label for="inputEmail">ログインメールアドレス</label>
+                    <input type="email" id="inputEmail" name="loginmailadd" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+                    <br>
+
+                    <label for="inputsummary">問い合わせ概要</label>
+                    <input type="text" id="inputsummary" name="inquirysummary" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">
+                    <br>
+
+                    <label for="inputvalue">問い合わせ内容</label>
+                    <textarea class="form-control" id="inputvalue" name="inputvalue" rows="3" required="" autofocus="" kl_vkbd_parsed="true"></textarea>
+                    <!--<input type="textarea" id="inputvalue" class="form-control" required="" autofocus="" kl_vkbd_parsed="true">-->
+                    <br>
+
+                <div class="form-group">
+                    <label class="col-sm-3"></label>
+                    <div class="col-sm-9">
+                        <button  type="reset" class="btn btn-outline-secondary">リセット</button>
+                        <button type="submit" class="btn btn-outline-success" name="inquirysubmit">送信する</button>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </main>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
