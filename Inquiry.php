@@ -79,6 +79,11 @@ if($_POST['inquirysubmit']){
         <div class="container">
             <form action="./Inquiry.php" method="post" class="form-inquiry">
                 <div class="text-left mb-4">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                     <h1>問い合わせ</h1>
                 </div>
                     <label for="inputUser">ログインユーザー名</label>
