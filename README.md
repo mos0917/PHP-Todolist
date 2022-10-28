@@ -28,7 +28,7 @@ MOS09 at fukurou
 ※完了済みタスクを取り消す機能については今後追加予定です。
 
 ## どのサイトで公開してるか
-https://blooming-ocean-46381.herokuapp.com/login.php  
+~https://blooming-ocean-46381.herokuapp.com/login.php~  
 上記サイトで公開をしています。  
 現在絶賛実装中のため、一日に数回デプロイを行っています。  
 ### 参考画像  
